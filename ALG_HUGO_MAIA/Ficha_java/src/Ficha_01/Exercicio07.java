@@ -21,7 +21,7 @@ public class Exercicio07 {
 
 
 
-        System.out.println("insiara  o primeiro valor");
+        System.out.println( valorFinal );
 
     }
 }
