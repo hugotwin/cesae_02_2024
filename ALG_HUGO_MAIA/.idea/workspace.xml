@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio12.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio7.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio8.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio8.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +58,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/softdev/Desktop/cesae_02_2024/ALG_HUGO_MAIA"
   }
 }]]></component>
