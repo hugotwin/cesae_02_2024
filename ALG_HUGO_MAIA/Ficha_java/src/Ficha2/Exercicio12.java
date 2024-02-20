@@ -16,7 +16,7 @@ public class Exercicio12 {
                 "\n ---------------------");
         escolha = input.nextInt();
         if (escolha == 1) {
-            System.out.println("criar");
+            System.out.println(escolha>1?"ok":"nok");
         } else if (escolha == 2) {
             System.out.println("actualizar");
         } else if (escolha == 3) {

@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/ExerciciosDiversos/Lambda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio7.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio8.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio12.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio12.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +25,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -54,14 +46,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/softdev/Desktop/cesae_02_2024/ALG_HUGO_MAIA"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/softdev/Desktop/cesae_02_2024/ALG_HUGO_MAIA&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
