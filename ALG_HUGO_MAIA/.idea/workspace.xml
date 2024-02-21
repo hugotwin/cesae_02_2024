@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/ExerciciosDiversos/Lambda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio14.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio17.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio12.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha2/Exercicio12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha2/Exercicio12.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
