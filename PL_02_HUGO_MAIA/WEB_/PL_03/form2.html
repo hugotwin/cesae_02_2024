@@ -4,47 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
-    <script>
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADRUlEQVR4Ae2WA3AcARhG/5i1bdu2bVtxNmcrdtJObFtVuLnabmPW9njqv26vF253mDfzRt/hHRbQxP8iqQVnOHq9FvcCnRw24k5ElenNuV1VPWTEleEmAToh9fgT0cwaNgKlN+CstmAimlnDRqD0BlwD0UQ0s4aNQOkNKAHxRDSzho1AqQewu1sD0d1qPrpcVZ+2TE6+AT8b1HAXpARKLcC3AwtcO9m42nYhLsu6EhGqKroQmY6dbf4JqO7goHu3hV3mPSNbC2gsWYY8SG7OcY1uzVYGtmcZghoSWnEmx7fi/BVQMspNt2yQS0ZFb+eQqs6OmtAYikAClzWErqe1BcpcfZ4h1MA5XeHkc9rCXwE35hzQvTXdO6NwkmdI8Vj3xr152RBXqG5j51qtJ1eWgdgQaqGqhe3kamNFNiAXVgXpXloWkHFlsV/I9Xk+jXvzY7ui4dzqYNer832UReM8DKEOLi3xn4xmn9geqXtqc3jGmQ2hIRfWBDfuzYPlORDPO+SaYZOqzNsXZwj1IJWZNjmVma7MM4k7lL8nJuTYzihNaCxhkzxNQhb4v4/rLPSJb8N1VVXKzXZme134S77HuRhPu/zPh62TQ7IsEjWBCngBsU1rwU1KbsMzUxW3EvauNMcVvtdN/nQlutfrwvYUdoYmUCXHgGeLWtSwkehooJOTOgJb1KKGjUTpDbisIbLFY99C/SYkUXoDCkFsi1rUsJEovQHVILFF1QZUgoQs1hSPN+9hpf2vlprwP7ivK5fd11e4qttEXQlS0M36Ob+b9WNVhV2tX9p2sZkLVLndzqF9ZTengvK+ziaqW2hbFhnSlqX2J9jfgTE0uB3rdkxrNvWIkhFu7YvGexQUTPH6KyJfj0+io2u5OR2K++2zWgLqETdmH2h/bYFvwZUl/r8iKrSkZIWmFANq5haIh1ZoSG7f1ZVRj8ArW/tz60IKzmwKM/n24pO9SbTOo6C8n/PQgklety8v9qMecWJHVHvl7pgCcl+sSaZ5AonW6zA8vj1yaJZZwm28UFGPyDZPaH/EKqnAT5732t7l1F6hx7np9dHZ6YSZh+Oxt7aup6cCVVJZ6e2t3M8lbPC5emiDz7WMBroemlDDF5F80sJfiqyWAAAAAElFTkSuQmCC">
+    <style>
+        div { margin : 10px
 
-    </script>
+        }
+    </style>
 </head>
 <body>
 
     <div>
 
+       
+
         <form action="form2.html" method ="post">
+             <fieldset>
+                <legend>Titulo do formulario</legend>
+
+            <div>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id ="nome" placeholder="Insira aqui o seu nome" autofocus
-            required>
-        <br><br>
+            <input type="text" name="nome" id ="nome" placeholder="Insira aqui o seu nome" autofocus required>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id ="email" >
+            </div>
+            
+        <div>
         <label for="genero">Género:</label>
+
         <br>
         <label for="masculino" id = "masculino">Masculino</label>  
         <input type="radio" value="Masculino" name ="genero" id ="masculino">
         <label for="feminino" id ="feminino">Feminino</label>
         <input type="radio" name="genero" id="feminino" value="Feminino">
-        <br>
-        <br>
+        </div>
+        <div>
         <label for="date">Data actual :</label>
         <input type="date" id="date" name="date" >
-        <br>
-        <br>
+        </div>
+        <div>
         <label for="turma">Turma</label>
         <input type="text" list="lista" name="turma" id="turma" placeholder=" Insira a sua turma">
-        <datalist list="lista">
-            <option value="A">A</option>
-            <option value="B">B</option>
+        <datalist id="lista">
+
+            <option value="Web Develepor">Web Develepor</option>
+            <option value="Outra">Outra</option>
 
         </datalist>
-        <br>
-        <br>
-        <label for="mensagem">Mensagem :</label>
-        <input type="text" name="mensagem ">
-         
+        </div>
+        
+        <div>
+
+        <label for="mensagem">mensagem:</label>
+        
+            <textarea id="mensagem" name="mensagem" rows="3" cols="30">
+
+            </textarea>
+        </div>   
+        <div>
+        <button type = "submit" id = "enviar" name = "enviar">Enviar</button>
+        <button type="reset" id="limpar" name="limpar" >Limpar</button>   
+        </div>
+
+
+        <label for="upload">Upload : </label>
+        <input type="file" name="ficheiro" id="ficheiro">
 
 
 
 
+        </fieldset>
+
+        <div>
+            <input type="range" max="5" min="0" name="valor" id="">
+
+        </div>
+
+        <label for="checkbox">Opcao 1</label><input type="checkbox" name="opcao 1" id="opcao1">
+        <label for="checkbox">Opcao 2</label><input type="checkbox" name="opcao2" id="opcao2">
+
+
+        <select name="opcao" id="opcao">
+            <option value="verde">verde</option>
+            <option value="azul">azul</option>
+            <option value="" disabled selected>Seleciona uma opcao</option>
+        </select>
+
+
+
+       
+
+       
+       
+
+
+
+
+
+
+        
 
 
 
