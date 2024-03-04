@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7beab6ca-dd83-48b3-b14e-3723e571e601" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha3/Exercicio15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha3/Exercicio16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha_extra_ciclos/Exercicio1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha_extra_ciclos/Exercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha_extra_ciclos/Exercicio3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha_extra_ciclos/Exercicio4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ficha_java/src/Ficha_extra_ciclos/Exercicio5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/.idea/production.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Ficha_java/Ficha3/Exercicio15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled1/exercicio15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled1/fichaExtra/fichaExtra.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled1/untitled1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../out/.idea/out.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ficha_java/out/production/Ficha_java/Ficha_01/Exercicio6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Ficha_java/out/production/Ficha_java/Ficha_01/Exercicio6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Ficha_java/Ficha3/Exercicio14.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2cmbaMZLSPiYUBQnHdZR13QfjXT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/ALG_HUGO_MAIA/Ficha_java",
+    "onboarding.tips.debug.path": "C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/ALG_HUGO_MAIA/java_web/src/Main.java"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7beab6ca-dd83-48b3-b14e-3723e571e601" name="Changes" comment="" />
+      <created>1708719768397</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708719768397</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
