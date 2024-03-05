@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17db7469-35c6-44e6-8fe5-2aef6769215d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/out/production/Ficha_java/Ficha3/Exercicio15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio5_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio3.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,23 +29,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2caQCtFqwf3TS3gLyEWCs5h84D5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/ALG_HUGO_MAIA"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/ALG_HUGO_MAIA&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
