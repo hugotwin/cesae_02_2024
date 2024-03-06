@@ -1,0 +1,65 @@
+:root{
+
+    --corPrimaria:#e51b15;
+    --corPlaceholder: #dddddd;
+    --corWhite: white;
+}
+
+
+
+body{
+
+    font-family: "Open Sans", sans-serif;
+}
+
+.btn{
+
+    background-color: var(--corPrimaria);
+    color: var(--corWhite);
+    border: 1px solid var(--corWhite);
+}
+
+.btn.btn:hoover{
+
+    background-color: var(--corWhite);
+    color: var(--corPrimaria);
+}
+
+header{
+    background-color: var(--corPrimaria);
+}
+
+header img{
+    width: 200px;
+    
+
+}
+
+nav input{
+
+    background-color: var(--corWhite)!important;
+    color:black !important;
+
+} 
+
+nav input::placeholder{
+
+    color: var(--corPlaceholder) !important;
+}
+
+footer{
+    background-color: var(--corPrimaria);
+    color : var(--corWhite)
+}
+
+footer a {
+
+    color:  var(--corWhite);
+    border: 1px solid var(--corWhite);
+    
+    border-radius: 55%;
+    padding: 1%;
+    height: 4%;
+    
+
+}
