@@ -58,7 +58,95 @@
  <!----------------------boostrap--------------------------->
     </header>
 <!----------------------main--------------------------->
-    <main class="mb-2 p-2 shadow rounded">
+    <main class="mb-2 p-3 shadow rounded">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-6 ">
+            <iframe height="300px" class="w-100" id="gmaps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48025.09093475259!2d-8.765559051367191!3d41.209387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2468c6b85706e5%3A0xc63db81c976d211f!2sRadio%20Popular!5e0!3m2!1spt-PT!2spt!4v1709828773898!5m2!1spt-PT!2spt" 
+             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="col-12 col-md-6 text-center my-auto">
+
+
+            <div class="row">
+              <div class="col">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                  <P>R. Sara Afonso, </P>
+                  <P>4460-841 Sra. da Hora</P>
+              </div>
+            </div>
+            <hr>
+
+
+            <div class="row">
+              <div class="col">
+                <i class="bi bi-clock-fill"></i>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                  <P>10:00 - 23:00</P>
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col">
+            
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Fale con nós
+            </button></div>
+          
+        </div>
+
+      </div>
+
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    <!-- form boostrapl -->
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </main>
 <!-----------------------footer row container-------------------------->

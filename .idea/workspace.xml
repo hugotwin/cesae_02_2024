@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17db7469-35c6-44e6-8fe5-2aef6769215d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio7_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio8.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio5.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio5_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio5_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha6/Exercicio5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha6/Exercicio5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha6/Exercicio5_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha6/Exercicio5_2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio8.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha6/Exercicio8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha6/Exercicio8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha6/Exercicio8.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,5 +63,16 @@
       <updated>1708347085202</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio6.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
