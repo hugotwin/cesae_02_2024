@@ -49,7 +49,7 @@ public class Exercicio5 {
         {
             if ( i==0){controle=valor[i];}
 
-            if (valor[i]<controle )
+            if (valor[i]<=controle )
             {
                 return "Não é crescente";
 
