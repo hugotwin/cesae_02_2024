@@ -14,10 +14,10 @@ public class exercicio13 {
 
        int [][] lista1 = new int[4][4];
 
-        for (int i = 0; i<4;i++)
+        for (int i = 0; i< lista1.length;i++)
         {
 
-            for ( int j =0; j<4; j++)
+            for ( int j =0; j< lista1[0].length; j++)
             {
 
 
@@ -32,10 +32,10 @@ public class exercicio13 {
         }
         //---------
 
-        for( int i = 0; i<4;i++)
+        for( int i = 0; i<lista1.length;i++)
         {
 
-           for ( int j =0; j<4; j++)
+           for ( int j =0; j<lista1[0].length; j++)
            {
 
 
