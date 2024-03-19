@@ -3,7 +3,7 @@ package Ficha_extra_funcoes;
 import java.util.Scanner;
 
 public class Exercicio11 {
-
+/**
 
     public static String jogoVelha() {
         int coluna, linha, a_vex = 0, contador = 0, contador1 = 0, contador2 = 0;
@@ -223,5 +223,5 @@ public class Exercicio11 {
 
 
     }
-
+ */
 }

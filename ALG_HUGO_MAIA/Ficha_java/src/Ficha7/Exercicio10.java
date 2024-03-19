@@ -144,13 +144,12 @@ public class Exercicio10 {
 
         }
         conteudo2.close();
-        ficheiro.
 
         return contacto+"\n O número de inscritos no curso : "+ contador;
     }
     //---------------------------- ALUNO MAIS VELHO
 
-
+/*
 
     public static void alunoVelho() throws FileNotFoundException
     {
@@ -171,7 +170,7 @@ public class Exercicio10 {
 
     }
 
-
+*/
 
 
 
