@@ -41,12 +41,13 @@ public class Exercicio11 {
 
 
             if (a_vex == 0) {
-                while (verdadeiro<0){
+                while (verdadeiro<1){
                 System.out.println("jogador 1 escolha uma posição linha ");
                 linha = input.nextInt();
                 System.out.println("jogador 1 escolha uma posição coluna ");
                 coluna = input.nextInt();
                 a_vex = 1;
+
                 if( array[linha][coluna] == jogador1){
 
                     verdadeiro=-1;
@@ -61,6 +62,8 @@ public class Exercicio11 {
 
 
                 }
+
+                verdadeiro=0;
 
 
 
@@ -81,8 +84,10 @@ public class Exercicio11 {
                         verdadeiro=1;
                     }
 
-                }
 
+
+                }
+                verdadeiro=0;
             }
 
 
