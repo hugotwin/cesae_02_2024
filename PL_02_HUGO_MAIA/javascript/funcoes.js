@@ -14,5 +14,7 @@ document.write("<h1>paragrafo em java script</h1>")
 function fundoVermelho(){
 
     document.bgColor="red";
+
+    
 };
 

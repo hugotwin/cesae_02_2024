@@ -9,7 +9,7 @@ public class Exercicio11 {
         int coluna, linha, a_vex = 0, contador = 0, contador1 = 0, contador2 = 0;
         String jogador1 = " X | ";
         String jogador2 = " * | ";
-        int verdadeiro=0;
+        String verdadeiro="";
 
 
         String[][] array = new String[3][3];
@@ -40,58 +40,79 @@ public class Exercicio11 {
         while (contador < 9) {
 
 
+<<<<<<< HEAD
             if (a_vex == 0) {
                 while (verdadeiro<1){
                 System.out.println("jogador 1 escolha uma posição linha ");
+=======
+            if (a_vex == 0 ){
+
+                while (!verdadeiro.equals(jogador1)){
+                System.out.println("jogador 1 escolha uma posição linha - insira um numero ");
+>>>>>>> 6dd8f85d2dc7ccea069e2ccf6054ef53922b9087
                 linha = input.nextInt();
-                System.out.println("jogador 1 escolha uma posição coluna ");
+                System.out.println("jogador 1 escolha uma posição coluna - insira um numero");
                 coluna = input.nextInt();
                 a_vex = 1;
+<<<<<<< HEAD
 
                 if( array[linha][coluna] == jogador1){
 
                     verdadeiro=-1;
 
+=======
+                if(linha>=3 || coluna>=3 || linha <0 || coluna <0 || array[linha][coluna].equals(jogador1) || array[linha][coluna].equals(jogador2) ){
+>>>>>>> 6dd8f85d2dc7ccea069e2ccf6054ef53922b9087
 
+                    System.out.println("\nEscolha outra linha e coluna a que escolheu ja foi inserida, " +
+                            "\nou insira um valor correcto de linha e coluna");
 
                 }else {
                     array[linha][coluna] = jogador1;
-                    verdadeiro=1;
-                }
-
-
+                    verdadeiro=jogador1;
 
                 }
 
+<<<<<<< HEAD
                 verdadeiro=0;
 
+=======
+                }
+                verdadeiro="";
+>>>>>>> 6dd8f85d2dc7ccea069e2ccf6054ef53922b9087
 
 
             } else {
 
-                while (verdadeiro==0) {
+                while (!verdadeiro.equals(jogador1)) {
+
                     System.out.println("jogador 2 escolha uma posição linha ");
                     linha = input.nextInt();
                     System.out.println("jogador 2 escolha uma posição coluna ");
                     coluna = input.nextInt();
                     a_vex = 0;
-                    if( array[linha][coluna] == jogador2){
-                        verdadeiro=-1;
+                    if( linha>=3 || coluna>=3 || linha <0 || coluna <0 || array[linha][coluna] == jogador1 || array[linha][coluna] == jogador2 ){
 
-
+                        System.out.println("\nEscolha outra linha e coluna a que escolheu ja foi inserida, " +
+                                "\nou insira um valor correcto de linha e coluna");
                     }else {
                         array[linha][coluna] = jogador2;
-                        verdadeiro=1;
+                        verdadeiro=jogador1;
                     }
+<<<<<<< HEAD
 
 
 
                 }
                 verdadeiro=0;
+=======
+                }
+                verdadeiro="";
+>>>>>>> 6dd8f85d2dc7ccea069e2ccf6054ef53922b9087
             }
-
-
             contador++;
+
+
 
 
             for (int i = 0; i < 3; i++) {
@@ -117,11 +138,12 @@ public class Exercicio11 {
                             }
                         }
 
-
                     }
 
 
                 }
+                contador1 = 0;
+                contador2 = 0;
 
             }
 
@@ -139,7 +161,7 @@ public class Exercicio11 {
                             contador1++;
                             System.out.println("jogadas do jogador 1 _" + contador1);
                             if (contador1 >= 3) {
-                                return "jogador 1 ganhou";
+                                return "jogador 1 ganhou-";
                             }
                         }
 
@@ -147,7 +169,7 @@ public class Exercicio11 {
                             contador2++;
                             System.out.println("jogadas do jogador 2 :" + contador2);
                             if (contador2 >= 3) {
-                                return "jogador 2 ganhou";
+                                return "jogador 2 ganhou-";
                             }
                         }
 
@@ -157,21 +179,24 @@ public class Exercicio11 {
 
                 }
 
-
-            }
-
-            if (array[0][0] == array[1][1] && array[2][2] == jogador1 && array[1][1] == array[2][2]) {
-
-                return "ganhou jogador 1";
-
-            }
-            if (array[0][0] == array[1][1] && array[2][2] == jogador2 && array[1][1] == array[2][2]) {
-
-                return "ganhou jogador 2";
+                contador1 = 0;
+                contador2 = 0;
             }
 
             contador1 = 0;
             contador2 = 0;
+
+            if (array[0][0] == array[1][1] && array[2][2] == jogador1 && array[1][1] == array[2][2]) {
+
+                return "ganhou jogador 1*";
+
+            }
+            if (array[0][0] == array[1][1] && array[2][2] == jogador2 && array[1][1] == array[2][2]) {
+
+                return "ganhou jogador 2*";
+            }
+
+
 
             for (String[] n : array) {
 

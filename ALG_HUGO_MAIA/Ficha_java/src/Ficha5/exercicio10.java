@@ -17,9 +17,9 @@ public class exercicio10 {
 
 
 
-        for(int i=0 ; i<3;i++ ){
+        for(int i=0 ; i<value.length;i++ ){
 
-            for ( int j=0; j<5; j++){
+            for ( int j=0; j<value[0].length; j++){
 
 
                 n=rd.nextInt(5);
@@ -36,9 +36,9 @@ public class exercicio10 {
         valor =input.nextInt();
 
 
-        for(int i=0 ; i<3;i++ ){
+        for(int i=0 ; i<value.length;i++ ){
 
-            for ( int j=0; j<5; j++){
+            for ( int j=0; j<value[0].length; j++){
 
                 if(value[i][j]== valor ){
 
