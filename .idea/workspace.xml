@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17db7469-35c6-44e6-8fe5-2aef6769215d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3_funcoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha7/Exercicio10.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha7/Exercicio10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio11.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_extra_funcoes/Exercicio11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha5/exercicio10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha5/exercicio10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha5/exercicio13.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha5/exercicio13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha7/Exercicio10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha7/Exercicio10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha_extra_arrays/ArrayExtra.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha_extra_funcoes/Exercicio11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha_extra_funcoes/Exercicio11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Ex_03 Hotel Temático/produtosHotel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Ex_03 Hotel Temático/produtosHotel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Ex_03 Hotel Temático/temasHotel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Ex_03 Hotel Temático/temasHotel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3_funcoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/ALG_HUGO_MAIA/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3_funcoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
