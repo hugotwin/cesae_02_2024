@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Ficha_java/Ficha3/Exercicio15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled1/exercicio15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/lojaJogos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/menuAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/Ficha3/Exercicio14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3_funcoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha_ficheiros_extra/Exercicio3_funcoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +58,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/ALG_HUGO_MAIA/Ficha_java"
+    "last_opened_file_path": "C:/Users/softdev/Desktop/cesae_02_2024/ALG_HUGO_MAIA"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -419,7 +419,7 @@ public static void consultar_quartos() throws FileNotFoundException{
 
     switch (opcao) {
         case "1":
-
+/*
             System.out.println("Consultar, quartos");
             dados = input.nextLine();
             while (conteudo_quartos.hasNextLine()) {
@@ -453,12 +453,12 @@ public static void consultar_quartos() throws FileNotFoundException{
 
 
 
-
+*/
 
             break;
 
         case "2":
-
+/*
             System.out.println("indique o telemovel");
             dados = input.nextLine();
             while (conteudo.hasNextLine()) {
@@ -467,11 +467,11 @@ public static void consultar_quartos() throws FileNotFoundException{
                 if (linhas[3].equals(dados)) {
                     dados = "" + linhas[1] + " - " + linhas[2] + " - " + linhas[3] + " - " + linhas[4];
                 }
-            }
+            }*/
             break;
 
         case "3":
-
+/*
             System.out.println("indique o email");
             dados = input.nextLine();
             while (conteudo.hasNextLine()) {
@@ -480,13 +480,13 @@ public static void consultar_quartos() throws FileNotFoundException{
                 if (linhas[4].equals(dados)) {
                     dados = "" + linhas[1] + " - " + linhas[2] + " - " + linhas[3] + " - " + linhas[4];
                 }
-            }
+            }*/
             break;
         default:
 
             dados = "valores invalidos";
     }
-    return dados;
+   /* return dados;*/
 
 
 
