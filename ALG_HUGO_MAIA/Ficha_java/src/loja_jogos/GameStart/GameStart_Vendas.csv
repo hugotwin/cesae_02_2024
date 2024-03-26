@@ -1,6 +1,8 @@
 idVenda;idCliente;editora;categoria;jogo;valor
 V00-001;1;CD Projekt Red;RPG;The Witcher III: Wild Hunt;39.99
 V00-002;1;Team Cherry;Metroidvania;Hollow Knight;19.99
+V00-002;1;Team Cherry;Metroidvania;Hollow Knight;19.9
+V00-002;1;Team Cherry;Metroidvania;Hollow Knight;19.9
 V00-003;2;Xbox Game Studios;Estrategia;Age of Empires IV;35.99
 V00-004;3;Sony;Festa;Sing Star;9.90
 V00-005;4;Xbox Game Studios;MMORPG;Sea of Thieves;15.90
@@ -33,7 +35,7 @@ V00-031;16;Xbox Game Studios;Estrategia;Age of Empires IV;35.99
 V00-032;17;Giants;Simulador;Farming Simulator 22;31.25
 V00-033;17;Coffee Stain;Simulador;Goat Simulator 3;19.99
 V00-034;1;Annapuma;Aventura;Stray;29.99
-V00-035;15;Naughty Dog;Aventura;The Last of Us;49000000000.90
+V00-035;15;Naughty Dog;Aventura;The Last of Us;49.90
 V00-036;19;Naughty Dog;Aventura;Uncharted 4;59.50
 V00-037;20;Ubisoft;Aventura;Assassins Creed Valhalla;69.90
 V00-038;21;Nintendo;Arcada;Super Mario Bros;1.99
@@ -68,7 +70,7 @@ V00-066;37;Astragon;Simulador;Firefighting Simulator;15.50
 V00-067;37;Big Cheese;Simulador;Cooking Simulator;19.99
 V00-068;38;Team17;Festa;Overcooked 2;5.75
 V00-069;38;Big Cheese;Simulador;Cooking Simulator;19.99
-V00-070;39;Big Cheese;Simulador;Cooking Simulator;19.99
+V00-070;39;Big Cheese;Simulador;Cooking Simulator;19000.99
 V00-071;39;EA;Corridas;Need for Speed Heat;34.50
 V00-072;39;Naughty Dog;Aventura;The Last of Us;49.90
 V00-073;39;Santa Monica;Aventura;God of War;59.90
@@ -148,7 +150,7 @@ V00-146;76;Nintendo;Desporto;Wii Sports;2.75
 V00-147;77;Rockstar;RPG;Red Dead Redemption 2;69.90
 V00-148;78;Naughty Dog;Aventura;The Last of Us;49.90
 V00-149;79;Giant Army;Simulador;Universe Sandbox;20.09
-V00-150;80;EA;Simulador;Sims 4 Digital Deluxe;2150000.90
+V00-150;80;EA;Simulador;Sims 4 Digital Deluxe;215.90
 V00-151;81;Rockstar;RPG;GTA V;29.90
 V00-152;81;EA;Simulador;Sims 4 Digital Deluxe;215.90
 V00-153;81;Frontier Developments;Simulador;Planet Zoo;310.90

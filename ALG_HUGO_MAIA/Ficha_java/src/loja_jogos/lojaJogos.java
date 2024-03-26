@@ -28,7 +28,7 @@ public class lojaJogos {
                     case "1":
 
                         // ecolheu opcao menu
-                        String caminho_admins = "src/loja_jogos/GameStart/GameStart_Admins.csv";
+                        String caminho_admins = "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Admins.csv";
 
                         if (verificar_login(leitura_sem_cabecalho(caminho_admins), 0, 1)) {
                            menuAdmin_();
