@@ -212,6 +212,7 @@ public class menuAdmin {
         double[] array_valor_cliente = new double[array_cliente.length - 1];
         int[] array_id_cliente = new int[array_cliente.length - 1];
 
+        // cria arrays em duplicados
         for (int n = 1; n < array_cliente.length; n++) {
 
             String[] campos_cliente = array_cliente[n].split(";");
@@ -232,6 +233,8 @@ public class menuAdmin {
             array_valor_cliente[n - 1] = valor;
             valor = 0;
         }
+
+        // faz ordenacao dos arrays
         for (int n = 1; n < array_valor_cliente.length; n++) {
 
             for (int i = 1; i < array_valor_cliente.length; i++) {
@@ -278,7 +281,15 @@ public class menuAdmin {
     }
   //-------------------------------------------------------------
 
-public static String clientes_jogo(String jogo, String caminho_vendas, String caminho_clientes) throws  FileNotFoundException
+    /**
+     * Funcao que apresenta os clinetes  que comprarm determinado jogo
+     * @param jogo
+     * @param caminho_vendas
+     * @param caminho_clientes
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static String clientes_jogo(String jogo, String caminho_vendas, String caminho_clientes) throws  FileNotFoundException
 {
     String clientes="";
     int contador=0;
@@ -312,8 +323,6 @@ public static String clientes_jogo(String jogo, String caminho_vendas, String ca
 
     return clientes;
 }
-
-
 
 
     //-------------------------------------------
@@ -362,8 +371,273 @@ public static String clientes_jogo(String jogo, String caminho_vendas, String ca
         return nome;
     }
 
+    /**
+     * Funcao que da  os top 5 jogos que deram mais lucro
+     * @param caminho_margem_
+     * @param caminho_vendas_
+     * @throws FileNotFoundException
+     */
+    //-----------------------------------------------------------------------------------------
+    public static void top_five(String caminho_margem_, String caminho_vendas_) throws FileNotFoundException {
+        double valor = 0;
+        String nome = "";
+        int contador = 0;
+        int id = 0;
 
 
+        String[] array_margem = leitura_sem_cabecalho(caminho_margem_);
+        String[] array_vendas = leitura_sem_cabecalho(caminho_vendas_);
+        double[] array_vendas_jogo = new double[array_vendas.length - 1];// array com valor total de cada jogo
+        String[] array_nome_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
+        String[] array_categoria_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
+        double[] array_margem_jogo = new double[array_vendas.length - 1];// array com o nome do jogos
+
+        // criar array de jogo sem duplicados
+
+        for (int i = 1; i < array_vendas.length; i++) {
+            int contador_ = 0;
+
+            String[] campos_vendas = array_vendas[i].split(";");
+
+
+            for (int n = 0; n < array_nome_jogo.length; n++) {
+
+                if (array_nome_jogo[n] != null) {
+                    if (campos_vendas[4].equals(array_nome_jogo[n])) {
+                        ++contador_;
+                    }
+
+                }
+            }
+
+
+            if (contador_ < 1) {
+
+                array_nome_jogo[i] = campos_vendas[4];
+                array_categoria_jogo[i] = campos_vendas[3];
+            }
+        }
+
+
+        // cria array com a soma por cada jogo
+        for (int i = 0; i < array_nome_jogo.length; i++) {
+            int soma = 0;
+
+            for (int n = 1; n < array_vendas.length; n++) {
+
+                String[] campos_vendas = array_vendas[i].split(";");
+
+                if (array_nome_jogo[i] != null) {
+                    if (campos_vendas[4].equals(array_nome_jogo[i])) {
+                        soma += Double.parseDouble(campos_vendas[5]);
+                    }
+
+                }
+
+                array_vendas_jogo[i] = soma;
+
+            }
+            soma=0;
+        }
+
+
+            // multiplicar a array de vendas por  pela margem categoria
+
+            for (int t = 0; t < array_vendas_jogo.length; t++) {
+
+                double margem =0;
+
+                for (int n = 1; n < array_margem.length; n++) {
+
+                    String[] campos_margem = array_margem[n].split(";");
+
+                        if (campos_margem[0].equals(array_categoria_jogo[t])) {
+
+                            margem = (Double.parseDouble(campos_margem[1])/100);
+                        }
+
+
+
+                }
+                array_vendas_jogo[t] = array_vendas_jogo[t]*margem;
+                array_margem_jogo[t] =margem;
+
+            }
+
+            // ordenar os array do maior para o menor
+
+
+        for (int n = 0; n < array_vendas_jogo.length; n++) {
+
+            for (int i = 1; i < array_vendas_jogo.length; i++) {
+
+                if (array_vendas_jogo[i] < array_vendas_jogo[i - 1]) {
+                    valor = array_vendas_jogo[i];
+                    array_vendas_jogo[i] = array_vendas_jogo[i - 1];
+                    array_vendas_jogo[i - 1] = valor;
+
+                    nome = array_nome_jogo[i];
+                    array_nome_jogo[i] = array_nome_jogo[i - 1];
+                    array_nome_jogo[i - 1] = nome;
+
+                    nome = array_categoria_jogo[i];
+                    array_categoria_jogo[i] = array_categoria_jogo[i - 1];
+                    array_categoria_jogo[i - 1] = nome;
+
+
+                }
+            }
+        }
+
+
+
+            for (int  n = array_nome_jogo.length-1; n>array_nome_jogo.length-5;n--) {
+
+                System.out.println("Categoria : "+array_categoria_jogo[n]);
+                    System.out.println("nome : "+array_nome_jogo[n]);
+                    System.out.println("Lucro : "+array_vendas_jogo[n]);
+
+                System.out.println("----------------------------------------------------");
+                }
+
+
+    }
+
+    /**
+     * Funcao que da o 5 jogos que deram menos lucro
+      * @param caminho_margem_
+     * @param caminho_vendas_
+     * @throws FileNotFoundException
+     */
+    public static void bottom_five(String caminho_margem_, String caminho_vendas_) throws FileNotFoundException {
+        double valor = 0;
+        String nome = "";
+        int contador = 0;
+        int id = 0;
+
+
+        String[] array_margem = leitura_sem_cabecalho(caminho_margem_);
+        String[] array_vendas = leitura_sem_cabecalho(caminho_vendas_);
+        double[] array_vendas_jogo = new double[array_vendas.length - 1];// array com valor total de cada jogo
+        String[] array_nome_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
+        String[] array_categoria_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
+        double[] array_margem_jogo = new double[array_vendas.length - 1];// array com o nome do jogos
+
+        // criar array de jogo sem duplicados
+
+        for (int i = 1; i < array_vendas.length; i++) {
+            int contador_ = 0;
+
+            String[] campos_vendas = array_vendas[i].split(";");
+
+
+            for (int n = 0; n < array_nome_jogo.length; n++) {
+
+                if (array_nome_jogo[n] != null) {
+                    if (campos_vendas[4].equals(array_nome_jogo[n])) {
+                        ++contador_;
+                    }
+
+                }
+            }
+
+
+            if (contador_ < 1) {
+
+                array_nome_jogo[i] = campos_vendas[4];
+                array_categoria_jogo[i] = campos_vendas[3];
+            }
+        }
+
+
+        // cria array com a soma por cada jogo
+        for (int i = 0; i < array_nome_jogo.length; i++) {
+            int soma = 0;
+
+            for (int n = 1; n < array_vendas.length; n++) {
+
+                String[] campos_vendas = array_vendas[i].split(";");
+
+                if (array_nome_jogo[i] != null) {
+                    if (campos_vendas[4].equals(array_nome_jogo[i])) {
+                        soma += Double.parseDouble(campos_vendas[5]);
+                    }
+
+                }
+
+                array_vendas_jogo[i] = soma;
+
+            }
+            soma=0;
+        }
+
+
+        // multiplicar a array de vendas por  pela margem categoria
+
+        for (int t = 0; t < array_vendas_jogo.length; t++) {
+
+            double margem =0;
+
+            for (int n = 1; n < array_margem.length; n++) {
+
+                String[] campos_margem = array_margem[n].split(";");
+
+                if (campos_margem[0].equals(array_categoria_jogo[t])) {
+
+                    margem = (Double.parseDouble(campos_margem[1])/100);
+                }
+
+
+
+            }
+            array_vendas_jogo[t] = array_vendas_jogo[t]*margem;
+            array_margem_jogo[t] =margem;
+
+        }
+
+        // ordenar os array do maior para o menor
+
+
+        for (int n = 0; n < array_vendas_jogo.length; n++) {
+
+            for (int i = 1; i < array_vendas_jogo.length; i++) {
+
+                if (array_vendas_jogo[i] < array_vendas_jogo[i - 1]) {
+                    valor = array_vendas_jogo[i];
+                    array_vendas_jogo[i] = array_vendas_jogo[i - 1];
+                    array_vendas_jogo[i - 1] = valor;
+
+                    nome = array_nome_jogo[i];
+                    array_nome_jogo[i] = array_nome_jogo[i - 1];
+                    array_nome_jogo[i - 1] = nome;
+
+                    nome = array_categoria_jogo[i];
+                    array_categoria_jogo[i] = array_categoria_jogo[i - 1];
+                    array_categoria_jogo[i - 1] = nome;
+
+
+                }
+            }
+        }
+
+
+
+        contador =0;
+
+        for (int  n = 0; n<array_nome_jogo.length;n++) {
+
+            if (array_nome_jogo[n]!=null && contador<5 ){
+            System.out.println("Categoria : "+array_categoria_jogo[n]);
+            System.out.println("nome : "+array_nome_jogo[n]);
+            System.out.println("Lucro : "+array_vendas_jogo[n]);
+
+            System.out.println("----------------------------------------------------");
+            contador++;
+        }
+    }
+
+
+    }
 
 
     //----------------------------------------------------------------------------------------------------
@@ -375,7 +649,7 @@ public static String clientes_jogo(String jogo, String caminho_vendas, String ca
     public static void menuAdmin_() {
 
         Scanner input = new Scanner(System.in);
-
+        boolean run = true;
         System.out.println("\nEntrou com sucesso no menu de Admin");
         System.out.println("\nIndique a opção" +
                 "\n1) Consulta de Ficheiros" +
@@ -387,140 +661,165 @@ public static String clientes_jogo(String jogo, String caminho_vendas, String ca
                 "\n7) Melhor Categoria " +
                 "\n8) Pesquisa Vendas" +
                 "\n9) Top 5 Jogos" +
-                "\n10)Bottom 5 jogos");
+                "\n10)Bottom 5 jogos"+
+                "\n11)Sair");
         String opcao = input.nextLine();
-
+        while (run) {
         switch (opcao) {
 
-            case "1":
 
-                // imprimir o ficheiro desejado
-                System.out.println("\nIndique o que deseja ver :" +
-                        "\n1) Ficheiro de Vendas" +
-                        "\n2) Clientes" +
-                        "\n3) Categorias");
-                opcao = input.nextLine();
 
-                String caminho = "";
+                case "1":
 
-                if (opcao.equals("1")) {
-                    caminho = "C:/Users/softdev/Desktop/cesae_02_2024/ALG_HUGO_MAIA/Ficha_java/src/loja_jogos/GameStart/GameStart_Admins.csv";
+                    // imprimir o ficheiro desejado
+                    System.out.println("\nIndique o que deseja ver :" +
+                            "\n1) Ficheiro de Vendas" +
+                            "\n2) Clientes" +
+                            "\n3) Categorias");
+                    opcao = input.nextLine();
 
-                } else if (opcao.equals("2")) {
+                    String caminho = "";
 
-                    caminho = "src\\loja_jogos\\GameStart\\GameStart_Clientes.csv";
-                } else if (opcao.equals("3")) {
+                    if (opcao.equals("1")) {
+                        caminho = "C:/Users/softdev/Desktop/cesae_02_2024/ALG_HUGO_MAIA/Ficha_java/src/loja_jogos/GameStart/GameStart_Admins.csv";
 
-                    caminho = "src\\loja_jogos\\GameStart\\GameStart_Categorias.csv";
+                    } else if (opcao.equals("2")) {
 
-                } else {
-                    System.out.println("Opção invalida");
-                }
-                try {
+                        caminho = "src\\loja_jogos\\GameStart\\GameStart_Clientes.csv";
+                    } else if (opcao.equals("3")) {
 
-                    String[] array = leitura_sem_cabecalho(caminho);
-                    for (int n = 0; n < array.length; n++) {
+                        caminho = "src\\loja_jogos\\GameStart\\GameStart_Categorias.csv";
 
-                        System.out.println(array[n].replace(";", " | "));
+                    } else {
+                        System.out.println("Opção invalida");
+                    }
+                    try {
 
+                        String[] array = leitura_sem_cabecalho(caminho);
+                        for (int n = 0; n < array.length; n++) {
+
+                            System.out.println(array[n].replace(";", " | "));
+
+                        }
+
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
                     }
 
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
+
+                    break;
+                case "2":
+                    try {
+                        // total de vendas retoran
+                        System.out.printf("%.2f", total_vendas());
+
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
 
 
-                break;
-            case "2":
-                try {
-                    // total de vendas retoran
-                    System.out.printf("%.2f", total_vendas());
+                    break;
+                case "3":
+                    // indica o total de lucro
+                    try {
+                        // total de vendas retoran
+                        System.out.printf("%.2f", total_lucro());
 
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+                    break;
 
+                case "4":
 
-                break;
-            case "3":
-                // indica o total de lucro
-                try {
-                    // total de vendas retoran
-                    System.out.printf("%.2f", total_lucro());
+                    // pesquida cliente por id
+                    try {
+                        System.out.println("Indique o id do cliente");
+                        String id = input.nextLine();
+                        System.out.println(pesquisa_(id, "src/loja_jogos/GameStart/GameStart_Clientes.csv"));
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
 
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
-                break;
+                    break;
+                case "5":
+                    // indica o jogo com maior valor vendido
+                    try {
 
-            case "4":
-
-                // pesquida cliente por id
-                try {
-                    System.out.println("Indique o id do cliente");
-                    String id = input.nextLine();
-                    System.out.println(pesquisa_(id, "src/loja_jogos/GameStart/GameStart_Clientes.csv"));
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
-
-                break;
-            case "5":
-                // indica o jogo com maior valor vendido
-                try {
-
-                    System.out.println(maior_valor("src/loja_jogos/GameStart/GameStart_Vendas.csv"));
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
+                        System.out.println(maior_valor("src/loja_jogos/GameStart/GameStart_Vendas.csv"));
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
 
 
-                break;
-            case "6":
+                    break;
+                case "6":
 
-                // indica o jogo com maior valor vendido
-                try {
+                    // indica o jogo com maior valor vendido
+                    try {
 
-                    melhores_clientes("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Clientes.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
-                break;
-            case "7":
-                // indica a categoria mais vendida e o valor
-                try {
+                        melhores_clientes("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Clientes.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+                    break;
+                case "7":
+                    // indica a categoria mais vendida e o valor
+                    try {
 
-                    System.out.println(categoria_maior_venda( "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv"));
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
-
-
-                break;
-            case "8":
+                        System.out.println(categoria_maior_venda("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv"));
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
 
 
-                // indica a categoria mais vendida e o valor
-                try {
+                    break;
+                case "8":
 
-                    System.out.println("iNdique o jogo");
-                    String jogo = input.nextLine();
-                    System.out.println(clientes_jogo(jogo,"C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv","C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Clientes.csv"));
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
-                }
-                break;
-            default:
 
-                System.out.println("Escolha uma opcao válida");
-                break;
+                    // indica a categoria mais vendida e o valor
+                    try {
+
+                        System.out.println("iNdique o jogo");
+                        String jogo = input.nextLine();
+                        System.out.println(clientes_jogo(jogo, "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Clientes.csv"));
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+                    break;
+
+                case "9":
+                    try {
+                        top_five("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Categorias.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+                    break;
+
+                case "10":
+                    try {
+                        bottom_five("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Categorias.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+
+                    break;
+                case "11":
+
+                    run=false;
+                    break;
+
+                default:
+
+                    System.out.println("Escolha uma opcao válida");
+                    break;
+
+
+            }
 
 
         }
-
-
     }
-
 }
 
 

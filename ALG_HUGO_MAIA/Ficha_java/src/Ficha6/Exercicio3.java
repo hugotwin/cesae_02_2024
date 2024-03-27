@@ -64,12 +64,12 @@ public class Exercicio3 {
     public static void main(String[] args) {
 
 
-        System.out.println(par(2));
-        System.out.println(positivo(2));
+        //System.out.println(par(2));
+        //System.out.println(positivo(2));
 
-        System.out.println(primo(59));
-        System.out.println(perfeito(9));
-        System.out.println(triangular(5));
+        //System.out.println(primo(59));
+        //System.out.println(perfeito(9));
+        System.out.println(triangular(6));
 
     }
 }

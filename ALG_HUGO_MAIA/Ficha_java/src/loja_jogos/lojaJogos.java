@@ -7,6 +7,7 @@ import java.util.Scanner;
 import static loja_jogos.login.leitura_sem_cabecalho;
 import static loja_jogos.login.verificar_login;
 import static loja_jogos.menuAdmin.menuAdmin_;
+import static loja_jogos.menuCliente.menuCliente_;
 
 public class lojaJogos {
 
@@ -16,7 +17,7 @@ public class lojaJogos {
 
             System.out.println("Menu :");
             System.out.println("Entrar no menu Admin - 1");
-            System.out.println("Entrar no menu Admin - 2");
+            System.out.println("Entrar no menu Cliente - 2");
             System.out.println("Sair - 3");
             System.out.print("\nEscolha a opçao : ");
             String opcao = input.nextLine().trim();
@@ -41,6 +42,7 @@ public class lojaJogos {
                         break;
                     case "2":
 
+                        menuCliente_();
 
                         break;
                     default:
