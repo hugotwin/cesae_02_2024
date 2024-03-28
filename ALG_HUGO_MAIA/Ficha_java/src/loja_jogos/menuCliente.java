@@ -68,6 +68,7 @@ public class menuCliente {
 
     /**
      * Funcao que vai receber um valor int e retornar false ou tru para trinagular
+     *
      * @param valor
      * @return
      */
@@ -93,6 +94,7 @@ public class menuCliente {
 
     /**
      * Funcao que vai indicar os lugares de estacionamento triangulares e multiplos de 5
+     *
      * @param valor
      */
     public static void estacionamento(int valor) {
@@ -112,6 +114,7 @@ public class menuCliente {
 
     /**
      * Funcao que apresenta uma lista de jogos
+     *
      * @param caminho_vendas_
      * @throws FileNotFoundException
      */
@@ -121,7 +124,7 @@ public class menuCliente {
         String[] array_vendas = leitura_sem_cabecalho(caminho_vendas_);
         String[] array_nome_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
 
-        int contador_jogos=0;
+        int contador_jogos = 0;
 
         // criar array de jogo sem duplicados
 
@@ -149,34 +152,34 @@ public class menuCliente {
         }
 
         String[] array_jogos = new String[contador_jogos];
-        contador_jogos=0;
+        contador_jogos = 0;
 
         for (int n = 0; n < array_nome_jogo.length; n++) {
 
             if (array_nome_jogo[n] != null) {
 
-                array_jogos[contador_jogos]=array_nome_jogo[n];
+                array_jogos[contador_jogos] = array_nome_jogo[n];
                 contador_jogos++;
 
 
             }
         }
 
-        for(int n=0;  n<array_jogos.length;n++ ){
+        for (int n = 0; n < array_jogos.length; n++) {
 
 
-            System.out.println("Numero : "+(n+1)+" Nome :"+array_jogos[n]);
+            System.out.println("Numero : " + (n + 1) + " Nome :" + array_jogos[n]);
 
         }
-
 
     }
 
     /**
      * Funcao que imprime o graficos de jogo escolhidos pelo utilizador
+     *
      * @throws FileNotFoundException
      */
-    public static void imprimir_graficos()throws FileNotFoundException{
+    public static void imprimir_graficos() throws FileNotFoundException {
         boolean run = true;
 
 
@@ -196,58 +199,57 @@ public class menuCliente {
             Scanner input = new Scanner(System.in);
             opcao = input.nextLine();
 
-            switch (opcao)
-            {
-                case "1" :
-                    String [] array =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\callOfDuty.txt");
-                    for(String n : array ){
+            switch (opcao) {
+                case "1":
+                    String[] array = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\callOfDuty.txt");
+                    for (String n : array) {
                         System.out.println(n);
                     }
 
                     break;
 
-                case "2" :
-                    String [] array_ =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\fifa.txt");
-                    for(String n : array_ ){
+                case "2":
+                    String[] array_ = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\fifa.txt");
+                    for (String n : array_) {
                         System.out.println(n);
                     }
                     break;
-                case "3" :
-                    String [] array__ =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\hollowKnight.txt");
-                    for(String n : array__ ){
-                        System.out.println(n);
-                    }
-                    break;
-
-                case "4" :
-                    String [] array___ =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\minecraft.txt");
-                    for(String n : array___ ){
-                        System.out.println(n);
-                    }
-                    break;
-                case "5" :
-                    String [] array____ =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\mortalKombat.txt");
-                    for(String n : array____ ){
+                case "3":
+                    String[] array__ = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\hollowKnight.txt");
+                    for (String n : array__) {
                         System.out.println(n);
                     }
                     break;
 
-                case "6" :
-                    String [] array_____ =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\overcooked.txt");
-                    for(String n : array_____ ){
+                case "4":
+                    String[] array___ = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\minecraft.txt");
+                    for (String n : array___) {
+                        System.out.println(n);
+                    }
+                    break;
+                case "5":
+                    String[] array____ = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\mortalKombat.txt");
+                    for (String n : array____) {
                         System.out.println(n);
                     }
                     break;
 
-                case "7" :
-                    String [] array______ =leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\witcher3.txt");
-                    for(String n : array______ ){
+                case "6":
+                    String[] array_____ = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\overcooked.txt");
+                    for (String n : array_____) {
                         System.out.println(n);
                     }
                     break;
 
-                case "8" :
-                    run=false;
+                case "7":
+                    String[] array______ = leitura_sem_cabecalho("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\CatalogoGrafico\\witcher3.txt");
+                    for (String n : array______) {
+                        System.out.println(n);
+                    }
+                    break;
+
+                case "8":
+                    run = false;
                     break;
 
             }
@@ -256,17 +258,144 @@ public class menuCliente {
 
     }
 
-    public static void jogos_editora(String valor,String opcao ,String caminho_categorias_, String caminho_vendas_) throws FileNotFoundException {
+    /**
+     * Funcao que imprime os jogos categoria ou por editora
+     * @param valor
+     * @param opcao
+     * @param caminho_categorias_
+     * @param caminho_vendas_
+     * @throws FileNotFoundException
+     */
+    public static void jogos_editora(String valor, String opcao, String caminho_categorias_, String caminho_vendas_) throws FileNotFoundException {
 
-        String nome = "";
+
+        String[] array_categorias_ficheiro = leitura_sem_cabecalho(caminho_categorias_);
+        String[] array_vendas = leitura_sem_cabecalho(caminho_vendas_);
+        String[] array_nome_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
+        String[] array_editora = new String[array_vendas.length - 1];
+        String[] array_categoria = new String[array_vendas.length - 1];
+
+        int contador_jogos = 0;
+
+        // criar array de jogo sem duplicados
+
+        for (int i = 1; i < array_vendas.length; i++) {
+            int contador_ = 0;
+
+            String[] campos_vendas = array_vendas[i].split(";");
+
+
+            for (int n = 0; n < array_nome_jogo.length; n++) {
+
+                if (array_nome_jogo[n] != null) {
+                    if (campos_vendas[4].equals(array_nome_jogo[n])) {
+                        ++contador_;
+                    }
+
+                }
+            }
+            if (contador_ < 1) {
+
+                array_nome_jogo[i] = campos_vendas[4];
+                array_editora[i] = campos_vendas[2];/// aceder a informacao das vendas
+                array_categoria[i] = campos_vendas[3];
+
+
+                contador_jogos++;
+
+            }
+        }
+        String[] array_editora_final = new String[contador_jogos];
+        String[] array_categoria_final = new String[contador_jogos];
+        String[] array_jogos = new String[contador_jogos];
+        contador_jogos = 0;
+
+        for (int n = 0; n < array_nome_jogo.length; n++) {
+
+            if (array_nome_jogo[n] != null) {
+
+                array_jogos[contador_jogos] = array_nome_jogo[n];
+                array_editora_final[contador_jogos] = array_editora[n];
+                array_categoria_final[contador_jogos] = array_categoria[n];
+
+                contador_jogos++;
+
+
+            }
+        }
+
+        contador_jogos = 0;
+
+        if (opcao.equals("5")) {////imprime por editora
+            System.out.println("***********" + valor + "**************");
+            for (int i = 1; i < array_categorias_ficheiro.length; i++) { //passa
+
+                String[] categorias = array_categorias_ficheiro[i].split(";");
+
+                for (int n = 0; n < array_jogos.length; n++) {
+                    if (array_editora_final[n] != null) {
+                        if (array_editora_final[n].equals(valor) && array_categoria_final[n].equals(categorias[0])) {
+
+                            if (categorias[0].equals(array_categoria_final[n]) && contador_jogos < 1) {// PERMITE A IMPRESSAO DO CABECALHO APENAS 1 VEX
+                                System.out.println("\n--------------" + categorias[0] + "--------------------");
+                                contador_jogos++;
+                            }
+
+                            System.out.println(array_jogos[n]);
+                            System.out.println(array_editora_final[n]);
+
+                        }
+                    }
+
+                }
+                contador_jogos = 0;
+            }
+        }
+
+        if (opcao.equals("6")) {//// imprime por categoria
+            System.out.println("***********" + valor + "**************");
+
+
+            for (int n = 0; n < array_jogos.length; n++) {
+                if (array_editora_final[n] != null) {
+                    if (array_categoria_final[n].equals(valor)) {
+
+
+                        if (array_categoria_final[n - 1] != array_categoria_final[n]) {// PERMITE A IMPRESSAO DO CABECALHO APENAS 1 VEX
+                            System.out.println("\n--------------" + array_editora_final[n] + "--------------------");
+                            contador_jogos++;
+                        }
+
+                        System.out.println(array_jogos[n]);
+                        System.out.println(array_editora_final[n]);
+
+                    }
+
+                }
+                contador_jogos = 0;
+
+            }
+
+
+
+        }
+
+
+    }
+
+    /**
+     * Funcao que da a jogo mais recente
+     * @param caminho_vendas_
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static String  jogo_recente(String caminho_vendas_) throws FileNotFoundException {
         int contador = 0;
-        int id = 0;
-
 
         String[] array_vendas = leitura_sem_cabecalho(caminho_vendas_);
         String[] array_nome_jogo = new String[array_vendas.length - 1];// array com o nome do jogos
 
-        int contador_jogos=0;
+        int contador_jogos = 0;
 
         // criar array de jogo sem duplicados
 
@@ -292,76 +421,24 @@ public class menuCliente {
 
             }
         }
-        String[] array_editora = new String[contador_jogos];
-        String[] array_categoria = new String[contador_jogos];
+
         String[] array_jogos = new String[contador_jogos];
-        contador_jogos=0;
+        contador_jogos = 0;
 
         for (int n = 0; n < array_nome_jogo.length; n++) {
 
             if (array_nome_jogo[n] != null) {
 
-                array_jogos[contador_jogos]=array_nome_jogo[n];
+                array_jogos[contador_jogos] = array_nome_jogo[n];
                 contador_jogos++;
 
 
             }
         }
 
-
-        for(int n=0;  n<array_jogos.length;n++ ){
-
-            for (int i=0; i<array_vendas.length;i++){
-
-                String [] campo_vendas = array_vendas[i].split(";");
-
-                if (campo_vendas[4] == array_jogos[n])
-                {
-                    array_editora[n] = campo_vendas[2];
-                    array_categoria[n] = campo_vendas[3];
-
-                }
-
-            }
-
-        }
-
-        System.out.println(valor);
-        if(opcao.equals("5")){
-
-        for(int n=0; n<array_jogos.length;n++ ){
-
-                if (array_editora[n] == valor)
-                {
-                    System.out.println(array_jogos[n]);
-
-                }
-
-            }
-
-        }else {
-
-
-            for(int n=0; n<array_jogos.length;n++ ){
-
-                if (array_editora[n] == valor)
-                {
-                    System.out.println(array_jogos[n]);
-
-                }
-
-            }
-
-        }
+        return array_jogos[array_jogos.length-1];
 
     }
-
-
-
-
-
-
-
 
     public static void menuCliente_() {
         Scanner input = new Scanner(System.in);
@@ -408,9 +485,9 @@ public class menuCliente {
 
                     break;
                 case "3":
-                    try{
-                    jogos("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
-            }catch (FileNotFoundException e){
+                    try {
+                        jogos("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
+                    } catch (FileNotFoundException e) {
                         System.out.println(e);
                     }
                     break;
@@ -418,7 +495,7 @@ public class menuCliente {
                 case "4":
                     try {
                         imprimir_graficos();
-                    }catch (FileNotFoundException e) {
+                    } catch (FileNotFoundException e) {
                         System.out.println(e);
                     }
                     break;
@@ -427,22 +504,39 @@ public class menuCliente {
                     try {
                         System.out.println("Indique a Editora : ");
                         String valor = input.nextLine();
-                        jogos_editora(valor,opcao,"C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Categorias.csv","C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv" );
-                    }catch (FileNotFoundException e) {
-                        System.out.println(e);}
+                        jogos_editora(valor, opcao, "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Categorias.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
 
 
-                        break;
+                    break;
                 case "6":
+                    try {
+
+                        System.out.println("Indique a Categoria : ");
+                        String valor = input.nextLine();
+                        jogos_editora(valor, opcao, "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Categorias.csv", "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv");
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
 
                     break;
 
                 case "7":
 
+                    try {
+                        System.out.println("Jogo mais recente : ");
+                        System.out.println(jogo_recente("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Vendas.csv"));
+                    } catch (FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+
                     break;
 
                 case "8":
-
+                    System.out.println("Saiu do menu cliente");
+                    run = false;
                     break;
 
             }

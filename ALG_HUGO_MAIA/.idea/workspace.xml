@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/menuCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/Ficha6/Exercicio3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/Ficha6/Exercicio3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/GameStart/GameStart_Categorias.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/GameStart/GameStart_Categorias.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/GameStart/GameStart_Clientes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/GameStart/GameStart_Clientes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/lojaJogos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/lojaJogos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/menuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/menuAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/loja_jogos/GameStart/GameStart_Categorias.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/loja_jogos/GameStart/GameStart_Categorias.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ficha_java/loja_jogos/menuAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ficha_java/loja_jogos/menuAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/menuCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha_java/src/loja_jogos/menuCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
