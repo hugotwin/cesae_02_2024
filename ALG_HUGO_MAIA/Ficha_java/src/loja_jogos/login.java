@@ -62,10 +62,12 @@ public class login {
         boolean validado = false;
 
         for (int n = 0; n < array.length; n++) {
-            String[] palavras = array[0].split(";");
-            if (palavras[posicao_id].toLowerCase().trim().equals(user.trim().toLowerCase()) && palavras[posicao_password].trim().toLowerCase().equals(password.trim().toLowerCase())) {
+            String[] palavras = array[n].split(";");
+
+            if (((palavras[0].trim().equalsIgnoreCase(user.trim()) && palavras[1].trim().equals(password.trim())) || (palavras[0].equals(user) && palavras[1].equals(password)))) {
 
                 validado = true;
+
             }
         }
 

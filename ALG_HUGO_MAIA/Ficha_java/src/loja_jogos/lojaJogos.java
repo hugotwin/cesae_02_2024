@@ -1,6 +1,6 @@
 package loja_jogos;
 
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,15 +13,17 @@ public class lojaJogos {
 
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(System.in);
+            boolean run = true;
 
-            System.out.println("Menu :");
-            System.out.println("Entrar no menu Admin - 1");
-            System.out.println("Entrar no menu Cliente - 2");
-            System.out.println("Sair - 3");
-            System.out.print("\nEscolha a opçao : ");
-            String opcao = input.nextLine().trim();
-            while (!opcao.equals("3")) {
+            while (run) {
+                Scanner input = new Scanner(System.in);
+
+                System.out.println("Menu :");
+                System.out.println("Entrar no menu Admin - 1");
+                System.out.println("Entrar no menu Cliente - 2");
+                System.out.println("Sair - 3");
+                System.out.print("\nEscolha a opçao : ");
+                String opcao = input.nextLine().trim();
 
                 switch (opcao) {
 
@@ -29,7 +31,7 @@ public class lojaJogos {
                     case "1":
 
                         // ecolheu opcao menu
-                        String caminho_admins = "C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\Ficha_java\\src\\loja_jogos\\GameStart\\GameStart_Admins.csv";
+                        String caminho_admins = "src\\loja_jogos\\GameStart\\GameStart_Admins.csv";
 
                         if (verificar_login(leitura_sem_cabecalho(caminho_admins), 0, 1)) {
                            menuAdmin_();
@@ -45,14 +47,22 @@ public class lojaJogos {
                         menuCliente_();
 
                         break;
+                    case "3":
+
+                        String [] array = leitura_sem_cabecalho("src/loja_jogos/GameStart/GameStart_Copyright.txt");
+                        for(String n : array ){
+                            System.out.println(n);
+                        }
+                        run=false;
+                        break;
+
                     default:
-                        System.out.println("\nEscolha uma opção válida" +
-                                "o");
+
                 }
             }
 
         }catch(FileNotFoundException e){
-            System.out.println(e);}
+            System.out.println("Erro ficheiro");}
     }
 
 
