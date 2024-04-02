@@ -1,82 +1,112 @@
-:root{
+/* Estilo da marca da navbar */
+.navbar-brand {
+   
+    font-size: 28px; /* Ajustando o tamanho da fonte */
+    color: #ffffff; /* Definindo a cor do texto como branco */
+}
 
-    --corPrimaria:#e51b15;
-    --corPlaceholder: #dddddd;
-    --corWhite: white;
+/* Estilo dos itens de menu da navbar */
+.navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
+    font-size: 18px; /* Ajustando o tamanho da fonte */
+    color: #ffffff; /* Definindo a cor do texto como branco */
+}
+
+/* Estilo do botão de pesquisa */
+.form-control {
+    border-color: #ffffff; /* Definindo a cor da borda como branco */
+    color: #ffffff; /* Definindo a cor do texto como branco */
+}
+
+/* Estilo do botão de busca */
+.btn-outline-success {
+    color: #ffffff; /* Definindo a cor do texto como branco */
+    border-color: #ffffff; /* Definindo a cor da borda como branco */
+}
+
+/* Estilo dos ícones do botão de busca (opcional) */
+.btn-outline-success .bi {
+    color: #ffffff; /* Definindo a cor do ícone como branco */
 }
 
 
 
-main{text-align: center!important;}
 
-body{
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Tamanho da fonte do logotipo */
+  }
+  
+  .navbar-gradient {
+    background-image: linear-gradient(to right, #695eff, #b9b8ff)!important; /* Gradient colors */
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.1rem; /* Tamanho da fonte dos links de navegação */
+  }
+  
+  .navbar-toggler {
+    border-color: #6e6c6c; /* Cor da borda do botão de alternância da barra de navegação */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #b8a5a5; /* Cor do ícone de alternância da barra de navegação */
+  }
+  
+  .form-control {
+    width: 250px; /* Largura do campo de pesquisa */
+  }
+  
+  
 
-    font-family: "Open Sans", sans-serif;
-}
+  .btn-outline-success:hover {
+    background-color: #2b2c2b; /* Cor de fundo do botão de pesquisa ao passar o mouse */
+    color: #fff; /* Cor do texto do botão de pesquisa ao passar o mouse */
+  }
 
-.btn{
 
-    background-color: var(--corPrimaria);
-    color: var(--corWhite);
-    border: 1px solid var(--corWhite);
-}
+/*--------------------------------------------------------------------------------------------*/
 
-.btn:hoover{
 
-    background-color: var(--corWhite);
-    color: var(--corPrimaria);
-    border: 1px solid red;
-}
+   /* Estilos para o conteúdo do main */
+   .card {
+    transition: transform 0.3s; /* Efeito de transição ao passar o mouse */
+  }
 
-.badge
-{
-    background-color: var(--corPrimaria);
-}
+  .card:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+  }
 
-header{
-    background-color: var(--corPrimaria);
-}
+  .card-img-top {
+    object-fit: cover; /* Garante que a imagem se ajuste ao tamanho da card */
+    height: 200px; /* Altura da imagem */
+  }
 
-header img{
-    width: 200px;
-    
+  .card-title {
+    font-size: 1.25rem; /* Tamanho do título */
+  }
 
-}
+  .card-text {
+    font-size: 1rem; /* Tamanho do texto */
+  }
 
-nav input{
+  .card-link {
+    color: #28a745; /* Cor do link */
+  }
 
-    background-color: var(--corWhite)!important;
-    color:black !important;
+  #background_noticias{
 
-} 
+    background-image: url('img/formula.jpg')!important;
 
-nav input::placeholder{
 
-    color: var(--corPlaceholder) !important;
-}
+  }
 
-.card-title{
-    min-height: 75px;
-}
+  .social-media-icons a {
+    color: #1f1d1d; /* Cor dos ícones de mídia social */
+    height: 15px;
+  }
+  
+  .social-media-icons a:hover {
+    color: #75737a; /* Cor dos ícones de mídia social ao passar o mouse */
+  }
 
-footer{
-    background-color: var(--corPrimaria);
-    color : var(--corWhite)
-}
-
-footer a {
-
-    color:  var(--corWhite);
-    border: 1px solid var(--corWhite);
-    
-    border-radius: 55%;
-    padding: 1%;
-    height: 4%;
-    
-
-}
-
-#gmaps
-{
-    size: 400px;
-}
+  

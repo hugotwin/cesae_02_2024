@@ -1,0 +1,82 @@
+:root{
+
+    --corPrimaria:#e51b15;
+    --corPlaceholder: #dddddd;
+    --corWhite: white;
+}
+
+
+
+main{text-align: center!important;}
+
+body{
+
+    font-family: "Open Sans", sans-serif;
+}
+
+.btn{
+
+    background-color: var(--corPrimaria);
+    color: var(--corWhite);
+    border: 1px solid var(--corWhite);
+}
+
+.btn:hoover{
+
+    background-color: var(--corWhite);
+    color: var(--corPrimaria);
+    border: 1px solid red;
+}
+
+.badge
+{
+    background-color: var(--corPrimaria);
+}
+
+header{
+    background-color: var(--corPrimaria);
+}
+
+header img{
+    width: 200px;
+    
+
+}
+
+nav input{
+
+    background-color: var(--corWhite)!important;
+    color:black !important;
+
+} 
+
+nav input::placeholder{
+
+    color: var(--corPlaceholder) !important;
+}
+
+.card-title{
+    min-height: 75px;
+}
+
+footer{
+    background-color: var(--corPrimaria);
+    color : var(--corWhite)
+}
+
+footer a {
+
+    color:  var(--corWhite);
+    border: 1px solid var(--corWhite);
+    
+    border-radius: 55%;
+    padding: 1%;
+    height: 4%;
+    
+
+}
+
+#gmaps
+{
+    size: 400px;
+}
