@@ -93,9 +93,14 @@
     color: #28a745; /* Cor do link */
   }
 
-  #background_noticias{
+  .img-formula{
 
     background-image: url('img/formula.jpg')!important;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+ 
 
 
   }
@@ -109,4 +114,7 @@
     color: #75737a; /* Cor dos ícones de mídia social ao passar o mouse */
   }
 
-  
+  #background_noticias{
+
+    background: transparent;
+  }
