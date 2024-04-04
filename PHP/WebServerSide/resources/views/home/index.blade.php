@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+
+
+
+@extends('layouts.fe')
+@section('titulo')
+<title>Pagina</title>
+@endsection
+@section('content')
     <h1>home page</h1>
     <ul>
-    <li><a href="{{route('home.welcome')}}">welcome</a></li>
-    <li><a href="">hello</a></li>
-    <li><a href=""></a></li>
+    <li><a href="{{route('home.welcome')}}">welcome</a></li><!-- tem o nome das alias  para fazer a religação como jinja do python-->
+    <li><a href="{{route('home.utilizadores')}}">users</a></li>
+    <li><a href="{{route('home.hello')}}">hello</a></li>
     </ul>
 
-    <a href=""></a>
-</body>
-</html>
+
+    <p>ola estou aqui</p>
+    <img class="img-test" src ="{{asset('img/img.avif')}}"></img>
+@endsection
