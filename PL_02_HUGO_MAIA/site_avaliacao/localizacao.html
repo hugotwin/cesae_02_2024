@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="falta aqui o link da imagem " type="image/x-icon">
+    <link rel="stylesheet" href="ccs/style.css">
+</head>
+<body class="img-loc" style ="background-image: url('img/imagen_40.jpg')!important;">
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-gradient bg-body-tertiary p-5 shadow"  style="background-image: url('img/imagen_40.jpg')!important;">
+      <div class="container-fluid">
+        <a class="navbar-brand "  href="index.html">Home</a>
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="viaturas.html">Viaturas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="noticias.html">Notícias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="localizacao.html">Localização & Contatos</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="O que procura" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Procura</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mb-4 p-3 shadow rounded"  >
+    <div class="row">
+      <!-- Mapa e Informações -->
+      <div class="col-md-6 mb-3 mb-md-0">
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d9445.889105792065!2d-8.662733033148278!3d41.15524893210427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scesae!5e0!3m2!1spt-PT!2spt!4v1712264309238!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="col-md-6">
+        <div class="row mb-3">
+          <div class="col-auto">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div class="col">
+            <b><address>
+              R. de Ciríaco Cardoso 186,<br>
+               4150-212 Porto
+            </address></b>
+          </div>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col-auto">
+            <i class="bi bi-clock-fill"></i></div>
+          <div class="col">
+            <b><p>Contacto:</p>
+            <p>+351 915000000</p></div></b>
+        </div>
+     
+        <hr>
+        <div class="row ">
+          <div class="col-auto">
+            <i class="bi bi-clock-fill"></i>
+          </div>
+          <div class="col">
+            <b><p>Horário de Funcionamento:</p>
+            <p>09:00 - 23:00</p></b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Botão de Contato -->
+    <div class="row">
+      <div class="col text-center"   >
+        <button  type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"> Fale Conosco </button>
+      </div>
+    </div>
+  </main>
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Entre em Contato</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Endereço de Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">Nós nunca compartilharemos seu email com ninguém.</div>
+            </div>
+            <div class="mb-3">
+              <label for="contacto" class="form-label"></label>
+              <input type="tel" class="form-control" id="contacto">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Lembre-se de Mim</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar Mudanças</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
