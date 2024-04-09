@@ -123,3 +123,63 @@ accept="image/*"
 
 php artisan make:resource TaskResourceCollection --collection.
 php artisan make:migration add_photo_to_users_table --table=use
+
+--------
+
+
+Route::get('/', [IndexController::class, 'index'])->name(contacts.home_contacts)// o nome serve para usar nas anchor cage{{}}
+
+
+$myVar= 'variavel';
+$contactoInfo=[
+	'name'=>'nome da pessoa',
+	'phone'=>'contacto pessoa'
+];
+
+return view('contacts.home_contacts', compact('myVar','' contactoInfo))
+
+
+{{}}
+a pagina da view 
+
+<p>{{$myVar}}</p>
+
+<p>{{$contactoInfo['name']}}</p>
+<p>{{$contactoInfo['phone']}}</p>
+
+dd($myVar)// debug para verificar os dados.
+
+
+php artisan make:controller CompanyController -r // crias as funcoes base de CRUD da aplicaçaõa (cria as migracoes base dos usres)
+
+php artisan migration (depois de alterar o evn) cria o template e as base dados no workbecnh sql
+
+php artisan make:migration create_flights_table // cria uma migracao que ira criar a tabela , gera o ficheiro para depois criar a tabela  a  nomeclatura cria logo a trabela com o nome correto
+
+php artisan migrate   // compra as migracoes e crias as tabelas necessesaria 
+
+php artisan migrate:rollback  // elimina a ultima altercao
+
+--------- adicionar colunas ou alterar tabelas
+
+php artisan make :migration add_adress_to_users_table // adiciona uma coluna a uma tabela ja existente
+
+ // temos depois alterar o ficheiro de migracoes tanto definir as colunas que queremos inserir como definir que tipo de roolback queremos
+
+$table->string('cpostal')->nullable()->after('adress');
+$table->dropColumn('email');
+php artisan migrate
+
+
+----- adicionar uma chave estrangeira--
+php artisan make:migration add_userForeignKey_to_tasks_table 
+
+  $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
+$table->dropColumn('user_id')
+
+
+
+
