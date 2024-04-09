@@ -1,0 +1,185 @@
+#extensões laravel para VC
+
+- PHP IntelliSense
+- PHP Namespace Resolver
+- Laravel-blade
+- Laravel Blade Snippets
+- Laravel goto view
+
+- Laravel extension pack
+- Laravel go-to-components
+- Laravel Extra Intellisense
+
+
+
+COMANDOS LARAVEL
+-> php artisan serve (iniciar o Servidor)
+
+-> php artisan make:controller DashboardController (criar um controller)
+-> php artisan make:controller UserController -r (controller com recursos)
+
+
+
+-> php artisan migrate (corre as migrações novas)
+-> php artisan migrate:status
+-> php artisan make:migration nomeDaMigração (corre a migração)
+-> php artisan migrate:rollback (reverte a migração)
+-> php artisan make:migration add_user_type_to_users_table (migração para alteração da tabela Users)
+
+
+//Rotas com Controller
+Route::get('/home_contacts', [HomeController::class, 'index'])->name('index.contacts');
+
+//retornar uma view com dados
+return view ('nameofview', compact('contacts');
+
+Route :: fallback([IndexController::class, 'fallback']);// nao se coloca o nome
+
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+
+( existe uma view com a pagina web na home)
+route
+Route::get('/hello_', [IndexController::class, 'home'])-> name('home.hello');//posso dar o nome que quiser
+
+controlador
+ public function home() {// ver na pagina do servidor
+        return view("home.hello");
+    }
+
+link das paginas das views
+<li><a href="{{route('home.welcome')}}">welcome</a></li><!-- tem o nome das alias  para fazer a religação como jinja do python-->
+
+BASES DE DADOS
+-> mysql --version 
+-> mysql -u root -p (entrar como root)
+-> CREATE DATABASE sd_app;
+
+Facade Query Builder
+-> use Illuminate\Support\Facades\DB;
+
+
+AUTENTICAÇÂO
+use Illuminate\Support\Facades\Auth;
+
+OUTRAS UTILIDADES
+
+//Formas de Debug
+var_dump($var)
+dd();
+
+file_put_contents("test.txt","Hello World. Testing!"); (uma variável)
+file_put_contents("output.txt", print_r($user, true)); (array ou objecto)
+->toSql();
+
+//dar permissões a uma pasta
+sudo chmod -R 777 nossaPasta
+
+//chamar um asset da pasta Public (imagens, CSS, JS,..)
+asset('caminhodentrodapastapublic/meuficheiro');
+
+//voltar para a rota anterior
+return back();
+
+//redireccionar para a rota especifica com mensagem
+return redirect()->route('nomeDaRota')->with('message', 'envio de mensagem');
+Na view: 
+if(session('message'))
+<p>session('message')</p>
+@endif
+
+
+//request->has('email') -> isset;
+
+//onclick/onsubmit="confirm('Tem a certeza?')";
+
+//encriptar a password
+use Illuminate\Support\Facades\Hash;
+
+
+FILE STORAGE 
+Storage::url(‘aminhaimagem.img’) -> retorna o caminho através do servidor.
+Storage::path(‘aminhaimagem.img’) -> retorna o caminho na nossa aplicação.
+Storage:: exists(‘aminhaimagem.img’) -> retorna true ou false conforme exista ou não
+Storage:: size(‘aminhaimagem.img’) -> retorna o tamanho da imagem em bytes
+Storage:: lastModified(‘aminhaimagem.img’) -> retorna a data em que foi modificado
+Storage:: download(‘aminhaimagem.img’) -> retorna o download
+
+Storage::put('localização relativa ao disco', 'Conteúdo do ficheiro'); -> guardar ficheiros
+Storage::prepend('localização relativa ao disco', 'Conteúdo do ficheiro Adicionado'); -> Adicionar conteúdo ao ficheiro
+Storage::apend('localização relativa ao disco', 'Conteúdo do ficheiro Adicionado'); -> Adicionar conteúdo ao ficheiro
+
+
+//para imagens
+Storage::putFile('pasta para o ficheiro', 'objecto do ficheiro'); -> Adicionar imagem a uma pasta
+Storage::putFileAs('pasta para o ficheiro', 'objecto do ficheiro', 'nome do ficheiro'); -> Adicionar imagem com nome específico a uma pasta
+
+No form:
+enctype="multipart/form-data"
+No input:
+type="file"
+accept="image/*"
+
+
+php artisan make:resource TaskResourceCollection --collection.
+php artisan make:migration add_photo_to_users_table --table=use
+
+--------
+
+
+Route::get('/', [IndexController::class, 'index'])->name(contacts.home_contacts)// o nome serve para usar nas anchor cage{{}}
+
+
+$myVar= 'variavel';
+$contactoInfo=[
+	'name'=>'nome da pessoa',
+	'phone'=>'contacto pessoa'
+];
+
+return view('contacts.home_contacts', compact('myVar','' contactoInfo))
+
+
+{{}}
+a pagina da view 
+
+<p>{{$myVar}}</p>
+
+<p>{{$contactoInfo['name']}}</p>
+<p>{{$contactoInfo['phone']}}</p>
+
+dd($myVar)// debug para verificar os dados.
+
+
+php artisan make:controller CompanyController -r // crias as funcoes base de CRUD da aplicaçaõa (cria as migracoes base dos usres)
+
+php artisan migration (depois de alterar o evn) cria o template e as base dados no workbecnh sql
+
+php artisan make:migration create_flights_table // cria uma migracao que ira criar a tabela , gera o ficheiro para depois criar a tabela  a  nomeclatura cria logo a trabela com o nome correto
+
+php artisan migrate   // compra as migracoes e crias as tabelas necessesaria 
+
+php artisan migrate:rollback  // elimina a ultima altercao
+
+--------- adicionar colunas ou alterar tabelas
+
+php artisan make :migration add_adress_to_users_table // adiciona uma coluna a uma tabela ja existente
+
+ // temos depois alterar o ficheiro de migracoes tanto definir as colunas que queremos inserir como definir que tipo de roolback queremos
+
+$table->string('cpostal')->nullable()->after('adress');
+$table->dropColumn('email');
+php artisan migrate
+
+
+----- adicionar uma chave estrangeira--
+php artisan make:migration add_userForeignKey_to_tasks_table 
+
+  $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
+$table->dropColumn('user_id')
+
+
+
+
