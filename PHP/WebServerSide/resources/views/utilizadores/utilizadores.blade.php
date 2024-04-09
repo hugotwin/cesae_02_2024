@@ -7,6 +7,15 @@
     <li><a href="{{route('home.utilizadores')}}">users</a></li>
     <li><a href="{{route('home.hello')}}">hello</a></li>
     <li><a href=""></a></li>
+
+
+
+
+
+
     </ul>
+    
+
+
 @endsection
 

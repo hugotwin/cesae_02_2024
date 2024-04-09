@@ -6,16 +6,41 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function utilizadores() {// ver na pagina do servidor
-        $sum = $this->sum(1,3);
+    public function allUsers(){
+
+        $variavel=$this->getCesae();
+
+        $users = $this->getUsers();
+
+        //dd($users);
 
 
-        return view("utilizadores.utilizadores");
+        return view('users.all_users', compact('variavel', 'users'));
     }
 
-    protected function sum($sum1,$sum2sum2){
 
-     return $sum1+$sum2;
+  protected function getCesae(){
 
-    }
+    $myvar=['name'=>'cesae','adress'=>'rua...','email'=>'cesae@cesae.pt'];
+
+        return $myvar;
+  }
+
+
+
+  protected function getUsers()
+  {
+        $users = [
+            ['id'=>1,'name'=>'ana', 'phone'=>'987654321'],
+            ['id'=>2,'name'=>'luis', 'phone'=>'987654321'],
+            ['id'=>3,'name'=>'jose', 'phone'=>'987654321'],
+            ['id'=>4,'name'=>'hugo', 'phone'=>'987654321'],
+        ];
+
+
+        return $users;
+
+}
+
+
 }
