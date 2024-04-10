@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="" />
+    <list default="true" id="e851b270-153b-465c-9ce4-5d4d48781fce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ficha9_classes/src/Exercicicio11_banca/Conta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ficha9_classes/src/Exercicicio11_banca/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ficha9_classes/src/Exercicio10Funcionario/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ficha9_classes/src/Exercicio10Funcionario/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ficha9_classes/src/produto/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ficha9_classes/src/produto/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ficha9_classes/src/produto/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ficha9_exemplo/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ficha9/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/Cao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/Carro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/Pessoa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/Rectangulo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/aluno/Aluno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/calculadora/Calculadora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/circulo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ficha9_classes/livro/Livro.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
