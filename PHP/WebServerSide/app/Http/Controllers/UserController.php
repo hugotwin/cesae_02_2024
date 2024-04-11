@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function allUsers(){
+    public function allUsers(){   // CONTROLADOR PARA PAGIMA USERS
+        $sum = $this->sum(1,3);
 
         $variavel=$this->getCesae();
 

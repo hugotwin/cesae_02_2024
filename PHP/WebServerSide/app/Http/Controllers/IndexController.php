@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function homePage(){
+    public function homePage(){  // CONTROLADOR PARA PAGIMA INDEX
         $sum = $this->sum(1,3);
         $helloVar = $this->helloFunc();
 
