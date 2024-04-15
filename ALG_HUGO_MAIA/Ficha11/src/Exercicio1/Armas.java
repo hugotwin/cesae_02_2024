@@ -1,0 +1,4 @@
+package Exercicio1;
+
+public enum Armas {METRALHADORAS,MISSEIS,FOGEUETES,TORPEDOS,BOMBAS
+}
