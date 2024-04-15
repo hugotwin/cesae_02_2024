@@ -32,13 +32,26 @@ public class Catalogo {
     {
         for (Aviao aviao:this.lista_aviao)
         {
-            System.out.println(aviao.getModelo());
+            if (aviao instanceof JatoParticular){
+                System.out.println(aviao.getModelo());
+                System.out.println(aviao.getModelo());
+                System.out.println(((JatoParticular) aviao).getCategoria());
+                ((JatoParticular) aviao).getInstalacoes();
+
+
+            }else{
+
+                System.out.println(aviao.getModelo());
+                System.out.println(aviao.getAno_fabrico());
+                System.out.println(aviao.getModelo());
+                ((AviaoCombate) aviao).listaArmas();
+
+
+            }
+
         }
 
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
+
 }

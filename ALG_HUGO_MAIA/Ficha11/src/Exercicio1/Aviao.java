@@ -79,4 +79,11 @@ public class Aviao {
    public void setPreco(double preco) {
       this.preco = preco;
    }
+
+
+   public  void exibirDetalhes()
+   {
+      System.out.println(this.modelo);
+      System.out.println(this.altura_cauda);
+   }
 }

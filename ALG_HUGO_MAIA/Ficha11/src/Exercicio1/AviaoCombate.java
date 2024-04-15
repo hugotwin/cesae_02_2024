@@ -69,8 +69,10 @@ public class AviaoCombate  extends Aviao{
 
     }
 
+    @Override
+    public void exibirDetalhes() {
+        super.exibirDetalhes();
+        listaArmas();
 
-
-
-
+    }
 }
