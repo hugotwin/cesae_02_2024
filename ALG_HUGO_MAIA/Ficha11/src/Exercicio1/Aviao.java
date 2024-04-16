@@ -79,4 +79,15 @@ public class Aviao {
    public void setPreco(double preco) {
       this.preco = preco;
    }
+
+   public void exibirDados()
+   {
+      System.out.println(this.modelo);
+      System.out.println(this.preco);
+
+   }
+
+
+
+
 }

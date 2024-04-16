@@ -37,8 +37,5 @@ public class Catalogo {
 
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
+
 }

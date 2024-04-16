@@ -82,6 +82,9 @@ public class JatoParticular extends  Aviao{
 
 
 
-
-
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        this.getInstalacoes();
+    }
 }
