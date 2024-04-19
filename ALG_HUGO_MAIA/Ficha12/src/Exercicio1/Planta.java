@@ -32,12 +32,11 @@ public class Planta extends SerVivo{
 
     }
 
+    public TipoFamilia getFamilia() {
+        return familia;
+    }
 
-
-
-
-
-
-
-
+    public int getGrau_defesa() {
+        return grau_defesa;
+    }
 }

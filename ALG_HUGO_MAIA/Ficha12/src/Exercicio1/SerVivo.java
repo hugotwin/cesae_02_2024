@@ -14,4 +14,19 @@ private int idade;
         this.pais_origem = pais_origem;
         this.idade = idade;
     }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void exibirDados()
+    {
+        System.out.println("Nome : "+this.nome);
+        System.out.println("Especie : "+this.especie);
+        System.out.println("Pais origem : "+this.pais_origem);
+        System.out.println("Idade : "+this.idade );
+    }
+
+
 }
