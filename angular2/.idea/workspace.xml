@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec6e36a-6a28-484d-9d9e-9dbde748728c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../angular/script.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/out/production/Ficha_java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/out/production/Ficha_java/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/out/production/Ficha_java/loja_jogos/menuCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/out/production/Ficha_java/loja_jogos/menuCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/out/production/Ficha_java/loja_jogos/teste2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha_java/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PHP/Helper (1).txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PHP/Helper (1).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExercicioAngular/ficha2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExercicioAngular/ficha2/script.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha12/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ALG_HUGO_MAIA/Ficha12/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,21 +27,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/angular2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.index.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/hugot/OneDrive/Ambiente de Trabalho/cesae_02_2024/ExercicioAngular/ficha2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,6 +60,9 @@
       <workItem from="1712950440990" duration="4559000" />
       <workItem from="1712955676753" duration="970000" />
       <workItem from="1712956921911" duration="1491000" />
+      <workItem from="1713549998435" duration="907000" />
+      <workItem from="1713550933609" duration="133000" />
+      <workItem from="1713551188235" duration="80000" />
     </task>
     <servers />
   </component>
