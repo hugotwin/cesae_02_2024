@@ -14,9 +14,7 @@ public class ConsumivelCombate extends Consumivel{
         super(nome, preco_moedas_ouro);
 
         this.ataqueInstantaneo = ataqueInstantaneo;
-
     }
-
 
     /**
      * Funcao que mostra os detalhes do ConsumivelCombate

@@ -17,7 +17,6 @@ public class ItemHeroi {
         this.preco_moedas_ouro = preco_moedas_ouro;
         this.heroisPermitidos = new <String>ArrayList();
 
-
     }
 
     /**
@@ -31,12 +30,13 @@ public class ItemHeroi {
 
         System.out.println("Herois permitido : "+heroi);
     }
-
-
 }
 
+    public int getPreco_moedas_ouro() {
+        return this.preco_moedas_ouro;
+    }
 
-
-
-
+    public String getNome() {
+        return nome;
+    }
 }
