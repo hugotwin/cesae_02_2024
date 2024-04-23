@@ -25,7 +25,16 @@ public class ArmaPrincipal extends ItemHeroi {
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
         System.out.println("Atauqe " + this.ataque);
-        System.out.println("Ataque Especial" + this.ataque);
+        System.out.println("Ataque Especial" + this.ataqueEspecial);
         System.out.println("--------------------------------");
+    }
+
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public int getAtaqueEspecial() {
+        return ataqueEspecial;
     }
 }

@@ -17,5 +17,11 @@ public class NPC extends Entidade {
 
     }
 
+    public int getOuro() {
+        return ouro;
+    }
 
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
 }

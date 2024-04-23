@@ -36,14 +36,13 @@ public class Vendedor {
             if (!numerosSaidos.contains(valor))// evita aparecer os mesmos itens
             {
                 System.out.println("*******************************************************************");
-                System.out.println("Item nª :" + valor);
+                System.out.println("-----------Item nª :" + valor+"-----------------");
                 listaItemHeroi.get(valor).mostrarDetalhes();
                 numerosSaidos.add(valor);
                 n++;
             }
         }
 
-        System.out.println("Escolha o item pelo item numero :");
 
 
     }
@@ -67,9 +66,10 @@ public class Vendedor {
 
         this.imprimirloja();
 
-        System.out.println("----------------");
+        System.out.println("--------------------------------------------------");
 
-        System.out.println("Escolha um item  da loja , indique o numero do item");
+        System.out.print("Escolha um item  da loja , indique o numero do item ->");
+
         int index_arma = input.nextInt();
 
         if (heroi.getOuro() >= this.listaItemHeroi.get(index_arma).getPreco_moedas_ouro() && listaItemHeroi.get(index_arma) instanceof ArmaPrincipal) {// verifica se o heroi tem ouro

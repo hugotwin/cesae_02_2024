@@ -4,11 +4,10 @@ import ItemHeroi.ArmaPrincipal;
 import ItemHeroi.Consumivel;
 import ItemHeroi.Pocao;
 
-import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Heroi extends Entidade {
+public abstract class Heroi extends Entidade {
 
     private int nivel;
     private int ouro;
@@ -35,16 +34,10 @@ public class Heroi extends Entidade {
     }
 
     /**
-     * FUNCAO de interaxao entre duas  entidades
-     * @param npc
+     * FUNCAO de interacao entre duas  entidades
      * @return um boolean
      */
-    public boolean atacar(NPC npc) {
-
-        System.out.println("");
-
-        return false;
-    }
+    //public abstract boolean atacar();
 
     public int getOuro() {
         return this.ouro;
@@ -80,10 +73,12 @@ public class Heroi extends Entidade {
         for(Consumivel  consumivelAtual : inventarioConsumiveis)
 
         {
-            System.out.println("Item nº : " + inventarioConsumiveis.indexOf(consumivelAtual));
+            System.out.println("*****************************************************************************************************************************************");
+            System.out.println("----------------Item nº : " + inventarioConsumiveis.indexOf(consumivelAtual)+"------------------");
             consumivelAtual.mostrarDetalhes();
-
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------\n");
         }
+
     }
 
     public ArrayList<Consumivel> getInventarioConsumiveis() {
@@ -195,4 +190,9 @@ public class Heroi extends Entidade {
     }
 
 
+    public abstract boolean atacar(NPC npc);
+
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
 }

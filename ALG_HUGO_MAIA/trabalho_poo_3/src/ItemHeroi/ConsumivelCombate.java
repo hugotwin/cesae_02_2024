@@ -25,4 +25,8 @@ public class ConsumivelCombate extends Consumivel{
     System.out.println("Ataque instantaneo : "+ this.ataqueInstantaneo);
 
     }
+
+    public int getAtaqueInstantaneo() {
+        return ataqueInstantaneo;
+    }
 }

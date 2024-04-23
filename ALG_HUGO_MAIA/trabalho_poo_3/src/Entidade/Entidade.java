@@ -1,5 +1,7 @@
 package Entidade;
 
+import javax.swing.plaf.PanelUI;
+
 public abstract class Entidade {
 
 
@@ -62,4 +64,14 @@ public abstract class Entidade {
     public void setVidaAtual_hp(int vidaAtual_hp) {
         this.vidaAtual_hp = vidaAtual_hp;
     }
+
+    public void setForca(int forca) {
+        this.forca = forca;
+    }
+
+    public String getNome() {
+        return nome;
+    }
 }
+
+

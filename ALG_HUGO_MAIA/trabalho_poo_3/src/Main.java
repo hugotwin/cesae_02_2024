@@ -1,5 +1,6 @@
 import Entidade.Cavaleiro;
 import Entidade.Heroi;
+import Entidade.NPC;
 import ItemHeroi.ArmaPrincipal;
 import ItemHeroi.Consumivel;
 import ItemHeroi.ConsumivelCombate;
@@ -48,19 +49,27 @@ public class Main {
 
         System.out.println("Faca a escolha do seu heroi");
 
-        Cavaleiro cavaleiro =new Cavaleiro(300,"valor", 300, 1,3000,faca );
+        Cavaleiro cavaleiro =new Cavaleiro(1500,"valor", 300, 1,3000,faca );
+        NPC zombie = new NPC(1000,"Zombie", 40, 100);
 
         vendedor.imprimirloja();
 
 
 
         vendedor.vender(cavaleiro);
+        vendedor.vender(cavaleiro);
 
 
 
         //cavaleiro.getInventarioConsumiveis_();
-        cavaleiro.usarPocao();
+        //cavaleiro.usarPocao();
         //System.out.println(cavaleiro.getArmaPrincipal());
+
+        System.out.println(cavaleiro.atacar(zombie));
+        cavaleiro.getInventarioConsumiveis_();
+        System.out.println(cavaleiro.getVidaAtual_hp());
+        System.out.println(cavaleiro.getForca());
+        System.out.println(cavaleiro.getNivel());
 
 
 
