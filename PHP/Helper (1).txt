@@ -1,3 +1,5 @@
+cd-ml-23
+
 #extensões laravel para VC
 
 - PHP IntelliSense
@@ -89,6 +91,10 @@ if(session('message'))
 @endif
 
 
+
+
+
+
 //request->has('email') -> isset;
 
 //onclick/onsubmit="confirm('Tem a certeza?')";
@@ -156,7 +162,7 @@ php artisan migration (depois de alterar o evn) cria o template e as base dados 
 
 php artisan make:migration create_flights_table // cria uma migracao que ira criar a tabela , gera o ficheiro para depois criar a tabela  a  nomeclatura cria logo a trabela com o nome correto
 
-php artisan migrate   // compra as migracoes e crias as tabelas necessesaria 
+php artisan migrate   // corre as migracoes e crias as tabelas necessesaria 
 
 php artisan migrate:rollback  // elimina a ultima altercao
 
@@ -188,6 +194,130 @@ $table->dropColumn('user_id')
 (criar funcoes no controlador para receber os dados)
 e enviar)
 criar migration 
+
+
+--------------------------------------------
+-
+
+(objectivo )
+
+Route::get('/tasks', function () {
+    return view('tasks.all_tasks');
+})->name('tasks.all');
+
+			----------------------
+(TaskcOntroller)
+public function allTasks()
+    {
+
+        $tasks = $this->tarefas();
+
+
+        return view('tasks.all_tasks', compact('tasks'));
+
+    }
+
+
+    protected function tarefas()
+    {
+        $tarefas = DB::table('tasks')
+        ->select('tasks.*','users.name as username')
+        ->join('users','users.id',"=","tasks.user_id")
+        ->get();
+
+
+            return $tarefas;
+    }
+
+			--------------------------
+
+php artisan make:model Note -m
+
+-----------
+
+pagina a receber um {id}
+
+na view enviar o id atraves da route  
+
+------------------------------------------------------------------------
+
+--------------------------------------------------------------------
+
+Route :: get ('/tasks',[TaskController::class, 'allTasks'])->name('tasks.all');
+
+
+body>
+            @foreach ($allUsers as $user)
+                <tr>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->password }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td><a href ="{{route('users.user', $user->id )}}"class ="btn btn-info" > Ver </a></td>
+                    <td><a class ="btn btn-warning">Apagar</a></td>
+
+                </tr>
+            @endforeach
+
+	-> tem botao na view tasks que envia para a funcao userinfo que inveia para 
+
+--- um botao que envia o id atraves de uma route o id   {{route('users.user', $user->id )}} // tem de existir a rota users.user 
+					-> Route::get('/user/{id}', [UserController::class, 'userInfo'])->name('users.user');
+
+
+
+---- indo ao controller naoa esquecer que o model tem de existir 
+
+			-> Route::get('/user/{id}', [UserController::class, 'userInfo'])->name('users.user');
+
+
+---(No UserController)------
+
+protected function infoId($id){     // vai buscar os dados a tabela DB se nao quiser usar o Model
+
+        $user = DB::table('users')
+                ->where('id', $id)
+                ->first();
+
+       //dd($user);
+
+        return $user;
+    }
+
+//------------------------------
+
+public function userInfo($id)
+{
+
+    $user = $this->infoId($id);
+    //dd($user);
+
+    return view('users.userview',compact('user'));
+
+}
+
+
+
+
+
+
+
+
+
+
+-- envia para esta view--
+
+@extends('layouts.fe')
+@section('content')
+
+<h1>ola sou um user</h1>
+
+<h1>{{$user->name}}</h1>
+<h1>{{$user->email}}</h1>
+<h1>{{$user->password}}</h1>
+
+
+@endsection
 
 
 

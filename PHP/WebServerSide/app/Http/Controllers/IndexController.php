@@ -36,10 +36,4 @@ class IndexController extends Controller
         $hello = 'Olá mundo, estamos a aprender web';
         return $hello;
     }
-
-
-    public function viewUsers(){
-
-        return view('users.userview');
-    }
 }

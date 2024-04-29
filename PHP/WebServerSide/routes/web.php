@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,10 +12,15 @@ Route::get('/', function () {
 Route::get('/home', [IndexController::class, 'homePage'] )->name('homenomedarotaparachamarno<a></a>');
 
 Route::get('/users', [UserController::class, 'allUsers'])->name('users.all');
+Route::get('/user', [UserController::class, 'viewUser'])->name('users.view');
+Route::get('/add-user', [UserController::class, 'addUser'])->name('users.add');
 
+/*
 Route::get('/tasks', function () {
-    return view('c');
-})->name('tasks.all');
+    return view('tasks.all_tasks');
+})->name('tasks.all');*/
+
+Route :: get ('/tasks',[TaskController::class, 'allTasks'])->name('tasks.all');
 
 
 Route::get('/hello', [IndexController::class, 'helloWorld'])->name('home.hello');
@@ -30,10 +35,6 @@ Route::fallback(function(){
     return view('errors.fallback');
 });
 
-Route::get('/users/view/{id}', [UserController::class, 'viewUsers'])->name('users.user');
+Route::get('/user/{id}', [UserController::class, 'userInfo'])->name('users.user');
 
-Route::get('/user-dd', [UserController::class, 'userAdd'])->name('users.useradd');
 
-Route::get('/user-update', [UserController::class, 'userUpdate'])->name('users.userUpdate');
-
-Route::get('/all_tasks', [TaskController::class, 'allTasks'])->name('users.allTasks');

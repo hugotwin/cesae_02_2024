@@ -11,6 +11,7 @@ class TaskController extends Controller
     {
 
         $tasks = $this->tarefas();
+        //dd($tasks);
 
 
         return view('tasks.all_tasks', compact('tasks'));

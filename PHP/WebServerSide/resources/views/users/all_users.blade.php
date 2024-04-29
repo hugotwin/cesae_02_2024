@@ -4,7 +4,7 @@
     <h1>Olá, aqui tens uma lista de todos os users.</h1>
 
 
-    <p>{{$cesae->name}}</p>
+
 
     <table class="table">
         <thead>

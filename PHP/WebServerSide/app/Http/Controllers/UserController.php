@@ -8,24 +8,48 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function allUsers(){
-
-
-        $cesae=$this->getCesaeInfo();
+        $cesaeInfo = $this->getCesaeInfo();
         $allUsers = $this->getUsers();
-        //dd( $allUsers);
-        return view('users.all_users', compact('allUsers','cesae'));
+
+        $delegadoTurma = DB::table('users')
+                        ->where('id', 4)
+                        ->where('name', 'Sara')
+                        ->first();
+
+       // dd( $delegado);
+        return view('users.all_users', compact('cesaeInfo', 'allUsers', 'delegadoTurma'));
+    }
+
+    public function viewUser(){
+        return view('users.user_view');
+    }
+
+    public function addUser(){
+
+        DB::table('users')
+        ->updateOrInsert(
+            [
+            'email' => 'liliana@gmail.com',
+            ],
+            [
+            'name' => 'liliana',
+            'password'=> 6666,
+            'updated_at'=>now()
+        ]);
+
     }
 
     protected function getCesaeInfo(){
-        $cesaeInfo =DB::table('users')
-        ->where('name', 'hugo')
-        ->first();
+        $cesaeInfo = [
+            'name'=>'cesae',
+            'address' =>'rua do cesae'
+        ];
 
         return     $cesaeInfo;
     }
 
     protected function getUsers(){
-       /* $users = [
+        /*$users = [
             ['id'=> 1, 'name'=> 'Ana', 'phone'=> '912222333'],
             ['id'=>2, 'name'=> 'Luís', 'phone'=> '912222333'],
             ['id'=>3, 'name'=> 'Miguel', 'phone'=> '912222333'],
@@ -33,57 +57,39 @@ class UserController extends Controller
             ['id'=> 5, 'name'=>  'Filipe','phone'=> '912222333'],
         ];*/
 
-       // $users = DB::table('users')->get();
+        $users = DB::table('users')
+                //->where('name', 'liliana')
+                ->whereNotNull('updated_at')
+                ->get();
+
         //dd($users);
-        $users =DB::table('users')
-        ->where('name', 'hugo')
-        ->get();
-
-       /* $users =DB::table('users')
-        ->where('name', 'hugo')
-        ->firts(); -- vai buscar
-*/
-
-
-
 
         return  $users;
     }
 
+//-----------------------------
+    protected function infoId($id){
 
-    public function viewUsers($id){
+        $user = DB::table('users')
+                ->where('id', $id)
+                ->first();
 
-        $user =DB::table('users')->where('id',$id)->first();
+       //dd($user);
 
-        return view('users.userview', compact('user'));
+        return $user;
     }
 
+//------------------------------
 
+public function userInfo($id)
+{
 
-    public function userAdd(){
+    $user = $this->infoId($id);
+    //dd($user);
 
-        DB::table('users')
-        ->insert([
-            'name'=>'ricardo',
-            'email'=>'ricardo@gmail',
-            'password'=>12345
-        ]);
-    }
-    public function userUpdate(){
+    return view('users.userview',compact('user'));
 
-        DB::table('users')
-        ->updateOrInsert(
-            [
-           'email'=>"manel@gmail"
-            ],
-           [
-            'name'=>'manel',
-           'password'=>123654,
-           'updated_at'=>now()
-        ]);
-    }
-
-
+}
 
 
 
