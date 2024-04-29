@@ -90,8 +90,8 @@ public class Main {
 
                     jogo = new JogoVersion();
                     heroi = jogo.criarPersonagem();
-                    heroi.setVidaMax_maxHp(500);// cheat para fazer o percurso completo
-                    heroi.setVidaAtual_hp(500);// cheat para fazer o percurso completo
+                    //heroi.setVidaMax_maxHp(500);// cheat para fazer o percurso completo
+                    //heroi.setVidaAtual_hp(500);// cheat para fazer o percurso completo
                     forca = heroi.getForca();
                     ouro = heroi.getOuro();
                     continuacao=jogo.labirintoMortal(heroi);
