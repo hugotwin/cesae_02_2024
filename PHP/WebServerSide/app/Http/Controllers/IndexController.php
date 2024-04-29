@@ -6,11 +6,18 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function homePage(){  // CONTROLADOR PARA PAGIMA INDEX
+    public function homePage(){
         $sum = $this->sum(1,3);
         $helloVar = $this->helloFunc();
 
-        return view('home.index', compact('sum', 'helloVar'));
+        $myArray = [
+            'name'=>'Sara',
+            'age'=> 37,
+            'profession'=>'web Developer'
+        ];
+
+
+        return view('home.index', compact('sum', 'helloVar', 'myArray'));
     }
 
     public function helloWorld(){
@@ -28,5 +35,11 @@ class IndexController extends Controller
     protected function helloFunc(){
         $hello = 'Olá mundo, estamos a aprender web';
         return $hello;
+    }
+
+
+    public function viewUsers(){
+
+        return view('users.userview');
     }
 }

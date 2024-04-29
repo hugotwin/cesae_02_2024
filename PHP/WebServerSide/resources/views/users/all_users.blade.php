@@ -3,48 +3,32 @@
 @section('content')
     <h1>Olá, aqui tens uma lista de todos os users.</h1>
 
-    <h1>{{$variavel['name']}}</h1>
 
-    <ul>
+    <p>{{$cesae->name}}</p>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">password</th>
+                <th scope="col">email</th>
 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($allUsers as $user)
+                <tr>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->password }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td><a href ="{{route('users.user', $user->id )}}"class ="btn btn-info" > Ver </a></td>
+                    <td><a class ="btn btn-warning">Apagar</a></td>
 
+                </tr>
+            @endforeach
 
-        <div class= "container text-center">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">id</th>
-                <th scope="col">nome</th>
-                <th scope="col">contacto</th>
-
-              </tr>
-            </thead>
-            <tbody>
-
-                @foreach ($users as $user)
-              <tr>
-
-                <td scope="row">{{$user['id']}}</td>
-                <td>{{$user['name']}}</td>
-                <td>{{$user['phone']}}</td>
-
-              </tr>
-
-                 @endforeach
-            </tbody>
-          </table>
-        </div>
-
-
-
-
-
-
-
-        </ul>
-
-
-
-
+        </tbody>
+    </table>
 @endsection

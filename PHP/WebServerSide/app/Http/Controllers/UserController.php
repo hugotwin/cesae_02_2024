@@ -3,45 +3,90 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function allUsers(){   // CONTROLADOR PARA PAGIMA USERS
-        $sum = $this->sum(1,3);
+    public function allUsers(){
 
-        $variavel=$this->getCesae();
 
-        $users = $this->getUsers();
+        $cesae=$this->getCesaeInfo();
+        $allUsers = $this->getUsers();
+        //dd( $allUsers);
+        return view('users.all_users', compact('allUsers','cesae'));
+    }
 
+    protected function getCesaeInfo(){
+        $cesaeInfo =DB::table('users')
+        ->where('name', 'hugo')
+        ->first();
+
+        return     $cesaeInfo;
+    }
+
+    protected function getUsers(){
+       /* $users = [
+            ['id'=> 1, 'name'=> 'Ana', 'phone'=> '912222333'],
+            ['id'=>2, 'name'=> 'Luís', 'phone'=> '912222333'],
+            ['id'=>3, 'name'=> 'Miguel', 'phone'=> '912222333'],
+            ['id'=>4, 'name'=> 'Jéssica', 'phone'=>'912222333'],
+            ['id'=> 5, 'name'=>  'Filipe','phone'=> '912222333'],
+        ];*/
+
+       // $users = DB::table('users')->get();
         //dd($users);
+        $users =DB::table('users')
+        ->where('name', 'hugo')
+        ->get();
+
+       /* $users =DB::table('users')
+        ->where('name', 'hugo')
+        ->firts(); -- vai buscar
+*/
 
 
-        return view('users.all_users', compact('variavel', 'users'));
+
+
+        return  $users;
     }
 
 
-  protected function getCesae(){
+    public function viewUsers($id){
 
-    $myvar=['name'=>'cesae','adress'=>'rua...','email'=>'cesae@cesae.pt'];
+        $user =DB::table('users')->where('id',$id)->first();
 
-        return $myvar;
-  }
-
-
-
-  protected function getUsers()
-  {
-        $users = [
-            ['id'=>1,'name'=>'ana', 'phone'=>'987654321'],
-            ['id'=>2,'name'=>'luis', 'phone'=>'987654321'],
-            ['id'=>3,'name'=>'jose', 'phone'=>'987654321'],
-            ['id'=>4,'name'=>'hugo', 'phone'=>'987654321'],
-        ];
+        return view('users.userview', compact('user'));
+    }
 
 
-        return $users;
 
-}
+    public function userAdd(){
+
+        DB::table('users')
+        ->insert([
+            'name'=>'ricardo',
+            'email'=>'ricardo@gmail',
+            'password'=>12345
+        ]);
+    }
+    public function userUpdate(){
+
+        DB::table('users')
+        ->updateOrInsert(
+            [
+           'email'=>"manel@gmail"
+            ],
+           [
+            'name'=>'manel',
+           'password'=>123654,
+           'updated_at'=>now()
+        ]);
+    }
+
+
+
+
+
 
 
 }

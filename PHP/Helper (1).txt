@@ -180,6 +180,16 @@ php artisan make:migration add_userForeignKey_to_tasks_table
 
 $table->dropColumn('user_id')
 
+--- criar view
+--criar migration
+---criar controlador
+---criar model
+(depois  fazer o import do model no controlador)
+(criar funcoes no controlador para receber os dados)
+e enviar)
+criar migration 
+
+
 
 
 
