@@ -24,5 +24,6 @@ Route::get('/', [BandController::class,'index'])->name('index.index');
 Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums');
 //Route::get('/login', [LoginController::class,'index'])->name('login.loginForm');
 Route::get('/login', function(){
+    dd('teste');
     return view('login.loginForm');
-})->name('login.loginForm');
+})->name('loginForm');

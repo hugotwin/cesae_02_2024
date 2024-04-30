@@ -1,37 +1,64 @@
 @extends('layouts.fe')
+
 @section('content')
+    <h4>Tarefas</h4>
 
+    @if (@session('message'))
 
-    <h1>Tarefas</h1>
-    <ol>
-        <li>Rui: mudar as tarefas da turma</li>
-        <li>Maru: dizer à Sara para ir mais devagar</li>
+    <div>{{session('message')}}</div>
 
-        <table class="table">
-            <thead>
+    @endif
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome da Tarefa</th>
+                <th scope="col">Responsável da Tarefa</th>
+                <th scope="col">Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($tasks as $key)
                 <tr>
-
-                    <th scope="col">tarefa</th>
-                    <th scope="col">descricao</th>
-                    <th scope="col">username</th>
-                    <th scope="col">id_user</th>
-
+                    <th scope="row">{{ $key->id }}</th>
+                    <td>{{ $key->name }}</td>
+                    <td>{{ $key->usname }}</td>
+                    <td>{{ $key->description }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($tasks as $task)
-                    <tr>
-                        <th scope="row">{{ $task->name }}</th>
-                        <td>{{ $task->description }}</td>
-                        <td>{{ $task->username}}</td>
-                        <td>{{ $task->user_id}}</td>
-                      
+            @endforeach
+        </tbody>
+    </table>
 
 
-                    </tr>
-                @endforeach
+<h5>
+    <form method="post" action= {{route('tasks.create')}}>
+        @csrf
 
-            </tbody>
-        </table>
+        <div class="form-group">
+          <label for="exampleInputEmail1">nome tarefa</label>
+
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nome da tarefa" name="name" value="" required>
+
+        </div>
+        @error('email')
+        <div class="Invalid-feedback" >Erro no mail</div>
+        @enderror
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Descrição</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="descrição " description = "description" value="" required>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">id</label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="id" name="id" value="" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </h5>
 
 @endsection

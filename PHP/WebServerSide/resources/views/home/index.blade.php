@@ -17,11 +17,18 @@
             <li>
                 Users</li>
         </a>
-        <a href="{{ route('users.user') }}">
+        <a href="{{ route('tasks.all') }}">
             <li>
-                Users</li>
+                tarefas</li>
         </a>
-       
+
+        <a href="{{ route('gifts.gift') }}">
+            <li>
+                Gifts</li>
+        </a>
+
+      
+
     </ul>
 
     <hr>
