@@ -297,14 +297,6 @@ public function userInfo($id)
 }
 
 
-
-
-
-
-
-
-
-
 -- envia para esta view--
 
 @extends('layouts.fe')
@@ -318,6 +310,65 @@ public function userInfo($id)
 
 
 @endsection
+
+------------------------------------------------------------------
+
+funcao de login
+
+
+ public function createUser(Request $request){
+
+        $request->all();
+        $request->validate([
+            'name' =>'string|max:50',
+            'email'=>'required|email|unique:users'
+
+        ]);
+
+        User::insert([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>Hash::make($request->password),
+
+        ]);
+
+
+    //dd($request->all());
+    return redirect()->route('users.all')->with('message', 'inserido com suceso');
+
+    }
+-----route
+
+	Route::post('/register', [UserController::class, 'createUser'])->name('users.create');
+
+----pagina html 
+
+@if(session('message'))
+
+    <div>{{session('message')}}</div>
+
+   @endif
+----forms 
+ <form method="post" action= {{route('users.create')}}>
+            @csrf
+
+--->name="email" value=""(com o mesmo nome dos campos)
+
+--> colocar para evitar erros   
+
+@error('email')
+            <div class="Invalid-feedback" >Erro no mail</div>
+@enderror
+--------------------------------------------------------------------------------------------------------
+
+ <select class="form-select" aria-label="Default select example" name='id'>
+            <option selected>Open this select menu</option>
+            @foreach ($tasks as $key)
+            <option value={{ $key->id }}>{{ $key->username }}</option>
+          </select>
+
+
+
 
 
 

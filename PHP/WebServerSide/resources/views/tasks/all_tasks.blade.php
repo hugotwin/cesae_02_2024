@@ -23,7 +23,7 @@
                 <tr>
                     <th scope="row">{{ $key->id }}</th>
                     <td>{{ $key->name }}</td>
-                    <td>{{ $key->usname }}</td>
+                    <td>{{ $key->username }}</td>
                     <td>{{ $key->description }}</td>
                 </tr>
             @endforeach
@@ -56,6 +56,13 @@
           <label for="exampleInputPassword1">id</label>
           <input type="number" class="form-control" id="exampleInputPassword1" placeholder="id" name="id" value="" required>
         </div>
+
+
+        <select class="form-select" aria-label="Default select example" name='id'>
+            <option selected>Open this select menu</option>
+            @foreach ($tasks as $key)
+            <option value={{ $key->id }}>{{ $key->username }}</option>
+          </select>
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
