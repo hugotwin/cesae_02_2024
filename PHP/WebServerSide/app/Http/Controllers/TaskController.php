@@ -34,7 +34,7 @@ class TaskController extends Controller
         public function createTask(Request $request){
 
 
-            //dd($request->all());
+            dd($request->all());
 
             $request->validate([
                 'name' =>'string|max:50',

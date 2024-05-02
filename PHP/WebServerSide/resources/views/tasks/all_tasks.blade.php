@@ -1,6 +1,7 @@
 @extends('layouts.fe')
 
 @section('content')
+
     <h4>Tarefas</h4>
 
     @if (@session('message'))
@@ -31,7 +32,7 @@
     </table>
 
 
-<h5>
+    <h5>
     <form method="post" action= {{route('tasks.create')}}>
         @csrf
 
@@ -61,7 +62,8 @@
         <select class="form-select" aria-label="Default select example" name='id'>
             <option selected>Open this select menu</option>
             @foreach ($tasks as $key)
-            <option value={{ $key->id }}>{{ $key->username }}</option>
+            <option value={{ $key->id }}>{{ $key->name }}</option>
+            @endforeach
           </select>
 
         <button type="submit" class="btn btn-primary">Submit</button>
