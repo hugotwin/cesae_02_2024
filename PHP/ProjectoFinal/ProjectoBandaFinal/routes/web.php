@@ -21,9 +21,7 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [BandController::class,'index'])->name('index.index');
-Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums');
-//Route::get('/login', [LoginController::class,'index'])->name('login.loginForm');
-Route::get('/login', function(){
-    dd('teste');
-    return view('login.loginForm');
-})->name('loginForm');
+Route::get('/login', [LoginController::class,'index'])->name('login.loginForm');
+Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
+
+

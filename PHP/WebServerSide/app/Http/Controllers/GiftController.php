@@ -112,10 +112,6 @@ class GiftController extends Controller
         //
 
         $request->all();
-        
-
-
-
 
     }
 
@@ -124,9 +120,6 @@ class GiftController extends Controller
         //
 
         return view('forms.formu');
-
-
-
 
     }
 

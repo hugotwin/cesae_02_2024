@@ -84,13 +84,12 @@ asset('caminhodentrodapastapublic/meuficheiro');
 return back();
 
 //redireccionar para a rota especifica com mensagem
+
 return redirect()->route('nomeDaRota')->with('message', 'envio de mensagem');
 Na view: 
 if(session('message'))
 <p>session('message')</p>
 @endif
-
-
 
 
 
@@ -133,7 +132,7 @@ php artisan make:migration add_photo_to_users_table --table=use
 --------
 
 
-Route::get('/', [IndexController::class, 'index'])->name(contacts.home_contacts)// o nome serve para usar nas anchor cage{{}}
+Route::get('/', [IndexController::class, 'index'])->name(contacts.home_contacts)// o nome serve para usar nas anchor cage{{route('contacts.home_contacts')}}
 
 
 $myVar= 'variavel';
@@ -367,6 +366,11 @@ funcao de login
             <option value={{ $key->id }}>{{ $key->username }}</option>
           </select>
 
+
+-----------nota importante 
+
+Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
+----------------------------------------
 
 
 

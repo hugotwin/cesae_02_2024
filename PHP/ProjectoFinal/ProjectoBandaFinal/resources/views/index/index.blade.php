@@ -21,11 +21,18 @@
                 <td>{{ $band['total'] }}</td> <!-- deve ser o numero de albuns" -->
                 <td>
                     <a href="{{route('bands.albums',$band->id)}}" class="btn btn-primary">Ver Álbuns</a>
+
+
                 </td>
             </tr>
+
+
         @endforeach
         </tbody>
     </table>
+    
+    <a href="{{route('login.loginForm')}}" >Login</a>
+
 </div>
 
 @endsection
