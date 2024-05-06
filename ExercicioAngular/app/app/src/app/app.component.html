@@ -1,7 +1,8 @@
 
 <app-header>
-</app-header>
 
+</app-header>
+/*
 <div  class="container">
 
   <div class = "row">
@@ -9,25 +10,40 @@
     <div class = "col-3">
 
 
-      <app-card></app-card>
+      <app-card
+        [textButtonCard]='textButton'
+        [imageCard]='image2'
+     [descriptionCard]='descriptionum'></app-card>
 
     </div>
     <div class = "col-3">
 
 
-      <app-card></app-card>
+      <app-card
+      [textButtonCard]="'textButton'"
+      [imageCard] = "'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U'"
+      [descriptionCard]='descriptiondois'></app-card>
 
     </div>
     <div class = "col-3">
 
 
-      <app-card></app-card>
+      <app-card
+        [textButtonCard]="'textButton'"
+        [imageCard] = "'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U'"
+        [descriptionCard]='descriptiondois'
+
+      ></app-card>
 
     </div>
     <div class = "col-3">
 
 
-      <app-card></app-card>
+      <app-card [imageCard]='image_'
+                [descriptionCard]='descriptiondois'
+                [textButtonCard]="'boato'"
+
+      ></app-card>
 
     </div>
 
@@ -36,7 +52,7 @@
 
 </div>
 <h1>Hello world {{name}}</h1>
-
+<router-outlet></router-outlet>
 <app-footer></app-footer>
 
 

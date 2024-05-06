@@ -1,0 +1,29 @@
+
+<main class="container ">
+  <div class="p-4 p-md-5 mb-4 bg-secondary rounded text-body-emphasis ">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">{{titleBlog }}</h1>
+      <p class="lead my-3">{{textBlog}}</p>
+      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="container ">
+<div class="row">
+  <div class="col-12 col-sm-8 col-lg-10">
+  <app-post [writterPost]="writterPost1"
+  [contentPost]="contentPost1"
+  [datePost]="datePost1"
+  ></app-post>
+
+  <app-post [writterPost]="writterPost2"
+            [contentPost]="contentPost2"
+            [datePost]="datePost2"
+  ></app-post>
+</div>
+
+  <div class="col -12 col-sm-4 col-lg-2">
+  <app-section></app-section>
+  </div>
+</div>
+</div>

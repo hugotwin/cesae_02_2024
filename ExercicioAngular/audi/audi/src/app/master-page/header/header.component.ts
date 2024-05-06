@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MdbCollapseModule} from "mdb-angular-ui-kit/collapse";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    MdbCollapseModule
+    MdbCollapseModule,
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  @Input() title: string ="";
 
 }
