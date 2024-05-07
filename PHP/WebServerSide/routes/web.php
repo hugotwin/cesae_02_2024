@@ -47,8 +47,9 @@ Route::get('/{id?}', [GiftController::class, 'delete'])->name('gifts.delete');
 
 //Route::get('/forms', [GiftController::class, 'createUser'])->name('forms.formulario');
 
-Route::post('/register', [UserController::class, 'createUser'])->name('users.create');
+Route::post('/createUser', [UserController::class, 'createUser'])->name('users.create');
 Route::post('/register', [TaskController::class, 'createTask'])->name('tasks.create');
+Route::get('/task/{id}', [TaskController::class, 'viewTask'])->name('tasks.viewTask');
 
 
 
