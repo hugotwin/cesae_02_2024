@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Band;
 use App\Models\Album;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AlbumController extends Controller
 {
@@ -43,8 +44,13 @@ class AlbumController extends Controller
     {
         $albums = Album::where('id', $id)->get();
         //dd($albums);
+        $bandas_albums = Band::rightJoin('albums', 'bands.id', '=', 'albums.band_id')
+        ->selectRaw('bands.name as bandName, albums.*')
+        ->where('bands.id', $id)
+        ->get();
 
-        return $albums;
+
+        return $bandas_albums;
 
     }
 
@@ -75,5 +81,14 @@ class AlbumController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    public function apagarAlbum($id){
+
+        Album::where('id', $id)->delete();
+
+        return  back();
+
     }
 }

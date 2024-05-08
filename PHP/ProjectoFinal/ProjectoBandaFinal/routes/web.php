@@ -25,4 +25,8 @@ Route::get('/newband', [BandController::class,'insertBand'])->name('bands.newban
 
 Route::get('/albums/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
 
-Route::get('/bands/{id?}', [bandController::class,'apagarBand'])->name('bands.delete');
+Route::get('/bands/{id?}', [BandController::class,'apagarBand'])->name('bands.delete');
+
+Route::get('/deleteAlbums/{id?}', [AlbumController::class,'apagarAlbum'])->name('bands.albumsDelete');
+
+Route::get('/insertAlbums/{id?}', [AlbumController::class,'insertAlbum'])->name('bands.albumsinsert');

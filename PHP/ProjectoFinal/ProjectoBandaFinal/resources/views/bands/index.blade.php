@@ -19,7 +19,19 @@
             <tr>
                 <td>{{ $band['name'] }}</td>
                 <td><img src="{{ $band['image'] }}" alt="{{ $band['name'] }}" style="max-width: 100px;"></td>
-                <td>{{ $band['total'] }}</td> <!-- deve ser o numero de albuns" -->
+
+                <td>
+                    @foreach ($bands_albuns as  $albuns )
+
+                    @if ($albuns->id == $band['id'] )
+                                {{ $albuns ['total'] }}
+                    @endif
+
+
+                    @endforeach
+
+
+                </td> <!-- deve ser o numero de albuns" -->
                 <td>
                     <a href="{{route('bands.albums',[$band['id']])}}" class="btn btn-primary">Ver Álbuns</a>
                 </td>

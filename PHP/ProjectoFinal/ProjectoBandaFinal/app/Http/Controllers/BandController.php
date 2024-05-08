@@ -18,7 +18,7 @@ class BandController extends Controller
     {
         //$bands = $this->bands();
         $bands_albuns=$this->numberAlbums();
-        dd($bands_albuns);
+       // dd($bands_albuns);
         $bands=Band::all();
         return view('bands.index', compact('bands', 'bands_albuns'));
     }
@@ -45,9 +45,6 @@ class BandController extends Controller
 
 
     }
-
-
-
 
     /**
      * Show the form for creating a new resource.
