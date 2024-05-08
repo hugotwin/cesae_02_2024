@@ -23,6 +23,8 @@ class UserController extends Controller
         return view('users.all_users', compact('cesaeInfo', 'allUsers', 'delegadoTurma'));
     }
 
+
+
     public function viewUser($id){
 
        $user = Db::table('users')->where('id', $id)->first();
@@ -31,6 +33,10 @@ class UserController extends Controller
         return view('users.user_view', compact('user'));
     }
 
+
+
+
+
     public function deleteUser($id){
 
         DB::table('tasks')->where('user_id', $id)->delete();
@@ -38,6 +44,8 @@ class UserController extends Controller
 
         return redirect()->route('users.all');
      }
+
+
 
     public function addUser(){
 
@@ -87,23 +95,55 @@ class UserController extends Controller
 
     public function createUser(Request $request){
 
-        $request->all();
-        $request->validate([
-            'name' =>'string|max:50',
-            'email'=>'required|email|unique:users'
+        //$request->all();
 
-        ]);
-
-        User::insert([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>Hash::make($request->password),
-
-        ]);
+        if(isset($request->id)){
 
 
-    //dd($request->all());
-    return redirect()->route('users.all')->with('message', 'inserido com suceso');
+            $request->validate([
+                'name' =>'string|max:10',
+                'cpostal'=>'string',
+
+            ]);
+
+            user::where('id', $request->id)
+            ->update([
+                'name'=>$request->name,
+                'cpostal'=>$request->cpostal,
+
+            ]);
+
+            return redirect()->route('users.all')->with('message', 'atualizado com sucesso');
+
+
+
+
+        }else{
+
+            $request->validate([
+                'name' =>'string|max:50',
+                'email'=>'required|email|unique:users'
+
+            ]);
+
+            User::insert([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'password'=>Hash::make($request->password),
+
+            ]);
+
+
+        //dd($request->all());
+        return redirect()->route('users.all')->with('message', 'inserido com suceso');
+
+
+
+
+
+        }
+
+
 
     }
 

@@ -12,6 +12,16 @@
 
     {{ $cesaeInfo['name'] }}
 
+    <form action="">
+            <input class="ms-5" type='text'  value ="{{request()->query('search')}}" name="search"
+            id="" placeholder="procurar">
+            <button class ="btn btn-secondary">Procurar</button>
+
+
+    </form>
+
+
+
     <table class="table">
         <thead>
             <tr>
