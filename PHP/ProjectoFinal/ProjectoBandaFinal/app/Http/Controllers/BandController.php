@@ -17,8 +17,10 @@ class BandController extends Controller
     public function index()
     {
         //$bands = $this->bands();
-        $bands=$this->numberAlbums();
-        return view('index.index', compact('bands'));
+        $bands_albuns=$this->numberAlbums();
+        dd($bands_albuns);
+        $bands=Band::all();
+        return view('bands.index', compact('bands', 'bands_albuns'));
     }
 
 
@@ -33,10 +35,12 @@ class BandController extends Controller
     {
 
         //$bandas_albums = DB::select('select count(*) as total, bands.name, bands.image from bands join albums on bands.id=albums.band_id group by albums.band_id');
-        $bandas_albums = Band::join('albums', 'bands.id', '=', 'albums.band_id')
+        $bandas_albums = Band::rightJoin('albums', 'bands.id', '=', 'albums.band_id')
         ->selectRaw('COUNT(*) as total, bands.name, bands.image, bands.id')
         ->groupBy('bands.id', 'bands.name', 'bands.image')
         ->get();
+
+            //dd($bandas_albums->all());
         return  $bandas_albums;
 
 
@@ -97,4 +101,47 @@ class BandController extends Controller
     {
         //
     }
+
+
+    public function insertBand(Request $request)
+    {
+
+        //dd($request->all());
+        $request->validate([
+
+            'name' => 'required|unique:bands|max:255',
+            'image' => 'required|url',
+
+        ]);
+
+
+        Band::insert([
+            'name'=>$request->name,
+            'image'=>$request->image,
+
+        ]);
+
+
+
+        return redirect()->route('bands.index')->with('message', 'Inserido com sucesso');
+    }
+
+
+
+
+
+    public function apagarBand($id){
+
+        Band::where('id', $id)->delete();
+
+        return  back();
+
+    }
+
+
+
+
+
+
+
 }

@@ -30,8 +30,7 @@
         @endforeach
         </tbody>
     </table>
-    
-    <a href="{{route('login.loginForm')}}" >Login</a>
+
 
 </div>
 

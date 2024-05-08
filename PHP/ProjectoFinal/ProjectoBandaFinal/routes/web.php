@@ -20,8 +20,9 @@ use App\Http\Controllers\LoginController;
 //Route::resource('bands.albums', 'AlbumController');// nome da pagina html e do controlador
 
 
-Route::get('/', [BandController::class,'index'])->name('index.index');
-Route::get('/login', [LoginController::class,'index'])->name('login.loginForm');
-Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
+Route::get('/', [BandController::class,'index'])->name('bands.index');
+Route::get('/newband', [BandController::class,'insertBand'])->name('bands.newband');
 
+Route::get('/albums/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
 
+Route::get('/bands/{id?}', [bandController::class,'apagarBand'])->name('bands.delete');

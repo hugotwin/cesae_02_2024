@@ -28,7 +28,7 @@
         </li>
       </ul>
 
-      <a class="btn btn-outline-success mx-2" href="{{route('login.loginForm')}}" >Login</a>
+      <a class="btn btn-outline-success mx-2" href="" >Login</a>
 
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
