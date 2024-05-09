@@ -1,0 +1,70 @@
+-- Active: 1715260043905@@127.0.0.1@3306@test
+use test;
+
+drop table formando;
+
+drop table curso;
+drop table Modulo;
+drop table cursoModulo;
+drop table turma;
+drop table falta;
+
+
+
+CREATE TABLE formando(
+idFormando int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nameFormando VARCHAR(200) NOT NULL,
+email VARCHAR(200) not NULL UNIQUE,
+idTurma int,
+FOREIGN KEY (idTurma) REFERENCES turma(idTurma)
+);
+
+
+
+CREATE table modulo(
+idModulo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nameModulo VARCHAR(200) NOT NULL
+);
+
+
+CREATE table curso(
+idcurso int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nameCurso VARCHAR(200) NOT NULL
+);
+
+
+
+
+
+CREATE TABLE cursoModulo (
+    idCursoModulo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idmodulo INT,
+    idcurso INT,
+    notaModulo int(11) DEFAULT null,
+    FOREIGN KEY (idmodulo) REFERENCES modulo(idModulo) ,
+    FOREIGN KEY (idcurso) REFERENCES curso(idCurso)
+);
+
+
+
+
+SELECT * from cursomodulo JOIN modulo
+on modulo.idModulo = cursoModulo.idmodulo
+join curso on curso.idcurso=cursomodulo.idcurso
+
+
+CREATE table turma(
+idTurma int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+idCurso int,
+nameTurma VARCHAR(200) NOT NULL,
+FOREIGN KEY (idcurso) REFERENCES curso(idcurso)
+);
+
+
+
+create table falta(
+idFaltao INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+idcursoModulo int,
+date TIMESTAMP,
+FOREIGN KEY (idcursoModulo) REFERENCES cursoModulo(idcursoModulo)
+);
