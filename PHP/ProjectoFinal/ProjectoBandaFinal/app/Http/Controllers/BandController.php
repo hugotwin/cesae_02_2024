@@ -19,9 +19,23 @@ class BandController extends Controller
         //$bands = $this->bands();
         $bands_albuns=$this->numberAlbums();
        // dd($bands_albuns);
-        $bands=Band::all();
+      // $bands=Band::all();
+
+       $search =request()->query('search')?request()->query('search'):null;
+        if($search){
+            $bands = Band::where('name', 'LIKE', "%{$search}%")
+            ->get();
+
+        }else{
+
+            $bands=Band::all();
+
+        }
+
         return view('bands.index', compact('bands', 'bands_albuns'));
     }
+
+
 
 
     protected function bands()
@@ -29,6 +43,8 @@ class BandController extends Controller
         $bands = Band::all();
         return $bands;
     }
+
+
 
 
     protected function numberAlbums()
@@ -103,6 +119,28 @@ class BandController extends Controller
     public function insertBand(Request $request)
     {
 
+
+        if(isset($request->id)){
+            $request->validate([
+
+                'name' => 'required|string|max:255',
+                'image' => 'required|url',
+
+            ]);
+
+            Band::where('id', $request->id)->update([
+                'band_id'=>$request->id,
+                'name' => $request->name,
+                'image' => $request->image,
+                'updated_at' => now(),
+            ]);
+            return redirect()->route('bands.index')->with('message', 'Banda actualizada com sucesso!');
+
+        }else{
+
+
+
+
         //dd($request->all());
         $request->validate([
 
@@ -120,7 +158,7 @@ class BandController extends Controller
 
 
 
-        return redirect()->route('bands.index')->with('message', 'Inserido com sucesso');
+        return redirect()->route('bands.index')->with('message', 'Inserido com sucesso');}
     }
 
 
@@ -134,6 +172,20 @@ class BandController extends Controller
         return  back();
 
     }
+
+
+
+
+    public function updateBand($id){
+        $band = Band::where('id', $id)
+        ->first();
+
+        //$allUsers = DB::table('users')->get();
+
+        return view('bands.update', compact('band'));
+    }
+
+
 
 
 

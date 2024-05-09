@@ -91,4 +91,57 @@ class AlbumController extends Controller
         return  back();
 
     }
+
+
+
+
+    public function insertAlbum(Request $request)
+    {
+
+
+        dd($request->all());
+        if(isset($request->id)){
+            $request->validate([
+                'name' => 'required|unique:bands|max:255',
+                'image' => 'required|url',
+
+            ]);
+
+            Album::insert([
+                'name'=>$request->name,
+                'image'=>$request->image,
+                'release_date'=>$request->image,
+            ]);
+            return redirect()->route('bands.albums')->with('message', 'Banda actualizada com sucesso!');
+
+        }else{
+
+
+
+
+        //dd($request->all());
+        $request->validate([
+
+            'name' => 'required|unique:bands|max:255',
+            'image' => 'required|url',
+
+        ]);
+
+
+        Album::insert([
+            'name'=>$request->name,
+            'image'=>$request->image,
+            'release_date'=>$request->image,
+
+        ]);
+
+
+
+        return redirect()->route('bands.index')->with('message', 'Inserido com sucesso');}
+    }
+
+
+
+
+
 }

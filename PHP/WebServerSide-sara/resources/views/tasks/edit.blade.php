@@ -5,6 +5,7 @@
     <form action="{{ route('tasks.create') }}" method="POST">
         @csrf
         <input name="id" type="hidden" value="{{ $task->id }}">
+        
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nome</label>
             <input name="name" value="{{ $task->name }}" type="text" class="form-control" id=""

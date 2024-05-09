@@ -4,6 +4,9 @@
 @section('content')
 
 
+
+
+
 <div class="container mt-5">
     <h1 class="mb-4">The  best albums from {{$albums[0]['bandName'] }}</h1>
     <table class="table">
@@ -42,7 +45,10 @@
         <div  class='col-3 offset-3'>
 
 
-    <form method = "get"  action = "{{route('bands.newband')}}">
+    <form method = "post"  action = "{{route('bands.albumsinsert')}}">
+        @csrf
+
+        <input type="hidden" name="band_id" value = {{$albums[0]['band_id'] }}>
         <div class="form-group">
           <label for="exampleInputEmail1">Nome do album</label>
           <input type="text" class="form-control" id="name"  name="name" aria-describedby="emailHelp" placeholder="Nome do album">

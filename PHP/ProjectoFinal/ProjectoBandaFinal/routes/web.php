@@ -21,7 +21,7 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [BandController::class,'index'])->name('bands.index');
-Route::get('/newband', [BandController::class,'insertBand'])->name('bands.newband');
+Route::post('/newband', [BandController::class,'insertBand'])->name('bands.newband');
 
 Route::get('/albums/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
 
@@ -29,4 +29,10 @@ Route::get('/bands/{id?}', [BandController::class,'apagarBand'])->name('bands.de
 
 Route::get('/deleteAlbums/{id?}', [AlbumController::class,'apagarAlbum'])->name('bands.albumsDelete');
 
-Route::get('/insertAlbums/{id?}', [AlbumController::class,'insertAlbum'])->name('bands.albumsinsert');
+Route::post('/insertAlbums', [AlbumController::class,'insertAlbum'])->name('bands.albumsinsert');
+
+Route::get('/newband/{id}', [BandController::class,'updateBand'])->name('bands.update');
+Route::get('/insertBand', function () {
+    return view('bands.insertBand');
+})->name('bands.insertBand');
+
