@@ -12,19 +12,13 @@ public class ClientController {
     public ClientController() {
     }
 
-    /**
-     *
-     * @param productTypeToFind
-     * @return
-     * @throws FileNotFoundException
-     */
     public ArrayList<Product> getProductOfCategory(String productTypeToFind) throws FileNotFoundException {
 
         System.out.println("Controller iniciado");
-        ArrayList<Sale> salesArray = SalesRepository.getInstance().getSalesArray();// cria aqui o sales array
-        ArrayList<Product> filteredProducts = new ArrayList<Product>();// para criara a lista filtrada
+        ArrayList<Sale> salesArray = SalesRepository.getInstance().getSalesArray();
+        ArrayList<Product> filteredProducts = new ArrayList<>();
 
-        for(Sale actualSale : salesArray){// compara o tipo de produto e diciona  alista
+        for(Sale actualSale : salesArray){
             if(actualSale.getProduct().getProductType().equals(productTypeToFind)){
                 filteredProducts.add(actualSale.getProduct());
             }

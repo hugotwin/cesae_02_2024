@@ -39,7 +39,7 @@ public class ClientView {
                     input.nextLine();
                     String productTypeToFind = input.nextLine();
 
-                    showProductOfCategory(productTypeToFind);// funcao avaixo vai fazer a funcao clientController.getProductOfCategory(productTypeToFind))
+                    showProductOfCategory(productTypeToFind);
 
                     break;
 
@@ -55,8 +55,6 @@ public class ClientView {
 
         } while (opcao != 0);
     }
-
-
 
     public static void showProductOfCategory(String productTypeToFind) throws FileNotFoundException {
 

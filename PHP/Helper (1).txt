@@ -374,6 +374,24 @@ Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //
 
 
 
+composer require laravel/fortify
+
+php artisan fortify:install
+php artisan migrate
+
+
+use Laravel\Fortify\Fortify; -- colocar aqui
+
+  Fortify::loginView(function () {
+            return view('auth.login');
+        });
+
+
+mediante isto fica defido um conjunto de rotas que não esta na web mas sim no fortify
+
+podemos fazer \login
+
+não esquecer de criar uma view auth.login.blade.php
 
 
 

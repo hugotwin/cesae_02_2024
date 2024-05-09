@@ -11,14 +11,13 @@ public class SalesRepository {
     private ArrayList<Sale> salesArray;
 
     private SalesRepository() throws FileNotFoundException {
-        this.salesArray = CSVSalesReader.readCsvFileToArray("Files/minimercado.csv");// aqui le o ficheiro e cria o array Objecto Produto e preço
+        this.salesArray = CSVSalesReader.readCsvFileToArray("Files/minimercado.csv");
     }
 
     public static SalesRepository getInstance() throws FileNotFoundException {
         if(instance==null){
             instance= new SalesRepository();
         }
-
         return instance;
     }
 
