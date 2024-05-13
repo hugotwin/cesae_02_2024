@@ -80,6 +80,38 @@ CREATE TABLE formadorModulo(
 
 
 
+
+SELECT formando.idFormando,  utilizador.name , turma.nameTurma, cursoturma.*, curso.nameCurso, cursomodulo.notamodulo , modulo.namemodulo, formadormodulo.idformador, formador.idFormador
+FROM utilizador
+JOIN formando ON utilizador.idUtilizador = formando.idUtilizador
+join turma on turma.idturma = formando.idturma
+join cursoTurma on cursoTurma.idturma =turma.idturma
+join curso on curso.idcurso = cursoTurma.idcurso
+join cursomodulo on cursomodulo.idCurso = curso.idcurso
+join modulo on modulo.idmodulo = cursomodulo.idmodulo
+left join formadormodulo on modulo.idmodulo =formadormodulo.idModulo
+left join formador on formadormodulo.idformador = formador.idformador
+
+
+
+SELECT utilizador.name , modulo.nameModulo, cursomodulo.*,curso.nameCurso, turma.*, formando.idformando
+FROM utilizador
+join formador on formador.idutilizador=utilizador.idutilizador
+join formadormodulo on formadormodulo.idformador = formador.idformador
+join modulo on formadormodulo.idmodulo=modulo.idmodulo
+join cursoModulo on modulo.idModulo=cursomodulo.idmodulo
+join curso on cursoModulo.idcurso=curso.idcurso
+join cursoturma on curso.idcurso=cursoturma.idcurso
+join turma on turma.idturma = cursoturma.idturma
+join formando on turma.idTurma= formando.idturma
+
+
+
+
+
+
+
+
 SELECT formando.*, turma.*, curso.* ,cursoModulo.*,modulo.*,falta.* ,formador.*,utilizador.*,tipoUtilizador.*
 FROM formando
 JOIN Turma ON turma.idTurma = formando.idTurma
