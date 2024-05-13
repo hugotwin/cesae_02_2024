@@ -1,0 +1,147 @@
+-- Active: 1715260043905@@127.0.0.1@3306@teste
+create database teste2;
+use teste2
+
+drop DATABASE teste2;
+
+drop table turma;
+drop table tipo utilizador;
+
+
+
+
+CREATE TABLE tipoUtilizador(
+    idTipoUtilizador INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tipoUtilizador VARCHAR(100) unique
+);
+
+CREATE TABLE utilizador(
+    idUtilizador INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name VARCHAR(200),
+    email VARCHAR(200) unique,
+    telefone VARCHAR(200),
+    idTipoUtilizador INT,
+    activeStatus BOOLEAN default true,
+    FOREIGN KEY (idTipoUtilizador) REFERENCES tipoUtilizador(idTipoUtilizador)
+);
+   
+
+
+CREATE TABLE modulo(
+    idModulo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nameModulo VARCHAR(200) NOT NULL unique
+);
+
+CREATE TABLE curso(
+    idCurso INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nameCurso VARCHAR(200) NOT NULL unique,
+    duracao int,
+    activeStatus BOOLEAN default true
+);
+
+CREATE TABLE cursoModulo (
+    idModulo INT,
+    idCurso int,
+    activeStatus BOOLEAN default true,
+    PRIMARY KEY CLUSTERED (IdModulo, IdCurso),
+    FOREIGN KEY (idModulo) REFERENCES modulo(idModulo),
+    FOREIGN KEY (idCurso) REFERENCES curso(idCurso)
+    
+);
+
+
+CREATE TABLE Turma(
+    idTurma INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idCurso INT,
+    dataInicio DATE,
+    dataFim date,
+    nome varchar(200) unique,
+    idLocalizacao int,
+    activeStatus BOOLEAN default true,
+    FOREIGN KEY (idCurso) REFERENCES curso(idCurso),
+    FOREIGN KEY (idLocalizacao) REFERENCES localizacao(idLocalizacao)
+);
+
+
+drop table falta;
+
+CREATE TABLE falta(
+    idFalta INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idModulo INT,
+    idUtilizador int, 
+    dataFalta TIMESTAMP,
+    horasFalta double,
+    FOREIGN KEY (idModulo) REFERENCES modulo(idModulo),
+    FOREIGN KEY (idUtilizador) REFERENCES utilizador(idUtilizador)
+);
+
+CREATE TABLE formadorModulo(
+    idFormadorModulo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idModulo INT,
+    idUtilizador INT,
+    idTurma int,
+    activeStatus BOOLEAN default true,
+    FOREIGN KEY (idTurma) REFERENCES Turma(idTurma),
+    FOREIGN KEY (idModulo) REFERENCES modulo(idModulo),
+    FOREIGN KEY (idUtilizador) REFERENCES utilizador(idUtilizador)
+);
+
+
+create table moduloFormando(
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+idUtilizador int,
+idModulo int,
+nota DOUBLE,
+idTurma int, 
+FOREIGN KEY (idModulo) REFERENCES modulo(idModulo),
+FOREIGN KEY (idUtilizador) REFERENCES utilizador(idUtilizador),
+FOREIGN KEY (idTurma) REFERENCES Turma(idTurma)
+);
+
+
+create table utilizadorTurma(
+idUtilizadorTurma int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+idUtilizador int,
+idTurma int,
+FOREIGN KEY (idUtilizador) REFERENCES utilizador(idUtilizador),
+FOREIGN KEY (idTurma) REFERENCES Turma(idTurma)
+);
+
+
+create table localizacao(
+idLocalizacao int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+localizacao varchar(200) unique
+);
+
+
+select utilizador.name, Turma.*, curso.nameCurso, localizacao.localizacao, modulo.nameModulo
+from utilizador
+left join utilizadorTurma on utilizador.idUtilizador=utilizadorTurma.idUtilizador
+join turma on turma.idturma = utilizadorTurma.idturma
+join curso on curso.idCurso=turma.idCurso
+join localizacao  on localizacao.idLocalizacao=turma.idLOcalizacao 
+join cursomodulo on  curso.idCurso=cursomodulo.idCurso
+join modulo on cursomodulo.idModulo= modulo.idModulo
+
+
+select utilizador.name, Turma.*, curso.nameCurso, localizacao.localizacao, modulo.nameModulo
+from utilizador
+left join formadormodulo on utilizador.idUtilizador=formadormodulo.idUtilizador
+join turma on turma.idturma = formadormodulo.idturma
+join curso on curso.idCurso=turma.idCurso
+join localizacao  on localizacao.idLocalizacao=turma.idLOcalizacao 
+join cursomodulo on  curso.idCurso=cursomodulo.idCurso
+join modulo on cursomodulo.idModulo= modulo.idModulo
+
+
+select utilizador.name, modulo.nameModulo, moduloFormando.nota
+from utilizador
+join moduloFormando on utilizador.idUtilizador=moduloformando.idUtilizador
+join modulo on moduloFormando.idmodulo = modulo.idmodulo
+
+
+
+select utilizador.name, modulo.nameModulo
+from utilizador
+join falta on utilizador.idUtilizador=falta.idUtilizador
+join modulo on falta.idmodulo = modulo.idmodulo
