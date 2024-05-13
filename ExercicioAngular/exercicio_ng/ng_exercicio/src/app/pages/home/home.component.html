@@ -1,0 +1,12 @@
+<p>home works!</p>
+<div *ngFor="let name of names">
+  <h2>{{name}}</h2>
+</div>
+
+
+
+
+<div class="col-4" *ngFor="let card of cards" >
+<app-card  [image]='card.image'  [title]='card.title' [description]='card.description' ></app-card>
+</div>
+

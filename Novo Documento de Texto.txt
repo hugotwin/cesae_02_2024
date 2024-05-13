@@ -1,70 +1,94 @@
--- Active: 1715260043905@@127.0.0.1@3306@test
-use test;
 
-drop table formando;
+CREATE TABLE tipoUtilizador(
+    idTipoUtilizador INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tipoUtilizador VARCHAR(100)
+);
 
-drop table curso;
-drop table Modulo;
-drop table cursoModulo;
-drop table turma;
-drop table falta;
-
-
+CREATE TABLE utilizador(
+    idUtilizador INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name VARCHAR(200),
+    email VARCHAR(200),
+    telefone VARCHAR(200),
+    idTipoUtilizador INT,
+    FOREIGN KEY (idTipoUtilizador) REFERENCES tipoUtilizador(idTipoUtilizador)
+);
 
 CREATE TABLE formando(
-idFormando int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-nameFormando VARCHAR(200) NOT NULL,
-email VARCHAR(200) not NULL UNIQUE,
-idTurma int,
-FOREIGN KEY (idTurma) REFERENCES turma(idTurma)
+    idFormando INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idTurma INT,
+    idUtilizador INT,
+    FOREIGN KEY (idTurma) REFERENCES turma(idTurma),
+    FOREIGN KEY (idUtilizador) REFERENCES utilizador(idUtilizador)
 );
 
-
-
-CREATE table modulo(
-idModulo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-nameModulo VARCHAR(200) NOT NULL
+CREATE TABLE formador(
+    idFormador INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idUtilizador INT,
+    FOREIGN KEY (idUtilizador) REFERENCES utilizador(idUtilizador)
 );
 
-
-CREATE table curso(
-idcurso int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-nameCurso VARCHAR(200) NOT NULL
+CREATE TABLE modulo(
+    idModulo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nameModulo VARCHAR(200) NOT NULL
 );
 
-
-
-
+CREATE TABLE curso(
+    idCurso INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nameCurso VARCHAR(200) NOT NULL
+);
 
 CREATE TABLE cursoModulo (
     idCursoModulo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    idmodulo INT,
-    idcurso INT,
-    notaModulo int(11) DEFAULT null,
-    FOREIGN KEY (idmodulo) REFERENCES modulo(idModulo) ,
-    FOREIGN KEY (idcurso) REFERENCES curso(idCurso)
+    idModulo INT,
+    idCurso int,
+    notaModulo INT(11) DEFAULT NULL,
+    FOREIGN KEY (idModulo) REFERENCES modulo(idModulo),
+    FOREIGN KEY (idCurso) REFERENCES curso(idCurso)
+    
+);
+
+
+CREATE TABLE cursoTurma(
+    idCursoTurma INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idCurso INT,
+    idTurma int,
+    FOREIGN KEY (idCurso) REFERENCES curso(idCurso),
+    FOREIGN KEY (idTurma) REFERENCES turma(idTurma)
+);
+
+
+CREATE TABLE turma(
+    idTurma INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nameTurma VARCHAR(200) NOT NULL
+    
+);
+
+CREATE TABLE falta(
+    idFalta INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idCursoModulo INT,
+    date TIMESTAMP,
+    FOREIGN KEY (idCursoModulo) REFERENCES cursoModulo(idCursoModulo)
+);
+
+CREATE TABLE formadorModulo(
+    idFormadorModulo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idModulo INT,
+    idFormador INT,
+    FOREIGN KEY (idModulo) REFERENCES modulo(idModulo),
+    FOREIGN KEY (idFormador) REFERENCES formador(idFormador)
 );
 
 
 
-
-SELECT * from cursomodulo JOIN modulo
-on modulo.idModulo = cursoModulo.idmodulo
-join curso on curso.idcurso=cursomodulo.idcurso
-
-
-CREATE table turma(
-idTurma int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-idCurso int,
-nameTurma VARCHAR(200) NOT NULL,
-FOREIGN KEY (idcurso) REFERENCES curso(idcurso)
-);
-
-
-
-create table falta(
-idFaltao INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-idcursoModulo int,
-date TIMESTAMP,
-FOREIGN KEY (idcursoModulo) REFERENCES cursoModulo(idcursoModulo)
-);
+SELECT formando.*, turma.*, curso.* ,cursoModulo.*,modulo.*,falta.* ,formador.*,utilizador.*,tipoUtilizador.*
+FROM formando
+JOIN Turma ON turma.idTurma = formando.idTurma
+join cursoTurma on cursoTurma.idTurma=turma.idTurma
+join curso on curso.idCurso=cursoTurma.idCurso
+join cursoModulo on curso.idCurso=cursoModulo.idCurso
+join modulo on modulo.idModulo = cursoModulo.idModulo
+join falta on falta.idCursoModulo = cursoModulo.idCursoModulo
+join formadorModulo on formadorModulo.idModulo=modulo.idModulo
+join formador on formador.idFormador = formadorModulo.idFormador
+join utilizador on formador.idUtilizador= utilizador.idUtilizador
+join tipoUtilizador on utilizador.idTipoUtilizador = tipoUtilizador.idTipoUtilizador

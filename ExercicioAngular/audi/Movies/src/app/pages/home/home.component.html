@@ -1,0 +1,8 @@
+
+<div class="container mx-auto">
+<div class="row offset-2" >
+<div class=" col col-lg-3 m-1" *ngFor="let movie of movies" >
+ <app-card [poster]='movie.poster'  [title]='movie.title' [description]='movie.description'  [year]='movie.year' [id]='movie.id' ></app-card>
+</div>
+</div>
+</div>
