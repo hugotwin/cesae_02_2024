@@ -370,8 +370,13 @@ funcao de login
 -----------nota importante 
 
 Route::get('/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
-----------------------------------------
+----------------------------------------------------------------
+---------------------------------foortify  autenticacao-----------------------
+-----------------------------------------------------------------
 
+microserviço
+ver o vendor
+php artisan route:list ver as rotas todas
 
 
 composer require laravel/fortify
@@ -381,7 +386,7 @@ php artisan migrate
 
 
 use Laravel\Fortify\Fortify; -- colocar aqui
-
+na funcao boot();
   Fortify::loginView(function () {
             return view('auth.login');
         });
@@ -390,8 +395,109 @@ use Laravel\Fortify\Fortify; -- colocar aqui
 mediante isto fica defido um conjunto de rotas que não esta na web mas sim no fortify
 
 podemos fazer \login
+no ficheiro auth/login.blade.php. tem o formulario que ira comunicar com a tabela users 
 
 não esquecer de criar uma view auth.login.blade.php
+
+@if(route::has('login'))
+@endif
+
+colar no search e colocar la o search  o 
+
+
+colocar o log oout  a seuir do @auth e 
+a faze se 
+<form action ='post' action ={{route('logout,)}}
+<button type=submit>
+</form>
+
+@auth
+<p>ola {Auth::user()->name}}
+
+
+
+                            <p>ola {{Auth::user()->name}}</p>
+                        <form action ='post' action ={{route('logout')}}>
+
+                        <button type=submit > logout</button>
+                        </form>
+                        </a>
+-------------------------
+--------------  midleware
+
+
+recuperacao password
+
+-- criar a para recuperacao que vai para uma pagina usar uma view
+no login
+<a href="{{route('password.request')}}">recuperacao pass</a>
+
+no fortify provider colocar
+
+ Fortify::requestPasswordResetLinkView(function () {
+            return view('auth.forgot-password');
+        });
+
+<a href= route('password.request') que faz parte do fortify
+
+fortify 
+
+
+ Fortify::resetPasswordView(function (Request $request) {
+        return view('auth.reset-password', ['request' => $request]);
+    });
+
+criar view  auth.reset-password
+
+criar formulario na view  auth.reset-password
+
+com mail e token 
+<form method="POST" action="{{ route('password.update') }}">
+<input type="hidden" name ="token" value ="{{request()->route('token')}}">
+ <input type="hidden" name ="token" value ="{{request()->route('token')}}">
+<button submit>
+
+
+
+
+-------------------------------
+ @if (Route::has('login'))
+                <nav class="-mx-3 flex flex-1 justify-end">
+                    @auth
+                        <a
+                            href="{{ route('backoffice.dashboard')}}"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        >
+                        <form action ={{route('logout')}} method="post">
+                         @csrf
+                        <button type=submit>logout</button>
+                        </a>
+                    @else
+                        <a
+                            href="{{ route('login') }}"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        >
+                            Log in
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a
+                                href="{{ route('register') }}"
+                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                            >
+                                Register
+                            </a>
+                        @endif
+                    @endauth
+
+---------------
+
+FILESYSTEM_DISK=public   ----no env
+php artisan storage:link   -- so cria um link
+vai criar pstiorage no public mas devo gravar sempre no storage privado   
+colocar imagens no storage/public                           
+
+
 
 
 

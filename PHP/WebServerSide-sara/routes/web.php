@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\IndexController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,6 +41,11 @@ Route::get('/hello/{name}', function ($name) {
 Route::fallback(function(){
     return view('errors.fallback');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('backoffice.dashboard');
+
+
+
 
 
 
