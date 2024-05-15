@@ -495,7 +495,12 @@ com mail e token
 FILESYSTEM_DISK=public   ----no env
 php artisan storage:link   -- so cria um link
 vai criar pstiorage no public mas devo gravar sempre no storage privado   
-colocar imagens no storage/public                           
+colocar imagens no storage/public  
+
+
+
+
+                         
 
 
 

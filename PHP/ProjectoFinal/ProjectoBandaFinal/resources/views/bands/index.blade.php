@@ -9,11 +9,17 @@
     <h1 class="mb-4">Bandas</h1>
 
 
-<div><a href="{{route('bands.insertBand')}}" class="btn btn-primary">Inserir bandas</a></div>
+
+
+@if(Auth::check())
+@if(Auth::user()->user_type==2)
+    <div><a href="{{ route('bands.insertBand') }}" class="btn btn-primary">Inserir bandas</a></div>
+@endif
+@endif
 
 <div class="container mb-2 text-end">
 
-    
+
 <form action="">
     <input class="ms-5"  placeholder="Procurar" type="text" name="search" id="name" value ="{{request()->query('search')}}" >
     <button class="btn btn-info" >Procurar</button>
@@ -25,7 +31,12 @@
             <th>Nome</th>
             <th>Foto</th>
             <th>Número de Álbuns</th>
+            <th></th>
+            @auth
             <th></th> <!-- Coluna para o botão "Ver Álbuns" -->
+            <th></th>
+
+            @endauth
         </tr>
         </thead>
         <tbody>
@@ -50,11 +61,18 @@
                     <a href="{{route('bands.albums',[$band['id']])}}" class="btn btn-primary">Ver Álbuns</a>
                 </td>
                 <td>
-                    <a href="{{route('bands.update',[$band['id']])}}" class="btn btn-warning">Update</a>
+                @auth
+                <a href="{{route('bands.update',[$band['id']])}}" class="btn btn-warning">Update</a>
+                @endauth
+
 
                 </td>
                 <td>
+                    @auth
+                    @if(Auth::user()->user_type==2)
                     <a href="{{route('bands.delete',[$band['id']])}}" class="btn btn-danger">Apagar banda</a>
+                    @endif
+                    @endauth
                 </td>
 
 

@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandController;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 
 /*Route::get('/', function () {
@@ -21,18 +22,29 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [BandController::class,'index'])->name('bands.index');
-Route::post('/newband', [BandController::class,'insertBand'])->name('bands.newband');
+Route::post('/newband', [BandController::class,'insertBand'])->name('bands.newband')->middleware('auth');
 
 Route::get('/albums/{id?}', [AlbumController::class,'index'])->name('bands.albums'); //sempre no fim das rotas ou Route::get('/users/{id?}', [AlbumController::class,'index'])->name('bands.albums');
 
-Route::get('/bands/{id?}', [BandController::class,'apagarBand'])->name('bands.delete');
+Route::get('/bands/{id?}', [BandController::class,'apagarBand'])->name('bands.delete')->middleware('auth');
 
-Route::get('/deleteAlbums/{id?}', [AlbumController::class,'apagarAlbum'])->name('bands.albumsDelete');
+Route::get('/deleteAlbums/{id?}', [AlbumController::class,'apagarAlbum'])->name('bands.albumsDelete')->middleware('auth');
 
-Route::post('/insertAlbums', [AlbumController::class,'insertAlbum'])->name('bands.albumsinsert');
+Route::post('/insertAlbums', [AlbumController::class,'insertAlbum'])->name('bands.albumsinsert')->middleware('auth');
 
-Route::get('/newband/{id}', [BandController::class,'updateBand'])->name('bands.update');
+Route::get('/newband/{id}', [BandController::class,'updateBand'])->name('bands.update')->middleware('auth');
 Route::get('/insertBand', function () {
     return view('bands.insertBand');
-})->name('bands.insertBand');
+})->name('bands.insertBand')->middleware('auth');
+
+
+Route::post('/create-user', [UserController::class, 'createUser'])->name('users.create')->middleware('auth');
+Route::get('/add-user', [UserController::class, 'addUser'])->name('add.user')->middleware('auth');
+Route::get('/home', [BandController::class,'index'])->name('bands.index');
+
+
+Route::get('/user/{id}', [UserController::class, 'viewUser'])->name('users.view');
+Route::get('/users', [UserController::class, 'allUsers'])->name('users.all');
+Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('backoffice.dashboard');
 

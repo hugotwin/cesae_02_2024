@@ -103,14 +103,14 @@ class AlbumController extends Controller
         if(isset($request->id)){
             $request->validate([
                 'name' => 'required|unique:bands|max:255',
-                'image' => 'required|url',
+                'updated_at' => now(),
 
             ]);
 
             Album::insert([
                 'name'=>$request->name,
                 'image'=>$request->image,
-                'release_date'=>$request->image,
+                'release_date'=>$request->data,
             ]);
             return redirect()->route('bands.albums')->with('message', 'Banda actualizada com sucesso!');
 

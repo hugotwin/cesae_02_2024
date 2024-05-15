@@ -28,9 +28,16 @@
                     <a href="{{route('bands.albums',[$album['id']])}}" class="btn btn-primary">Ver Álbuns</a>
                 </td>
                 <td>
-                    <a href="{{route('bands.albumsDelete',[$album['id']])}}" class="btn btn-warning">Apagar banda</a>
+                    @auth
+                    @if(Auth::user()->user_type==2)
+                      <a href="{{route('bands.albumsDelete',[$album['id']])}}" class="btn btn-warning">Apagar album</a>
+                    @endif
+                    @endauth
+
                 </td>
-                <td> <a href="" class="btn btn-info-sm">Update banda</a> </td>
+                @auth
+                <td> <a href="" class="btn btn-info-sm" >Update album</a> </td>
+                @endauth
         </tr>
 
         @endforeach
@@ -39,7 +46,8 @@
 </div>
 
 
-
+@auth
+@if(Auth::user()->user_type==2)
 <div class ="container">
     <div class='row'>
         <div  class='col-3 offset-3'>
@@ -93,6 +101,8 @@
     @endif
 
 </div>
+@endif
+@endauth
 </div>
 </div>
 
