@@ -429,7 +429,7 @@ a faze se
 recuperacao password
 
 -- criar a para recuperacao que vai para uma pagina usar uma view
-no login
+no login.blade
 <a href="{{route('password.request')}}">recuperacao pass</a>
 
 no fortify provider colocar
@@ -438,23 +438,27 @@ no fortify provider colocar
             return view('auth.forgot-password');
         });
 
-<a href= route('password.request') que faz parte do fortify
-
-fortify 
-
-
  Fortify::resetPasswordView(function (Request $request) {
         return view('auth.reset-password', ['request' => $request]);
     });
 
-criar view  auth.reset-password
+ e colocar no login.blade <a href= route('password.request') que faz parte do fortify
+
+fortify 
+
+criar uma view forgot-password . blade e colocar no action  
+<form method="POST" action="{{ route('password.email') }}">
+
+
+
+criar view  auth.reset-p +++++++++assword
 
 criar formulario na view  auth.reset-password
 
 com mail e token 
 <form method="POST" action="{{ route('password.update') }}">
 <input type="hidden" name ="token" value ="{{request()->route('token')}}">
- <input type="hidden" name ="token" value ="{{request()->route('token')}}">
+<input type="hidden" name ="token" value ="{{request()->route('token')}}">
 <button submit>
 
 

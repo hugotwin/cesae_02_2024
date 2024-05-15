@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipoUtilizador', function (Blueprint $table) {
-            $table->increments('idTipoUtilizador');
-            $table->string('tipoUtilizador', 100)->unique();
-            $table->timestamps();
+        Schema::create('localizacao', function (Blueprint $table) {
+            $table->id('idLocalizacao');
+            $table->string('localizacao')->unique();
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipoUtilizador');
+        Schema::dropIfExists('localizacao');
     }
 };
