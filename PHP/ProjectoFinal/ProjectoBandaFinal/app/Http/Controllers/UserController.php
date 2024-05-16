@@ -12,11 +12,10 @@ class UserController extends Controller
 {
 
 
-   /* public function __construct(){
-
-            $this->middleware('auth');
-
-    }*/
+    public function __construct() {
+      
+        $this->auth = ['auth'];
+    }
 
     /**
      * Display a listing of the resource.
@@ -89,7 +88,7 @@ class UserController extends Controller
         if(isset($request->id)){
             $request->validate([
                 'name' => 'string',
-                
+
 
             ]);
 
