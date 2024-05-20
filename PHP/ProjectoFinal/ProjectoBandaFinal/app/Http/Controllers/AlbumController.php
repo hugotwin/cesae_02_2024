@@ -6,6 +6,7 @@ use App\Models\Band;
 use App\Models\Album;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class AlbumController extends Controller
 {
@@ -17,7 +18,7 @@ class AlbumController extends Controller
 
         $albums = $this->show($id);
 
-        //
+        //dd($albums->all());
        return view('bands.albums', compact('albums'));
     }
 
@@ -98,19 +99,29 @@ class AlbumController extends Controller
     public function insertAlbum(Request $request)
     {
 
+       // dd($request->all());
 
-        dd($request->all());
+        $image=null;
+
+        if ($request->hasFile('image')) {
+            $image = Storage::putFile('image', $request->image);
+        }
+
+
+        //dd($request->all());
         if(isset($request->id)){
             $request->validate([
-                'name' => 'required|unique:bands|max:255',
-                'updated_at' => now(),
+                'name' => 'required|unique:albums|max:255',
+                'image' => 'image',
+
+
 
             ]);
 
             Album::insert([
-                'name'=>$request->name,
-                'image'=>$request->image,
-                'release_date'=>$request->data,
+                'name' => $request->name,
+                'image' => $image,
+                'release_date'=>$request->release_date,
             ]);
             return redirect()->route('bands.albums')->with('message', 'Banda actualizada com sucesso!');
 
@@ -123,21 +134,33 @@ class AlbumController extends Controller
         $request->validate([
 
             'name' => 'required|unique:bands|max:255',
-            'image' => 'required|url',
+            'image' => 'image',
 
         ]);
 
 
         Album::insert([
-            'name'=>$request->name,
-            'image'=>$request->image,
-            'release_date'=>$request->image,
+            'band_id'=>$request->band_id,
+            'name' => $request->name,
+            'image' => $image,
+            'release_date'=>$request->release_date,
 
         ]);
 
 
 
+
+
         return redirect()->route('bands.index')->with('message', 'Inserido com sucesso');}
+    }
+
+
+    public function updateAlbum($id){
+
+        $album =Album::where('id', $id)->first();
+
+        return view('bands.updateAlbum', compact('album'));
+
     }
 
 

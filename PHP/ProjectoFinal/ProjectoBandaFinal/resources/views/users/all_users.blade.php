@@ -63,6 +63,7 @@
             @enderror
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
+
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input name="password" value="" type="password" class="form-control" id="exampleInputPassword1">
@@ -70,9 +71,15 @@
                 erro de pass
             @enderror
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+
+        <div class = 'form-label m-1'>
+            <select name="user_type" id="user_type">
+                <option>Tipo Utilizador</option>
+                <option value ='1'>Utilizador</option>
+                <option value ='2'>Administrador</option>
+
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar User</button>

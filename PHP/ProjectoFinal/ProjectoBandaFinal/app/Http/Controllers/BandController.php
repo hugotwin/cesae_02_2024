@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Band;//preciso colocar o caminho do model
 use DB;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Band;//preciso colocar o caminho do model
 
 class BandController extends Controller
 {
@@ -18,8 +19,8 @@ class BandController extends Controller
     {
         //$bands = $this->bands();
         $bands_albuns=$this->numberAlbums();
-       // dd($bands_albuns);
-      // $bands=Band::all();
+       //dd($bands_albuns);
+      //$bands=Band::all();
 
        $search =request()->query('search')?request()->query('search'):null;
         if($search){
@@ -119,19 +120,30 @@ class BandController extends Controller
     public function insertBand(Request $request)
     {
 
+        //dd($request->image);
+
+        $image=null;
+
+        if ($request->hasFile('image')) {
+            $image = Storage::putFile('image', $request->image);// define o caminho para colocar no xamp
+        }
+
+
+
 
         if(isset($request->id)){
             $request->validate([
 
                 'name' => 'required|string|max:255',
-                'image' => 'required|url',
+                'image' => 'image',
 
             ]);
 
+
+
             Band::where('id', $request->id)->update([
-                'band_id'=>$request->id,
                 'name' => $request->name,
-                'image' => $request->image,
+                'image' => $image,
                 'updated_at' => now(),
             ]);
             return redirect()->route('bands.index')->with('message', 'Banda actualizada com sucesso!');
@@ -145,14 +157,14 @@ class BandController extends Controller
         $request->validate([
 
             'name' => 'required|unique:bands|max:255',
-            'image' => 'required|url',
+            'image' => 'image',
 
         ]);
 
 
         Band::insert([
             'name'=>$request->name,
-            'image'=>$request->image,
+            'image'=>$image,
 
         ]);
 
@@ -185,6 +197,12 @@ class BandController extends Controller
         return view('bands.update', compact('band'));
     }
 
+
+    public function dashboard(){
+
+
+        return view('auth.dashboard');
+    }
 
 
 

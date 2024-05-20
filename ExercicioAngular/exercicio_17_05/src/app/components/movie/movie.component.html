@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class="row mt-5 mb-6">
+    <div class="col-3" *ngFor="let movie of movies">
+      <div class="card">
+        <img [src]="movie.Poster" class="card-img-top" alt="{{ movie.Title }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.Title }}</h5>
+          <p class="card-text">{{ movie.Year }} - {{ movie.Type }}</p>
+          <button  type="button" class="btn btn-primary">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>

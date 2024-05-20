@@ -23,6 +23,9 @@
             @error('user_type')
                 erro de name
             @enderror
+
+
+            
         <button type="submit m-1" class="btn btn-primary">Update User</button>
     </form>
     @if(session('message'))

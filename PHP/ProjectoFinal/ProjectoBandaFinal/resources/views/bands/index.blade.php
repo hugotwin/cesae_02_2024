@@ -14,8 +14,15 @@
 @if(Auth::check())
 @if(Auth::user()->user_type==2)
     <div><a href="{{ route('bands.insertBand') }}" class="btn btn-primary">Inserir bandas</a></div>
+    @if(session('message'))
+    <div class="alert alert-success m-1" role="alert">
+        {{ session('message') }}
+    </div>
 @endif
 @endif
+@endif
+
+
 
 <div class="container mb-2 text-end">
 
@@ -43,10 +50,12 @@
         @foreach($bands as $band)
             <tr>
                 <td>{{ $band['name'] }}</td>
-                <td><img src="{{ $band['image'] }}" alt="{{ $band['name'] }}" style="max-width: 100px;"></td>
 
+
+
+                <td><img src="{{$band->image? asset('storage/'.$band->image):asset('storage/OIP.jpg') }}" alt="{{ $band['name'] }}" style="max-width: 100px;"></td>
                 <td>
-                    @foreach ($bands_albuns as  $albuns )
+                @foreach ($bands_albuns as  $albuns )
 
                     @if ($albuns->id == $band['id'] )
                                 {{ $albuns ['total'] }}
@@ -65,7 +74,6 @@
                 <a href="{{route('bands.update',[$band['id']])}}" class="btn btn-warning">Update</a>
                 @endauth
 
-
                 </td>
                 <td>
                     @auth
@@ -74,6 +82,9 @@
                     @endif
                     @endauth
                 </td>
+
+
+
 
 
 

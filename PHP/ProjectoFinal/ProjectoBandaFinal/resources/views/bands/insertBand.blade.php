@@ -6,7 +6,7 @@
     <div class='row'>
         <div  class='col-3 offset-3'>
 
-    <form method = "POST"  action = "{{route('bands.newband')}}">
+    <form method = "POST"  action = "{{route('bands.newband')}}" enctype="multipart/form-data">
         <div class="form-group">
             @csrf
 
@@ -19,14 +19,18 @@
           @enderror
 
         </div>
+
+
+
         <div class="form-group">
-            <label for="exampleInputEmail1">Imagem -URL-</label>
-            <input type="url" class="form-control" id="name" name ="image" aria-describedby="emailHelp" placeholder="Imagem URL'">
+            <label for="photo">Selecione o arquivo: Photo</label>
+            <input type="file" id="file" name="image" accept="image/*" name =image><br><br>
             @error('image')
             <label>Endereço de imagem invalido</label>
             @enderror
-
         </div>
+
+
         <div class='text-center m-2'><button type="submit" class="btn btn-primary">Inserir nova banda</button></div>
     </form>
 

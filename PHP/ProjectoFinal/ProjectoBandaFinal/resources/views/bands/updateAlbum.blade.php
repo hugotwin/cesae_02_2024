@@ -1,4 +1,3 @@
-
 @extends('layouts.fe')
 
 @section('content')
@@ -7,16 +6,18 @@
     <div class='row'>
         <div  class='col-3 offset-3'>
 
-    <form method = "POST"  action = "{{route('bands.newband')}}" enctype="multipart/form-data">
+    <form method = "POST"  action = "{{route('bands.albumsinsert')}}" enctype="multipart/form-data">
+
+          @csrf
         <div class="form-group">
-            @csrf
 
-        <input name="id" type="hidden" value="{{ $band->id }}">
 
-          <label for="exampleInputEmail1">Nome da banda</label>
-          <input type="text" class="form-control" id="nameBanda"  value = "{{ $band->name}}" name="name" aria-describedby="emailHelp" placeholder="{{ $band->name }}">
+        <input name="id" type="hidden" value="{{ $album->id }}">
+
+          <label for="exampleInputEmail1">Nome do album</label>
+          <input type="text" class="form-control" id="nameBanda"  value = "{{ $album->name}}" name="name" aria-describedby="emailHelp" placeholder="{{ $album->name }}">
           @error('name')
-          <label>Nome de banda invalido</label>
+          <label>Nome do album invalido</label>
           @enderror
 
         </div>
@@ -29,6 +30,16 @@
             @enderror
 
         </div>
+
+        <div class="form-group">
+            <label for="release_date">Data de lançamento</label>
+            <input type="date" id="file" name="release_date"><br><br>
+            @error('release_date')
+            <label>Erro na data </label>
+            @enderror
+
+        </div>
+
         <div class='text-center m-2'><button type="submit" class="btn btn-primary">Actualizar</button></div>
     </form>
 
@@ -41,4 +52,3 @@
 </div>
 
 @endsection
-

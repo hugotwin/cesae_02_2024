@@ -37,7 +37,7 @@
 
             <a class="btn btn-outline-info mx-2" href={{route('add.user')}}>Criar utilizador</a>
                 <a
-                    href="{{ url('/dashboard') }}"
+                    href="{{ route('auth.dashboard') }}"
                     class="btn btn-outline-success mx-2"
                     >
                     Dashboard

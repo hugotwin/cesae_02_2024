@@ -13,7 +13,7 @@ class UserController extends Controller
 
 
     public function __construct() {
-      
+
         $this->auth = ['auth'];
     }
 
@@ -97,6 +97,7 @@ class UserController extends Controller
                 'name' => $request->name,
                 'user_type' => $request->user_type,
 
+
             ]);
 
 
@@ -110,12 +111,16 @@ class UserController extends Controller
                 'name' => 'string|max:10',
                 'password' => 'required|min:5',
                 'email' => 'required|email|unique:users',
+                'user_type'=>'numeric',
+
+
             ]);
 
         User::insert([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'user_type' => $request->user_type,
         ]);
 
         return redirect()->back()->with('message', 'User adicionado com sucesso');

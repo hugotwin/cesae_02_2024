@@ -31,8 +31,14 @@ Route::get('/bands/{id?}', [BandController::class,'apagarBand'])->name('bands.de
 Route::get('/deleteAlbums/{id?}', [AlbumController::class,'apagarAlbum'])->name('bands.albumsDelete')->middleware('auth');
 
 Route::post('/insertAlbums', [AlbumController::class,'insertAlbum'])->name('bands.albumsinsert')->middleware('auth');
+Route::get('/updateAlbum/{id}', [AlbumController::class,'updateAlbum'])->name('bands.updateAlbum')->middleware('auth');
+
+
+
 
 Route::get('/newband/{id}', [BandController::class,'updateBand'])->name('bands.update')->middleware('auth');
+
+
 Route::get('/insertBand', function () {
     return view('bands.insertBand');
 })->name('bands.insertBand')->middleware('auth');
@@ -46,5 +52,5 @@ Route::get('/home', [BandController::class,'index'])->name('bands.index');
 Route::get('/user/{id}', [UserController::class, 'viewUser'])->name('users.view');
 Route::get('/users', [UserController::class, 'allUsers'])->name('users.all');
 Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('backoffice.dashboard');
+Route::get('/dashboard', [BandController::class, 'dashboard'])->name('auth.dashboard');
 

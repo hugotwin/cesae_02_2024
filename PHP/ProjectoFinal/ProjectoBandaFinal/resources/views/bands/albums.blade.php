@@ -15,6 +15,8 @@
             <th>Nome</th>
             <th>Foto</th>
             <th>Data de lançamento</th>
+            <th></th>
+            <th></th>
             <th></th> <!-- Coluna para o botão "Ver Álbuns" -->
         </tr>
         </thead>
@@ -22,7 +24,7 @@
         @foreach($albums as $album)
             <tr>
                 <td>{{ $album['name'] }}</td>
-                <td><img src="{{ $album['image'] }}" alt="{{ $album['name'] }}" style="max-width: 100px;"></td>
+                <td><img src="{{$album->image? asset('storage/'.$album->image):asset('storage/OIP.jpg') }}" alt="" style="max-width: 100px;"></td>
                 <td>{{ $album['release_date'] }}</td> <!-- deve ser o numero de albuns" -->
                 <td>
                     <a href="{{route('bands.albums',[$album['id']])}}" class="btn btn-primary">Ver Álbuns</a>
@@ -30,14 +32,22 @@
                 <td>
                     @auth
                     @if(Auth::user()->user_type==2)
-                      <a href="{{route('bands.albumsDelete',[$album['id']])}}" class="btn btn-warning">Apagar album</a>
+                      <a href="{{route('bands.albumsDelete',[$album['id']])}}" class="btn btn-danger">Apagar album</a>
                     @endif
                     @endauth
 
                 </td>
-                @auth
-                <td> <a href="" class="btn btn-info-sm" >Update album</a> </td>
-                @endauth
+
+                <td>
+                    @auth
+                    @if(Auth::user()->user_type==2)
+                      <a href="{{route('bands.updateAlbum',[$album['id']])}}" class="btn btn-warning">update album</a>
+                    @endif
+                    @endauth
+
+
+                </td>
+
         </tr>
 
         @endforeach
@@ -53,7 +63,7 @@
         <div  class='col-3 offset-3'>
 
 
-    <form method = "post"  action = "{{route('bands.albumsinsert')}}">
+    <form method = "post"  action = "{{route('bands.albumsinsert')}}" enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="band_id" value = {{$albums[0]['band_id'] }}>
@@ -67,17 +77,16 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Imagem -URL-</label>
-            <input type="url" class="form-control" id="name" name ="image" aria-describedby="emailHelp" placeholder="imagem 'url'">
+            <label for="photo">Selecione o arquivo: Photo</label>
+            <input type="file" id="file" name="image" accept="image/*" name =image><br><br>
             @error('image')
-            <label>Nome do album invalido</label>
+            <label>Endereço de imagem invalido</label>
             @enderror
-
         </div>
 
 
         <div class="form-group">
-            <label for="exampleInputEmail1">Imagem -URL-</label>
+            <label for="exampleInputEmail1">Data do album</label>
             <input type="date" class="form-control" id="name" name ="release_date" aria-describedby="emailHelp" placeholder="Release date'">
             @error('release_date')
             <label>Data inválida</label>
