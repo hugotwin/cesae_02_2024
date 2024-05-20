@@ -1,15 +1,18 @@
 @extends('layouts.fe')
 
 @section('content')
-
     <h4>Tarefas</h4>
 
-    @if (@session('message'))
-
-    <div>{{session('message')}}</div>
-
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
     @endif
-
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <table class="table">
         <thead>
             <tr>
@@ -24,52 +27,11 @@
                 <tr>
                     <th scope="row">{{ $key->id }}</th>
                     <td>{{ $key->name }}</td>
-                    <td>{{ $key->username }}</td>
+                    <td>{{ $key->usname }}</td>
                     <td>{{ $key->description }}</td>
-                    <td><a href="{{route('tasks.viewTask', $key->id)}}" class="btn btn-info">Ver</a></td>
-                    <td><a href="{{route('tasks.viewTask', $key->id)}}" class="btn btn-danger">Apagar</a></td>
+                    <td><a class="btn btn-info" href="{{route('tasks.edit',$key->id )}}">Ver / Editar</a></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-
-    <h5>
-    <form method="post" action= {{route('tasks.create')}}>
-        @csrf
-
-        <div class="form-group">
-          <label for="exampleInputEmail1">nome tarefa</label>
-
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nome da tarefa" name="name" value="" required>
-
-        </div>
-        @error('email')
-        <div class="Invalid-feedback" >Erro no mail</div>
-        @enderror
-
-        <div class="form-group">
-            <label for="exampleInputPassword1">Descrição</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="descrição " description = "description" value="" required>
-        </div>
-
-
-
-        <div class="form-group">
-          <label for="exampleInputPassword1">id</label>
-          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="id" name="id" value="" required>
-        </div>
-
-
-        <select class="form-select" aria-label="Default select example" name='id'>
-            <option selected>Open this select menu</option>
-            @foreach ($tasks as $key)
-            <option value={{ $key->id }}>{{ $key->name }}</option>
-            @endforeach
-          </select>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </h5>
-
 @endsection

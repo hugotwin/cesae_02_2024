@@ -12,18 +12,40 @@ class UserController extends Controller
     public function allUsers(){
 
         $cesaeInfo = $this->getCesaeInfo();
-        $allUsers = $this->getUsers();
+        //$allUsers = $this->getUsers();
 
         $delegadoTurma = DB::table('users')
                         ->where('id', 1)
                         ->where('name', 'Sara')
                         ->first();
 
+
+
+        //sem ternário
+        /*$search = null;
+
+        if(request()->query('search')){
+            $search = request()->query('search');
+        }else{
+            $search = null;
+        }*/
+
+        $search = request()->query('search')?request()->query('search'):null;
+
+        if( $search){
+            $allUsers = Db::table('users')
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('email', 'LIKE', "%{$search}%")
+            ->get();
+        }else{
+             //query que busca todos os users
+            $allUsers = Db::table('users')->get();
+        }
+
+
        // dd( $delegado);
         return view('users.all_users', compact('cesaeInfo', 'allUsers', 'delegadoTurma'));
     }
-
-
 
     public function viewUser($id){
 
@@ -32,10 +54,6 @@ class UserController extends Controller
 
         return view('users.user_view', compact('user'));
     }
-
-
-
-
 
     public function deleteUser($id){
 
@@ -46,10 +64,9 @@ class UserController extends Controller
      }
 
 
+     public function addUser(){
 
-    public function addUser(){
-
-        DB::table('users')
+       /* DB::table('users')
         ->updateOrInsert(
             [
             'email' => 'liliana@gmail.com',
@@ -58,7 +75,9 @@ class UserController extends Controller
             'name' => 'liliana',
             'password'=> 6666,
             'updated_at'=>now()
-        ]);
+        ]);*/
+
+        return view('users.create_user');
 
     }
 
@@ -92,61 +111,41 @@ class UserController extends Controller
         return  $users;
     }
 
-
     public function createUser(Request $request){
 
-        //$request->all();
-
         if(isset($request->id)){
-
-
             $request->validate([
-                'name' =>'string|max:10',
-                'cpostal'=>'string',
-
+                'name' => 'string',
+                'address' => 'string',
+                'cpostal' => 'string',
             ]);
 
-            user::where('id', $request->id)
+            User::where('id', $request->id)
             ->update([
-                'name'=>$request->name,
-                'cpostal'=>$request->cpostal,
-
+                'name' => $request->name,
+                'address' => $request->address,
+                'cpostal' => $request->cpostal,
             ]);
 
-            return redirect()->route('users.all')->with('message', 'atualizado com sucesso');
-
-
-
+            return redirect()->route('users.all')->with('message', 'User actualizado com sucesso');
 
         }else{
 
             $request->validate([
-                'name' =>'string|max:50',
-                'email'=>'required|email|unique:users'
-
+                'name' => 'string|max:10',
+                'password' => 'required|min:5',
+                'email' => 'required|email|unique:users',
             ]);
 
-            User::insert([
-                'name'=>$request->name,
-                'email'=>$request->email,
-                'password'=>Hash::make($request->password),
+        User::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-            ]);
-
-
-        //dd($request->all());
-        return redirect()->route('users.all')->with('message', 'inserido com suceso');
-
-
-
-
-
+        return redirect()->back()->with('message', 'User adicionado com sucesso');
         }
 
 
-
     }
-
-
-
 }

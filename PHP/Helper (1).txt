@@ -496,18 +496,162 @@ com mail e token
 
 ---------------
 
-FILESYSTEM_DISK=public   ----no env
+FILESYSTEM_DISK=public   ----no env sempre que copiamos um programa temos de fazer isto
 php artisan storage:link   -- so cria um link
 vai criar pstiorage no public mas devo gravar sempre no storage privado   
 colocar imagens no storage/public  
 
+-----------------------------------------------------------------
+--------------------------criar uma api---------------
+
+
+criar o php artisan install:api
+e criar uma pagina na pasta routes api.php
+
+e colocar Route::get('/task/{task}', [TaskApiController::class, 'show']);
+
+-- criar controllador 
+> php artisan make:controller TaskApiController -r
+
+
+->e no controlador
+
+    public function show(Task $task)  // podemso colocar o modelo no paramentro d einput e associa automaticamente ao model com id
+    {
+        return $task;
+    }
+
+
+->no postman 
+
+http://127.0.0.1:8000/api/task/1
+
+---criar api limita os  valores mostrados
+
+
+php artisan make:resource TaskResource // nos resources 
+
+ public function toArray(Request $request): array
+    {
+
+        return[
+            'nome'=>$this->name,
+            'description'=>$this->description,];
+    }
+
+
+depois no controller TaskApiController
+
+public function show(Task $task):TaskResource  // podemos colocar o modelo no paramentro d einput e associa 								automaticamente ao model com id
+    {
+        return new TaskResource($task);
+    }
+
+
+--- substitui anterior e fica com rotas para todas as rotas definicao 
+Route::apiResource('/task', TaskApiController::class);
+
+
+---para ir buscar toda a informacao 
+
+php artisan make:resource TaskResourceCollection --collection // nos resources 
+
+no TaksApiController  colocamos no index 
+
+  public function index() :TaskResourceCollection
+    {
+        //
+
+        return new TaskResourceCollection(resource: Task::paginate(2) ); // cria duas paginas com dados 
+    }
 
 
 
-                         
+----------- ir ao model e defenir os campos obrigatorios  (enviar dados para a api como por exemplo a 
+autenticacao) login  neste caso criamos uma task
+
+--- colocar no  model Task
+protected  $fillable =['name',
+			'description',
+			'user_id'];
+
+----------------------------
+
+----no TaskApiController
+public funtion store(Request $request){
+
+$request->validate([
+	'name'=>requeried,
+	description ='requeriesd'
+	user_id = 'requeried'
+]);  // valida os dados 
+
+$task =$Task::create($request->all());
+
+return response()->json('task ok') --- retorna que foi feito bem a task
+
+}
+
+
+--- no postmam
 
 
 
+não squecer post/ http://127.0.0.1:8000/api/task
+
+{"name":"teste",
+"description":"teste2",
+"user_id":9}
+
+
+
+envia dados para laravel 
+
+------update atraves da api
+
+
+
+public funtion update(Request $request, Task $task){
+
+
+$taks->update($request->all())
+
+return response()->json('task ok')
+
+
+
+}
+
+  
+no put no postmam put/http://127.0.0.1:8000/api/task/4 (exemplo ) esta a espera de um parametro
+
+no postmam no texto colocamos 
+
+{"description":"teste3"}
+
+
+
+------delete atraves da api
+
+
+
+public funtion destroy(Task $task){ // aqui tem o id
+
+
+$taks->delete( $task))
+
+return response()->json('task apagada')
+
+
+
+}
+
+  
+no put no postmam put/http://127.0.0.1:8000/api/task/4 (exemplo ) esta a espera de um parametro
+
+no postmam no texto colocamos 
+
+{"description":"teste3"}
 
 
 

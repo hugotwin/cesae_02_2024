@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GiftController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\IndexController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,8 +18,15 @@ Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('us
 
 Route::get('/add-user', [UserController::class, 'addUser'])->name('users.add');
 
+Route::post('/create-user', [UserController::class, 'createUser'])->name('users.create');
+
 
 Route::get('/tasks', [TaskController::class, 'allTasks'])->name('tasks.all');
+
+Route::get('/task/{id}', [TaskController::class, 'editTask'])->name('tasks.edit');
+
+Route::get('/add-task', [TaskController::class, 'addTask'])->name('tasks.add');
+Route::post('/create-task', [TaskController::class, 'createTask'])->name('tasks.create');
 
 
 Route::get('/hello', [IndexController::class, 'helloWorld'])->name('home.hello');
@@ -34,22 +40,6 @@ Route::get('/hello/{name}', function ($name) {
 Route::fallback(function(){
     return view('errors.fallback');
 });
-
-
-
-
-Route::get('/gifts', [GiftController::class, 'index'])->name('gifts.gift');
-Route::get('/gifts/{id?}', [GiftController::class, 'show'])->name('gifts.description');
-
-Route::get('/{id?}', [GiftController::class, 'delete'])->name('gifts.delete');
-
-//Route::get('/register_errado', [GiftController::class, 'form'])->name('forms.formu');
-
-//Route::get('/forms', [GiftController::class, 'createUser'])->name('forms.formulario');
-
-Route::post('/createUser', [UserController::class, 'createUser'])->name('users.create');
-Route::post('/register', [TaskController::class, 'createTask'])->name('tasks.create');
-Route::get('/task/{id}', [TaskController::class, 'viewTask'])->name('tasks.viewTask');
 
 
 
