@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('turma', function (Blueprint $table) {
+        Schema::create('turmas', function (Blueprint $table) {
             $table->id('idTurma');
             $table->unsignedBigInteger('idCurso');
             $table->unsignedBigInteger('idLocalizacao');
@@ -19,9 +19,11 @@ return new class extends Migration
             $table->date('dataFim')->nullable();;
             $table->string('nome');
             $table->boolean('activeStatus')->default(true);
+            $table->timestamps();
 
-            $table->foreign('idCurso')->references('idCurso')->on('curso')->onDelete('cascade');
-            $table->foreign('idLocalizacao')->references('idLocalizacao')->on('localizacao')->onDelete('cascade');
+
+            $table->foreign('idCurso')->references('idCurso')->on('cursos')->onDelete('cascade');
+            $table->foreign('idLocalizacao')->references('idLocalizacao')->on('localizacaos')->onDelete('cascade');
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('turma');
+        Schema::dropIfExists('turmas');
     }
 };

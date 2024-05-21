@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
             $table->boolean('activeStatus')->default(true);
             $table->unsignedBigInteger('idTipoUtilizador');
-            $table->foreign('idTipoUtilizador')->references('idTipoUtilizador')->on('tipoUtilizador')->onDelete('cascade');
+            $table->foreign('idTipoUtilizador')->references('idTipoUtilizador')->on('tipo_utilizadors')->onDelete('cascade');
 
         });
 

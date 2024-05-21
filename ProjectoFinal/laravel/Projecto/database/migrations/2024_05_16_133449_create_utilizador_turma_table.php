@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('utilizadorTurma', function (Blueprint $table) {
-
+        Schema::create('utilizador_turmas', function (Blueprint $table) {
+            $table->id('idUtilizadorTurma');
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idTurma');
+            $table->timestamps();
 
 
             // Definindo as chaves estrangeiras
             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('idTurma')->references('idTurma')->on('turma')->onDelete('cascade');
+            $table->foreign('idTurma')->references('idTurma')->on('turmas')->onDelete('cascade');
             $table->unique(['idUser', 'idTurma']);
+
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('utilizadorTurma');
+        Schema::dropIfExists('utilizador_turmas');
     }
 };

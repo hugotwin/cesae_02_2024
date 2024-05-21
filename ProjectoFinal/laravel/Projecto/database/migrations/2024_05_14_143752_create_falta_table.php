@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('falta', function (Blueprint $table) {
+        Schema::create('faltas', function (Blueprint $table) {
             $table->id('idFalta');
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idModulo');
             $table->date('dataFalta')->nullable();
             $table->integer('horasFalta')->nullable();
+            $table->timestamps();
+
 
             // Definindo as chaves estrangeiras
             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('idModulo')->references('idModulo')->on('modulo')->onDelete('cascade');
+            $table->foreign('idModulo')->references('idModulo')->on('modulos')->onDelete('cascade');
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('falta');
+        Schema::dropIfExists('faltas');
     }
 };

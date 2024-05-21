@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('moduloFormando', function (Blueprint $table) {
+        Schema::create('modulo_formandos', function (Blueprint $table) {
             $table->id('idModuloFormando');
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idTurma');
             $table->unsignedbigInteger('idModulo');
             $table->decimal('nota', 5, 2)->nullable();
+            $table->timestamps();
+
 
             // Definindo as chaves estrangeiras
             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('idTurma')->references('idTurma')->on('turma')->onDelete('cascade');
-            $table->foreign('idModulo')->references('idModulo')->on('modulo')->onDelete('cascade');
+            $table->foreign('idTurma')->references('idTurma')->on('turmas')->onDelete('cascade');
+            $table->foreign('idModulo')->references('idModulo')->on('modulos')->onDelete('cascade');
 
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('moduloFormando');
+        Schema::dropIfExists('modulo_formando');
     }
 };
