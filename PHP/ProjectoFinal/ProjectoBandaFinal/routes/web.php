@@ -49,8 +49,8 @@ Route::get('/add-user', [UserController::class, 'addUser'])->name('add.user')->m
 Route::get('/home', [BandController::class,'index'])->name('bands.index');
 
 
-Route::get('/user/{id}', [UserController::class, 'viewUser'])->name('users.view');
-Route::get('/users', [UserController::class, 'allUsers'])->name('users.all');
-Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
-Route::get('/dashboard', [BandController::class, 'dashboard'])->name('auth.dashboard');
+Route::get('/user/{id}', [UserController::class, 'viewUser'])->name('users.view')->middleware('auth');;
+Route::get('/users', [UserController::class, 'allUsers'])->name('users.all')->middleware('auth');;
+Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete')->middleware('auth');;
+Route::get('/dashboard', [BandController::class, 'dashboard'])->name('auth.dashboard')->middleware('auth');;
 

@@ -16,7 +16,10 @@ class AlbumController extends Controller
     public function index($id)
     {
 
-        $albums = $this->show($id);
+        //dd($id);
+        $albums = $this->show($id)?$this->show($id):0;
+       // dd($this->show($id));
+
 
         //dd($albums->all());
        return view('bands.albums', compact('albums'));
@@ -43,12 +46,19 @@ class AlbumController extends Controller
      */
     protected function show(string $id)
     {
+
+
+
         $albums = Album::where('id', $id)->get();
         //dd($albums);
-        $bandas_albums = Band::rightJoin('albums', 'bands.id', '=', 'albums.band_id')
-        ->selectRaw('bands.name as bandName, albums.*')
+        $bandas_albums = Band::leftJoin('albums', 'bands.id', '=', 'albums.band_id')
+        ->selectRaw('bands.name as bandName, albums.*, bands.id')
         ->where('bands.id', $id)
         ->get();
+
+
+
+
 
 
         return $bandas_albums;
@@ -113,6 +123,7 @@ class AlbumController extends Controller
             $request->validate([
                 'name' => 'required|unique:albums|max:255',
                 'image' => 'image',
+                'release_date'=>$request->release_date,
 
 
 
@@ -121,7 +132,7 @@ class AlbumController extends Controller
             Album::insert([
                 'name' => $request->name,
                 'image' => $image,
-                'release_date'=>$request->release_date,
+                
             ]);
             return redirect()->route('bands.albums')->with('message', 'Banda actualizada com sucesso!');
 
@@ -135,6 +146,7 @@ class AlbumController extends Controller
 
             'name' => 'required|unique:bands|max:255',
             'image' => 'image',
+            'release_date' => 'required|date'
 
         ]);
 

@@ -8,6 +8,7 @@
 
 
 <div class="container mt-5">
+
     <h1 class="mb-4">The  best albums from {{$albums[0]['bandName'] }}</h1>
     <table class="table">
         <thead>
@@ -22,9 +23,13 @@
         </thead>
         <tbody>
         @foreach($albums as $album)
+        @if($album['id'])
             <tr>
+
                 <td>{{ $album['name'] }}</td>
+
                 <td><img src="{{$album->image? asset('storage/'.$album->image):asset('storage/OIP.jpg') }}" alt="" style="max-width: 100px;"></td>
+
                 <td>{{ $album['release_date'] }}</td> <!-- deve ser o numero de albuns" -->
                 <td>
                     <a href="{{route('bands.albums',[$album['id']])}}" class="btn btn-primary">Ver Álbuns</a>
@@ -32,7 +37,9 @@
                 <td>
                     @auth
                     @if(Auth::user()->user_type==2)
+
                       <a href="{{route('bands.albumsDelete',[$album['id']])}}" class="btn btn-danger">Apagar album</a>
+
                     @endif
                     @endauth
 
@@ -41,13 +48,15 @@
                 <td>
                     @auth
                     @if(Auth::user()->user_type==2)
+
                       <a href="{{route('bands.updateAlbum',[$album['id']])}}" class="btn btn-warning">update album</a>
+
                     @endif
                     @endauth
 
 
                 </td>
-
+                @endif
         </tr>
 
         @endforeach
@@ -66,7 +75,7 @@
     <form method = "post"  action = "{{route('bands.albumsinsert')}}" enctype="multipart/form-data">
         @csrf
 
-        <input type="hidden" name="band_id" value = {{$albums[0]['band_id'] }}>
+        <input type="hidden" name="band_id" value = {{$albums[0]['id'] }}>
         <div class="form-group">
           <label for="exampleInputEmail1">Nome do album</label>
           <input type="text" class="form-control" id="name"  name="name" aria-describedby="emailHelp" placeholder="Nome do album">

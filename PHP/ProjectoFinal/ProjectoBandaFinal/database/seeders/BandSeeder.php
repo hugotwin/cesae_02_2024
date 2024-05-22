@@ -14,7 +14,7 @@ class BandSeeder extends Seeder
     public function run(): void
     {
 
-        Band::factory()->count(5)->create();
+    
 
     }
 }
