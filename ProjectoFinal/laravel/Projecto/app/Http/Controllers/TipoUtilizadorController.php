@@ -110,6 +110,24 @@ class TipoUtilizadorController extends Controller
     ->get();// indica os formadores todos e os cursos e turmas a que estão associados */
 
 
+    /*$result = DB::table('cursos')
+    ->join('turmas', 'turmas.idCurso', '=', 'cursos.idCurso')
+    ->select('cursos.*', 'turmas.*')
+    ->get();// vai buscar todos os cursos e turmas*/
+
+    
+
+    /*$result = DB::table('tipo_utilizadors')
+    ->leftJoin('users', 'tipo_utilizadors.idTipoUtilizador', '=', 'users.idTipoUtilizador')
+    ->leftJoin('formador_modulos', 'users.id', '=', 'formador_modulos.idUser')
+    ->leftJoin('modulos', 'modulos.idModulo', '=', 'formador_modulos.idModulo')
+    ->where('tipo_utilizadors.tipoUtilizador', 'formador')
+    ->select('tipo_utilizadors.tipoUtilizador', 'users.name', 'modulos.nameModulo')
+    ->get();// vai buscar todos os formadores e mostra os modulos que dão */
+
+
+
+
 
 
 
