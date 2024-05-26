@@ -13,8 +13,8 @@ export class MovieService {
   constructor(private http:HttpClient) { } //construtor com a biblioteca HttpClient
 
 
-  getMovies():Observable<MoviesResponse>{ // funcao com
-    return this.http.get<MoviesResponse>(`${this.domain}/?apikey=${this.apiKey}&s=harry`)
+  getMovies(search :string):Observable<MoviesResponse>{ // funcao com
+    return this.http.get<MoviesResponse>(`${this.domain}/?apikey=${this.apiKey}&s=${search}`)
 
   }
 }

@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TaskApiController;
+use App\Http\Controllers\WeatherController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -53,4 +55,11 @@ Route::get('/user/{id}', [UserController::class, 'viewUser'])->name('users.view'
 Route::get('/users', [UserController::class, 'allUsers'])->name('users.all')->middleware('auth');;
 Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete')->middleware('auth');;
 Route::get('/dashboard', [BandController::class, 'dashboard'])->name('auth.dashboard')->middleware('auth');;
+
+
+// api
+
+
+
+
 

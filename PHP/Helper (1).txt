@@ -506,9 +506,10 @@ colocar imagens no storage/public
 
 
 criar o php artisan install:api
+
 e criar uma pagina na pasta routes api.php
 
-e colocar Route::get('/task/{task}', [TaskApiController::class, 'show']);
+-->e colocar Route::get('/task/{task}', [TaskApiController::class, 'show']);
 
 -- criar controllador 
 > php artisan make:controller TaskApiController -r
@@ -554,7 +555,7 @@ Route::apiResource('/task', TaskApiController::class);
 
 ---para ir buscar toda a informacao 
 
-php artisan make:resource TaskResourceCollection --collection // nos resources 
+---->php artisan make:resource TaskResourceCollection --collection // nos resources 
 
 no TaksApiController  colocamos no index 
 
@@ -578,6 +579,8 @@ protected  $fillable =['name',
 ----------------------------
 
 ----no TaskApiController
+
+
 public funtion store(Request $request){
 
 $request->validate([
@@ -586,7 +589,7 @@ $request->validate([
 	user_id = 'requeried'
 ]);  // valida os dados 
 
-$task =$Task::create($request->all());
+$task =Task::create($request->all());
 
 return response()->json('task ok') --- retorna que foi feito bem a task
 

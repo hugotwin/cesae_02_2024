@@ -9,9 +9,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route("bands.index")}}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -19,13 +17,16 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href={{route('users.all')}}>Ver Utilizadores</a></li>
+            @auth
+ <li><a class="dropdown-item" href={{route('users.all')}}>Ver Utilizadores</a></li>
+            @endauth
+
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+
       </ul>
+
+    <div class= 'mx-3' >A Temperatura ambiente exterior:{{ $temperatureData[$hora]}} ºC</div>
 
 @if (Route::has('login'))
   @auth

@@ -132,7 +132,7 @@ class AlbumController extends Controller
             Album::insert([
                 'name' => $request->name,
                 'image' => $image,
-                
+
             ]);
             return redirect()->route('bands.albums')->with('message', 'Banda actualizada com sucesso!');
 

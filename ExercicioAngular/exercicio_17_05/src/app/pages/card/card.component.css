@@ -1,0 +1,26 @@
+/* Estilos personalizados para melhorar a aparência */
+.container {
+  margin-top: 2rem;
+}
+
+.form-outline {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 0.375rem;
+}
+
+.btn {
+  margin-top: 1rem;
+}
+
+.img-fluid {
+  border-radius: 0.375rem;
+}
+
+.movie-details {
+  margin-top: 1.5rem;
+}
+
+

@@ -1,0 +1,49 @@
+
+
+
+<div class="container mt-5" >
+  <!-- Conteúdo dentro do contêiner -->
+
+
+  <!-- Search Form -->
+  <div class="form-outline mb-4">
+    <input class="form-label rounded m-1" id="formControlReadonly" type="text" value="" aria-label="readonly input example" name="search" [(ngModel)]="search"/>
+    <label class="form-label" for="formControlReadonly"></label>
+    <button class="btn btn-primary" (click)="getPage()" >Search: {{ search }}</button>
+  </div>
+  <div class="text-center mb-4">
+
+  </div>
+
+  <!-- Movie Details -->
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <img [src]="movie.Poster" class="img-fluid rounded" [alt]="movie.Title">
+    </div>
+    <div class="col-md-8">
+      <h2 class="mb-3">{{ movie.Title }}</h2>
+      <p><strong>Year:</strong> {{ movie.Year }}</p>
+      <p><strong>Rated:</strong> {{ movie.Rated }}</p>
+      <p><strong>Released:</strong> {{ movie.Released }}</p>
+      <p><strong>Runtime:</strong> {{ movie.Runtime }}</p>
+      <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+      <p><strong>Director:</strong> {{ movie.Director }}</p>
+      <p><strong>Writer:</strong> {{ movie.Writer }}</p>
+      <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+      <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+      <p><strong>Language:</strong> {{ movie.Language }}</p>
+      <p><strong>Country:</strong> {{ movie.Country }}</p>
+      <p><strong>Awards:</strong> {{ movie.Awards }}</p>
+      <p><strong>Metascore:</strong> {{ movie.Metascore }}</p>
+      <p><strong>IMDB Rating:</strong> {{ movie.imdbRating }}</p>
+      <p><strong>IMDB Votes:</strong> {{ movie.imdbVotes }}</p>
+      <p><strong>BoxOffice:</strong> {{ movie.BoxOffice }}</p>
+      <p><strong>Production:</strong> {{ movie.Production }}</p>
+      <p><strong>Website:</strong> <a [href]="movie.Website" target="_blank">{{ movie.Website }}</a></p>
+      <div *ngFor="let rating of movie.Ratings" class="mt-2">
+        <p><strong>{{ rating.Source }}:</strong> {{ rating.Value }}</p>
+      </div>
+    </div>
+  </div>
+
+

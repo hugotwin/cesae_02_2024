@@ -11,3 +11,4 @@ export interface Movie{
   Type:string
   Poster:string
 }
+
