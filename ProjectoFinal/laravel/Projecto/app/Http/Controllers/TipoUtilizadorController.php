@@ -69,11 +69,11 @@ class TipoUtilizadorController extends Controller
 
     public function dados(){
 
-       /* $dados=DB::table('tipo_utilizadors')
+        $dados=DB::table('tipo_utilizadors')
         ->join('users', 'tipo_utilizadors.idTipoUtilizador', '=', 'users.idTipoUtilizador')
         ->where('tipo_utilizadors.tipoUtilizador', 'formando')
         ->select('tipo_utilizadors.tipoUtilizador', 'users.name')
-        ->get(); // indica todos fornmandos que existem*/
+        ->get(); // indica todos fornmandos que existem
 
 
         /*$dados= DB::table('tipo_utilizadors')
@@ -115,7 +115,7 @@ class TipoUtilizadorController extends Controller
     ->select('cursos.*', 'turmas.*')
     ->get();// vai buscar todos os cursos e turmas*/
 
-    
+
 
     /*$result = DB::table('tipo_utilizadors')
     ->leftJoin('users', 'tipo_utilizadors.idTipoUtilizador', '=', 'users.idTipoUtilizador')
@@ -132,7 +132,7 @@ class TipoUtilizadorController extends Controller
 
 
 
-        dd($dados);
+        //dd($dados);
 
 
         return view('dados', compact('dados'));
