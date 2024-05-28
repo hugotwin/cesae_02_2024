@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Validator;
 
 class TipoUtilizadorController extends Controller
 {
@@ -135,9 +138,23 @@ class TipoUtilizadorController extends Controller
         //dd($dados);
 
 
-        return view('dados', compact('dados'));
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+
+        if ($user->idTipoUtilizador == 0) {
+            return view('welcome', compact('dados'));
+        } else {
+            return view('dados', compact('dados'));
+        }
+
+
+        //return view('dados', compact('dados'));
 
     }
+
 
 
 }

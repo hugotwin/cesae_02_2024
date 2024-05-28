@@ -3,10 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TipoUtilizadorController;
 
-/*Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
-});*/
+});
 
-
-Route::get('/', [TipoUtilizadorController::class, 'dados'])->name('dados');
-
+Route::get('/home', [TipoUtilizadorController::class, 'dados'])->name('dados');

@@ -26,6 +26,7 @@
                         <div class="col-12 col-md-9 col-lg-8 col-xl-7">
                             <div class="card text-dark rounded-4 p-5">
                                 <form method="POST" class="d-flex flex-column" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="card-body p-5 text-center">
                                         <div class="mb-md-5 mt-md-4 pb-5">
                                             <h1 class="fw-bold mb-2 ">Login</h1>

@@ -47,9 +47,11 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login');
         });
 
-        /*Fortify::authenticated(function (Request $request, $user) {
-            dd($user);
-            return redirect()->route('dados');});*/
+
+
+        Fortify::registerView(function () {
+            return view('auth.register');
+        });
 
 
 
