@@ -24,15 +24,20 @@ class FuncionarioTest {
         assertEquals(1100, funcionario.aumentarSalario(10));
     }
 
-    @Test
-    void exibirDados() {
-    }
 
     @Test
-    void testAumentarSalario() {
+    void aumentarSalarioNegative() {
+
+        assertEquals(1000, funcionario.aumentarSalario(-10));
     }
 
+
     @Test
-    void testExibirDados() {
+    void aumentarSalarioZero() {
+
+        assertEquals(1000, funcionario.aumentarSalario(0));
     }
+
+
+
 }

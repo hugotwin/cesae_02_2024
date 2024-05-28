@@ -129,12 +129,6 @@ class TipoUtilizadorController extends Controller
     ->get();// vai buscar todos os formadores e mostra os modulos que dão */
 
 
-
-
-
-
-
-
         //dd($dados);
 
 
@@ -144,7 +138,8 @@ class TipoUtilizadorController extends Controller
 
         $user = Auth::user();
 
-        if ($user->idTipoUtilizador == 0) {
+       //dd($user);
+        if ($user->idTipoUtilizador == 1) {
             return view('welcome', compact('dados'));
         } else {
             return view('dados', compact('dados'));
