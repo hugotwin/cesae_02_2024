@@ -16,7 +16,7 @@ export class PageComponent implements OnInit {
 
   search :string  ="tt3896198"
 
-  movie: MovieDetails ={
+  movie: MovieDetails ={// inicializa o objecto com os campos vazios
     Title:"",
     Year:"",
     Rated:"",
@@ -47,16 +47,16 @@ export class PageComponent implements OnInit {
   };
 
 
-  constructor(private pageDetails:PageService){}
+  constructor(private pageDetails:PageService){}// inicializa o Page service que é o page.service.ts
 
   ngOnInit(): void {
-   this.getPage();
+   this.getPage();// inicializa a funcao
   }
 
 
-getPage():void{
+getPage():void{// funcao que vai ao objecto PageDetails. que inicaliza a funcao getPage do pageDetails o subrscribe um metodo de arrys para inicializar um conjunto de arrays
 
-    this.pageDetails.getPage(this.search).subscribe((movieDetails : MovieDetails) : void =>{
+    this.pageDetails.getPage(this.search).subscribe((movieDetails : MovieDetails) : void =>{// vai se buscar o search ao html
 
       console.log(movieDetails)
       this.movie=movieDetails
