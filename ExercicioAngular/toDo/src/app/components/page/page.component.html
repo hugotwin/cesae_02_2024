@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="form7Example1" class="form-control"  name ="search" [(ngModel)]="search" />
+    <label class="form-label" for="form7Example1">Name</label>
+    <button (click) ="getParams()" > search : {{search}}</button>
+  </div>
+
+
+  <div class="row mt-5 mb-6">
+    <div class="col-3" *ngFor="let page of pages">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ page.title }}</h5>
+          <p class="card-text">{{ page.description  }} </p>
+          <button  type="button" class="btn btn-primary">View Details</button>
+          <a [routerLink]="['id', page.id]" class = 'btn btn-primary'>view more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

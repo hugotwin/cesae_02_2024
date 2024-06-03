@@ -5,6 +5,7 @@ import org.example.Domain.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -29,13 +30,24 @@ class CSVPlayerReaderTest {
     }
 
     @Test
-    void readCsvFileFileFound() throws FileNotFoundException {
+    void readCsvFileToArrayTestedsize() throws FileNotFoundException {
 
-        ArrayList<Player> players = CSVPlayerReader.readCsvFileToArray("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\trabalhoTeste\\src\\main\\resources\\Files\\jogadores.csv");
-
-        assertInstanceOf(Competition.class, players.get(0));
+        assertEquals(36, CSVPlayerReader.readCsvFileToArray("Files/jogadores.csv").size());
 
     }
+
+    @Test
+    void readCsvFileToArrayEmptyFile() throws FileNotFoundException {
+
+        ArrayList<Player> players = CSVPlayerReader.readCsvFileToArray("Files/jogadoresVazio.csv");
+
+        assertEquals(0, players.size());
+    }// falha de teste devesse verificar se o ficheiro esta vazio
+
+
+
+
+
 
 
 

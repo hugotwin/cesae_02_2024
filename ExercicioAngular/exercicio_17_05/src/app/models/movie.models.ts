@@ -6,6 +6,7 @@ export interface MoviesResponse{
 }
 
 export interface Movie{
+  imdbID:string
   Title:string
   Year:string
   Type:string

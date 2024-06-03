@@ -25,7 +25,7 @@ class AnimalTest {
 
     @Test
     void estaComFome() {
-        assertEquals(true,animal.estaComFome());
+        assertTrue(animal.estaComFome());
     }
 
     @Test
@@ -38,7 +38,7 @@ class AnimalTest {
     void comerTrue() {
 
         assertTrue( animal.comer(Alimento.VEGETAIS));
-        assertEquals(false,animal.estaComFome());
+        assertFalse(animal.estaComFome());
     }
 
 
@@ -47,7 +47,7 @@ class AnimalTest {
         assertFalse( animal.comer(Alimento.FRUTAS));
         assertFalse( animal.comer(Alimento.PEIXE));
         assertFalse( animal.comer(Alimento.CARNE));
-        assertEquals(true,animal.estaComFome());
+        assertTrue(animal.estaComFome());
 
     }
 }

@@ -16,6 +16,7 @@
           <h5 class="card-title">{{ movie.Title }}</h5>
           <p class="card-text">{{ movie.Year }} - {{ movie.Type }}</p>
           <button  type="button" class="btn btn-primary">View Details</button>
+          <a [routerLink]="['movie', movie.imdbID]" class = 'btn btn-primary'>view more</a>
         </div>
       </div>
     </div>

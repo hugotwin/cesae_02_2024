@@ -15,11 +15,15 @@ public class Competition {
         this.theirGoals = theirGoals;
     }
 
-    public void showDetails(){
+    public String showDetails(){
         System.out.println("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
         System.out.println("Date: " + date + " | Competition: " + competition + " | Adversary: " + adversary + " | Our Goals: " + ourGoals + " | Their Goals: " + theirGoals);
         System.out.println("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
 
+        String detalhes = "⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽\nDate: " + date + " | Competition: " + competition + " | Adversary: " + adversary + " | Our Goals: " + ourGoals + " | Their Goals: " + theirGoals+"\n⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽";
+
+
+        return detalhes;
     }
 
     public String getDate() {

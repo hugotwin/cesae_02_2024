@@ -31,3 +31,5 @@ https://colorlib.com/wp/template/bootstrap-sidebar-02/
 https://startbootstrap.com/theme/sb-admin-2
 
 https://startbootstrap.github.io/startbootstrap-sb-admin-2/index.html#
+
+https://transform.tools/json-to-typescript

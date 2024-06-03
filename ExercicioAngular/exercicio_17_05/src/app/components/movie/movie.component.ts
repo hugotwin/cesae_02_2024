@@ -3,13 +3,15 @@ import {MovieService} from "./movie.service";
 import {Movie, MoviesResponse} from "../../models/movie.models";
 import {NgForOf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-movie',
   standalone: true,
   imports: [
     NgForOf,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.css'

@@ -1,6 +1,7 @@
 package org.example.Tools;
 
 import org.example.Domain.Competition;
+import org.example.Domain.Player;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,15 +36,20 @@ class CompetitionsCSVReaderTest {
 
 
 
-
-
-
     @Test
     void readCsvFileFileFound() throws FileNotFoundException {
 
-        ArrayList<Competition> competitions = CompetitionsCSVReader.readCsvFileToArray("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\trabalhoTeste\\src\\main\\resources\\Files\\competicoes.csv");
+        ArrayList<Competition> competitions = CompetitionsCSVReader.readCsvFileToArray("Files/competicoes.csv");
 
        assertInstanceOf(Competition.class, competitions.get(0));
+
+    }
+
+
+    @Test
+    void readCsvFileToArrayTestedsize() throws FileNotFoundException {
+
+        assertEquals(63, CompetitionsCSVReader.readCsvFileToArray("Files/competicoes.csv").size());
 
     }
 

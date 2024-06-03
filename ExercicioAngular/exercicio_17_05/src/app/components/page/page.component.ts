@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PageService} from "./page.service";
 import {MovieDetails, Rating} from "../../models/page.models";
 import {FormsModule} from "@angular/forms";
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-page',
@@ -47,10 +48,24 @@ export class PageComponent implements OnInit {
   };
 
 
-  constructor(private pageDetails:PageService){}// inicializa o Page service que é o page.service.ts
+  constructor(private pageDetails:PageService, private activatedRoute:ActivatedRoute){}// inicializa o Page service que é o page.service.ts
 
   ngOnInit(): void {
-   this.getPage();// inicializa a funcao
+
+    this.getParams();
+    // inicializa a funcao
+  }
+
+  getParams():void{
+
+
+    this.activatedRoute.params.subscribe((params:Params |{id:string}):void=>{
+      console.log(params.id)
+      this.search=params.id;
+      this.getPage();
+
+
+    })
   }
 
 
