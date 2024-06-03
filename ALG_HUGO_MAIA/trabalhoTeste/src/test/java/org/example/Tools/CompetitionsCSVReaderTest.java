@@ -41,7 +41,7 @@ class CompetitionsCSVReaderTest {
     @Test
     void readCsvFileFileFound() throws FileNotFoundException {
 
-        ArrayList<Competition> competitions = CompetitionsCSVReader.readCsvFileToArray("C:\\Users\\softdev\\Desktop\\cesae_02_2024\\ALG_HUGO_MAIA\\trabalhoTeste\\src\\main\\resources\\Files\\competicoes.csv");
+        ArrayList<Competition> competitions = CompetitionsCSVReader.readCsvFileToArray("main/resources/Files/competicoes.csv");
 
        assertInstanceOf(Competition.class, competitions.get(0));
 
