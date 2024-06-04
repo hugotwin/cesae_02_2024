@@ -13,7 +13,7 @@ public class CoachController {
     }
 
 
-    public void competitionsByYear(int year) {
+    public boolean competitionsByYear(int year) {
         boolean found = false;
 
         for (Competition competition : competitionsRepository.getCompetitionsArray()) {
@@ -23,12 +23,17 @@ public class CoachController {
             if (competitionYear.equals(Integer.toString(year))) {
                 competition.showDetails();
                 found = true;
+
             }
         }
 
         if (!found) {
             System.out.println("No competitions found for the year " + year);
+            found = false;
+
         }
+        return found;
     }
+
 
 }
