@@ -34,7 +34,7 @@ class CompetitionTest {
         assertThrows(NullPointerException.class, () -> new Competition(null, "League", "Opponent", 2, 1));
         assertThrows(NullPointerException.class, () -> new Competition("2024-06-03", null, "Opponent", 2, 1));
         assertThrows(NullPointerException.class, () -> new Competition("2024-06-03", "League", null, 2, 1));
-    }
+    }// tramento destas exception
 
     @Test
     void showDetails() {

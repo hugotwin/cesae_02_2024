@@ -31,13 +31,14 @@ class CoachControllerTest {
     void testCompetitionsByYear_withCompetitionsTrue() {
         assertTrue( coachController.competitionsByYear(2020));
         assertTrue( coachController.competitionsByYear(2021));
+
     }
 
 
     /*
     @Test
     void testCompetitionsByYear_withCompetitionsString() {
-        assertThrows(IllegalArgumentException.class, () -> coachController.competitionsByYear("2020"));
+        assertThrows(IllegalArgumentException.class, () -> coachController.competitionsByYear("null"));
     }// deveriar ter um illegal argument exception ou entao receber os doistipos de dados
 
 */
