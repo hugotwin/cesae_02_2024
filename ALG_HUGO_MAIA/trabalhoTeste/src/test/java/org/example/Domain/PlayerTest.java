@@ -53,15 +53,13 @@ class PlayerTest {
 
         assertEquals(22, player.getAge());
         assertEquals(25, player2.getAge());
-
-
     }
 
     @Test
     void getNationality() {
 
-        assertEquals("portuguesa", player.getAge());
-        assertEquals("Inglesa", player2.getAge());
+        assertEquals("portuguesa", player.getNationality());
+        assertEquals("Inglesa", player2.getNationality());
 
 
 

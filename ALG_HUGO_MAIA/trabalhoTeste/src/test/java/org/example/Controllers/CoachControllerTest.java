@@ -34,14 +34,24 @@ class CoachControllerTest {
 
     }
 
-
-    /*
     @Test
-    void testCompetitionsByYear_withCompetitionsString() {
-        assertThrows(IllegalArgumentException.class, () -> coachController.competitionsByYear("null"));
-    }// deveriar ter um illegal argument exception ou entao receber os doistipos de dados
+    public void rankingAtaqueDefesaTeste()  {
+       assertNotNull( coachController.rankingAtaqueDefesa());//A funcao não esta terminada
 
-*/
+    }
+
+    @Test
+    public void melhorDefesaTeste()  {
+        assertNotNull( coachController.melhorDefesa());//A funcao não esta terminada
+
+    }
+
+
+    @Test
+    public void melhorAtaqueTeste()  {
+        assertNotNull( coachController.melhorAtaque());//A funcao não esta terminada
+    }
+
 
 
 

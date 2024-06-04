@@ -21,7 +21,7 @@ class PlayerControllerTest {
     }
 
     @Test
-    void getPlayersList() throws FileNotFoundException {
+    void getPlayersListTeste() throws FileNotFoundException {
 
         assertEquals(36,  playerController.getPlayersList().size());
         playerController.getPlayersList().clear();
@@ -30,7 +30,7 @@ class PlayerControllerTest {
 
 
     @Test
-    void getPlayersListNome() throws FileNotFoundException {
+    void getPlayersListNomeTeste() throws FileNotFoundException {
        ArrayList<Player> lista = playerController.getPlayersList();
         assertEquals("Joaquim Alberto",  lista.get(0).getName());
     }
@@ -38,35 +38,37 @@ class PlayerControllerTest {
 
 
     @Test
-    void getCompetitions() throws FileNotFoundException {
+    void getCompetitionsTeste() throws FileNotFoundException {
 
         assertEquals(63,  playerController.getCompetitions().size());
         playerController.getCompetitions().clear();
         assertTrue(playerController.getCompetitions().isEmpty());
         assertNotNull( playerController.getCompetitions());
-
     }
 
 
     @Test
-    void getPlayerCompetionNome() throws FileNotFoundException {
+    void getPlayerCompetionNomeTeste() throws FileNotFoundException {
         ArrayList<Competition> lista = playerController.getCompetitions();
         assertEquals("Champions League",  lista.get(0).getCompetition());
-
-
     }
 
     @Test
-    void getPlayerCompetionNotNome() throws FileNotFoundException {
+    void getPlayerCompetionNotNomeTeste() throws FileNotFoundException {
         ArrayList<Competition> lista = playerController.getCompetitions();
         assertNotEquals("Champions",  lista.get(0).getCompetition());
         assertNotEquals("",  lista.get(1).getCompetition());
-
-
+        assertThrows(IndexOutOfBoundsException.class,()-> lista.get(3000).getCompetition());
     }
 
+    @Test
+    void getPlayerCompetionNotNomeTesteOutBounds() throws FileNotFoundException {
+        ArrayList<Competition> lista = playerController.getCompetitions();
+        assertDoesNotThrow(IndexOutOfBoundsException.class,lista.get(3000).getCompetition());
+    }
 
-
+    private void assertDoesNotThrow(Class<IndexOutOfBoundsException> indexOutOfBoundsExceptionClass, Object o) {
+    }
 
 
 }

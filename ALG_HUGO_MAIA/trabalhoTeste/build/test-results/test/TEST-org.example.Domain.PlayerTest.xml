@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.Domain.PlayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-04T08:43:28" hostname="PRTCPU71W10AIO" time="0.033">
-  <properties/>
-  <testcase name="getNumber()" classname="org.example.Domain.PlayerTest" time="0.033"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -39,5 +39,13 @@ public class PlayerController {
 
         return competitionsArray;
     }
+
+
+
+    public void showMostGoalsOnCompetion() throws FileNotFoundException {}
+
+
+
+
 }
 

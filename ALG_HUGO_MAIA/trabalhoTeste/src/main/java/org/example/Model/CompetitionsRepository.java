@@ -22,8 +22,8 @@ public class CompetitionsRepository {
         return instance;
     }
 
-    public ArrayList<Competition> getCompetitionsArray() {
-        return competitionsArray;
+    public  ArrayList<Competition> getCompetitionsArray() {
+        return this.competitionsArray;
     }
 }
 

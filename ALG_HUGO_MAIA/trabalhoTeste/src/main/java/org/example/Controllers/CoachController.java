@@ -36,4 +36,21 @@ public class CoachController {
     }
 
 
+    public String rankingAtaqueDefesa() {
+        return null;
+    }
+
+
+    public String melhorDefesa()  {
+
+        return null;
+    }
+
+    public String melhorAtaque()  {
+        return null;
+    }
+
+
+
+
 }
