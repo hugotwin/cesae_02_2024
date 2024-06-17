@@ -27,14 +27,9 @@ export class MovieComponent implements OnInit {
   }
 
 
-  getMovies():void {
-
-    this.movieService.getMovies(this.search)
-      .subscribe((moviesResponse: MoviesResponse): void => {
-      this.movies = moviesResponse.Search;
-
-
+  getArticleByTitle(title: string): void {
+    this.newsService.getNews().subscribe((root: Root) => {
+      this.article = root.articles.find(article => article.title === title);
     });
   }
-
 }
