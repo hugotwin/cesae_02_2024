@@ -1,10 +1,36 @@
 <div class="container">
 
+               <div > Todo : {{pages.length}}</div>
+
+
+  <div > Todo : {{ pages.length? "ok": "nok" }}</div>
+
+
+
+  <div *ngIf="pages.length === 0">
+    <h5 class="card-title">Sem tarefas.</h5>
+  </div>
+
+
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="form7Example1" class="form-control"  name ="search" [(ngModel)]="search" />
+    <input  type="text" id="form7Example1" class="form-control"  name ="search" [(ngModel)]="search" />
     <label class="form-label" for="form7Example1">Name</label>
     <button (click) ="getParams()" > search : {{search}}</button>
   </div>
+
+
+
+  <form >
+    <mdb-form-control>
+      <input [(ngModel)]="todo.title" type="text" class="form-control" id="title" name="title" value="">
+      <label class="form-label">title</label>
+    </mdb-form-control>
+    <mdb-form-control>
+      <input [(ngModel)]="todo.description" type="text" class="form-control" id="description" name="description" value="">
+      <label class="form-label" >description</label>
+    </mdb-form-control>
+  </form>
+  <button (click) ="addTodo()" data-mdb-ripple-init type="button" class="btn btn-primary btn-block">Sign in</button>
 
 
   <div class="row mt-5 mb-6">
@@ -13,10 +39,23 @@
         <div class="card-body">
           <h5 class="card-title">{{ page.title }}</h5>
           <p class="card-text">{{ page.description  }} </p>
-          <button  type="button" class="btn btn-primary">View Details</button>
-          <a [routerLink]="['id', page.id]" class = 'btn btn-primary'>view more</a>
+          <button  (click) ="deleteTodo(page.id!)" type="button" class="btn btn-danger">apagar</button>
+         <!-- <a [routerLink]="['id', page.id]" class = 'btn btn-primary'>view more</a>-->
         </div>
+
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault{{page.id}}"
+               [(ngModel)]="page.isDone"
+               (change)="updateTodo(page)"
+               [checked]="page.isDone"
+
+        />
+        <label class="form-check-label" for="flexCheckDefault{{page.id}}">Default checkbox</label>
+
+
+      </div>
       </div>
     </div>
   </div>
+
 </div>

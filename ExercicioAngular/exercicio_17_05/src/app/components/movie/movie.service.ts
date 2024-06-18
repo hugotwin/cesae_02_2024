@@ -6,6 +6,8 @@ import { MoviesResponse } from "../../models/movie.models";
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class MovieService {
   private apiKey: string='d11e823b'
   private domain:string = 'http://omdbapi.com'
