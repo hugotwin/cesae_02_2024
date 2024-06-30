@@ -10,7 +10,7 @@ import os
 smtp_server = 'smtp.gmail.com'  # Exemplo: Gmail
 smtp_port = 587
 email_user = 'hugotwin4@gmail.com'  # Seu endereço de e-mail
-email_password = 'yjjf egkg crqw pbey' # Sua senha de e-mail
+email_password = '' # Sua senha de e-mail
 
 recipient_email = 'hugotwin@live.com.pt'  # E-mail do destinatário
 

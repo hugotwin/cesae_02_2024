@@ -6,9 +6,9 @@ from twilio.rest import Client
 
 # Configuração do Twilio
 
-account_sid = 'AC0a74e009e3115f542403f0c671cb0388'
-auth_token = '66ada840426800680980b7e442eeea4a'
-twilio_whatsapp_number = 'whatsapp:+18455168839'  # Número do WhatsApp do Twilio
+account_sid = ''
+auth_token = ''
+twilio_whatsapp_number = 'whatsapp:+18455168839'
 recipient_whatsapp_number = 'whatsapp:+351915146642'  # Seu número de WhatsApp
 
 client = Client(account_sid, auth_token)

@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 email_user = 'hugotwin4@gmail.com'
-email_password = 'yjjf egkg crqw pbey'
+email_password = ''
 recipient_email = 'hugotwin@live.com.pt'
 
 
