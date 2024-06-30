@@ -1,0 +1,389 @@
+node -v
+npm install -g @angular/cli
+ng --help
+
+ng new app
+
+CSS             [ https://developer.mozilla.org/docs/Web/CSS
+C:\Users\hugot\OneDrive\Ambiente de Trabalho\cesae_02_2024\angular>  cd app
+
+
+ng serve
+( a segunda lista)
+
+C:\Users\hugot\OneDrive\Ambiente de Trabalho\cesae_02_2024\angular\app>npn run start
+(npm run start)
+
+? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. Yes
+
+Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+
+
+instalr npm instal typescript so uma vez
+-------------------------------------------------------------------------------------------
+--- -------------criar um projecto em typeScript-----------------------------------------
+
+Criar uma pasta com qualquer nome (exemplo)
+
+ir para a pasta cd
+
+cd C:\Users\hugot\OneDrive\Ambiente de Trabalho\cesae_02_2024\ExercicioAngular\exemplo ou abrir no webstorm 
+
+
+----inicia um ficheiro de configuracao------------
+
+
+tsc -init 
+
+------criar um ficheiro e linkar 
+
+index. html
+script.ts(criar um ficjeiro script.js e tambem colocar no html essa ligacao  p script.ts)
+
+
+-- criar o whatcher  verifica a alteracao e grava
+
+tsc -w   
+--------------------------------------------------------------------
+---- criacao de app audi ---- ja com todos os ficheiros do angular 
+
+Criar uma pasta com qualquer nome (Audi)
+
+ir para a pasta cd
+
+cd C:\Users\hugot\OneDrive\Ambiente de Trabalho\cesae_02_2024\ExercicioAngular\Audi
+
+ng new <project name>
+
+
+const flag :boolean = true;
+if(flag){alert('true')}
+
+
+
+ng serve
+
+npm run start
+
+
+
+src/app/app.component.html
+
+https://mdbootstrap.com/docs/angular/getting-started/installation/ --- boostrap do angular
+
+
+y
+y (boostrap especial)
+
+
+
+npm run start  
+
+
+ng generate component card ou (ng g c card)-> cria uma pasta na root  e fazer as mesma coisa para os outros componentes
+
+ng generate component carrosel   
+
+ng generate component master-page/footer 
+
+ng generate component master-page/header  
+
+PS C:\Users\hugot\OneDrive\Ambiente de Trabalho\cesae_02_2024\ExercicioAngular\audi\audi> ng generate component master-page/header 
+
+(colocar nas pagina app <router-outlet)
+
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+ir ao ficheiro app.route.ts
+
+{ path:"",component:HomeComponent},
+  { path:"contact-us",component:ContactUsComponent},
+
+ir ao header(navbar) criar links
+<a class="nav-link" aria-current="page" routerLink="" >Home</a>
+ <a class="nav-link" routerLink="contact-us">Contact Us</a>
+
+---card--
+---card.coponent.ts
+
+export class BlogComponent {
+
+titleBlog :string ="Title post";}
+
+--blog.componente.ts
+
+<h1 class="display-4 fst-italic">{{titleBlog }}</h1>
+
+criar varios componente e carregar variaveis ------------------------
+
+
+--------na pagimna do card.coponente.html
+
+[src]='imageCard' ou    <p class="card-text">{{cardText}}</p>
+  
+---------na pagina card.componente.componente   //// criar uma variavel com input que vai receber outra variavel
+
+export class CardComponent {
+  @Input() cardText: string="";
+  @Input() imageCard: string=""; 
+
+
+---------home.componente.ts
+
+export class HomeComponent { /// vamos definir uma variavel na hoempara depois carregar numa variavel na carde 
+  
+  imageCardOne: string="https://fastly.picsum
+
+------------no home html
+
+<app-card[imageCard]='imageCardOne'></app-card>
+
+------------directivas------------
+
+a variavel items defibina na tag das exemplo.componente.ts
+
+<p>home works!</p>
+<div *ngFor="let name of names">
+  <h2>{{name}}</h2>
+</div>
+
+export class HomeComponent {
+  names:String[]=[
+
+    'sergio',
+    'maria',
+    'joao',
+
+  ]
+
+}
+
+-------------cards
+
+criar director model e depois ficheiro card.model.ts
+
+
+export interface Card{
+  title: string;
+  description: string;
+  image: string;
+}
+
+
+-------------
+
+
+
+
+<div class="card" style="width: 18rem;">
+  <img [src]="image" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+--
+
+export class CardComponent {
+
+  @Input() image: string="";
+
+}
+--
+  cards:Card[] =[
+
+    {title:'Title1',
+      description:'description1',
+      image : 'https://image.freepik.com/fotos-gratis/musico-banda-cantando_102671-5234.jpg'},
+
+    {title:'Title2',
+      description:'description2',
+      image : 'https://th.bing.com/th/id/R.e4d36119db120772d15566fca5b9d89d?rik=84TF50dDzxkI1A&pid=ImgRaw&r=0'}]
+
+
+
+
+}
+
+--
+
+<div  >
+<app-card *ngFor="let card of cards" [image]='card.image' ></app-card>
+</div>
+
+
+app.compoenytye 
+
+construtor(){}
+console.log('construtor')
+
+-----------------------------------------------------------------------------
+---------------fazer ligacao a api-------------
+-------------------------------------------------------------
+
+criar um 
+ ng generate component components/movie/movie 
+ ng generate service components/movie/movie
+(criar uma pasta models na pasta app e depois um ficheiro movie.models.ts)
+
+depois disto devemos 
+
+--criar duas interfaces 
+
+estão as duas modeladas de acordo com api
+
+export interface MoviesResponse{
+  Search :Movie[]  --------------------importante igual ao campos do ficheiro jason 
+  totalResults :string
+  Response:string
+
+}
+
+export interface Movie{ --------------------importante igual ao campos do ficheiro jason neste caso no campo search
+  Title:string
+  Year:string
+  Type:string
+  Poster:string
+}
+
+
+--no aa.config.ts
+
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes), provideClientHydration(), provideAnimations(),provideHttpClient()]
+};
+
+para cahamara s bibliotecas
+
+---- no movie.service.ts
+
+
+onde vamos fazer a ligacao 
+
+export class MovieService {
+
+  private apiKey: string='d11e823b'                             // de acordo com a pi
+  private domain:string = 'http://omdbapi.com'                  // de acordo com a api
+
+  constructor(private http:HttpClient) { }                      //construtor com a biblioteca HttpClient
+
+
+  getMovies():Observable<MoviesResponse>{                       // criar a funcao getMovies que ira usar a biblioteca Observable com um array de MoviesResponse
+    return this.http.get<MoviesResponse>(`${this.domain}/?apikey=${this.apiKey}&s=harry`) //usa  a funcao get do http para fazer comunicacao a api
+
+  }
+}
+-----movie.componente.ts---
+
+export class MovieComponent implements OnInit { //Aqui, a interface OnInit é importada de @angular/core e a classe MovieComponent a implementa. 
+
+  movies: Movie[] = [];  //// criar um arrau d objectos movies
+
+  constructor(private movieService: MovieService) {} // cria o objecto
+
+  ngOnInit(): void {                                 //O método ngOnInit é definido na classe. Esse método será chamado automaticamente pelo Angular logo após a criação do componente e a inicialização de suas propriedades de entrada.
+    this.getMovies();				//inicia o metdo da class
+  }
+
+
+  getMovies():void {
+
+    this.movieService.getMovies()              // vai ao objecto movieService e ao metodo.getMovies() que retorna o ficheiro jason
+      .subscribe((moviesResponse: MoviesResponse): void => { //para estar actualizado
+      this.movies = moviesResponse.Search;  // retorna um objecto com o campo search como definimos nos objectos ao inicio
+      console.log(moviesResponse)
+
+    });
+  }
+
+}
+
+Inicialização dos Filmes: Chama o método getMovies, que faz uma requisição ao MovieService para obter a lista de filmes.
+Subscrição ao Serviço: Dentro de getMovies, utiliza-se o método subscribe para se inscrever às atualizações do serviço, recebendo a resposta contendo os filmes.
+Atualização da Lista de Filmes: A resposta (moviesResponse) é usada para atualizar a propriedade movies do componente.
+
+no  -- movie.component.html
+ 
+div class="container">
+  <div class="row mt-5 mb-6">
+    <div class="col-3" *ngFor="let movie of movies">
+      <div class="card">
+        <img [src]="movie.Poster" class="card-img-top" alt="{{ movie.Title }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.Title }}</h5>
+          <p class="card-text">{{ movie.Year }} - {{ movie.Type }}</p>
+          <button  type="button" class="btn btn-primary">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+-----
+export const routes: Routes = [
+
+  {path:'',component:MovieComponent,}
+];
+
+
+
+-----------------------------------------------------------------------------------
+---------------------
+definire variavis no html 
+
+
+no comoponente.html
+ <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="form7Example1" class="form-control"  name ="search" [(ngModel)]="search" />
+    <label class="form-label" for="form7Example1">Name</label>
+    <button (click) ="getMovies()" > search : {{search}}</button>
+  </div>>
+
+no movie componente colocar 
+
+imports: [
+    NgForOf,
+    FormsModule
+  ],
+
+colocar 
+
+search :string ="Harry";
+
+
+e alterar o metodo 
+
+getMovies():void {
+
+    this.movieService.getMovies(this.search)
+      .subscribe((moviesResponse: MoviesResponse): void => {
+      this.movies = moviesResponse.Search;
+      console.log(moviesResponse)
+
+    });
+  }
+
+
+e ainda no movie.service.ts 
+alterar o metodo 
+
+para receber parametros 
+ getMovies(search :string):Observable<MoviesResponse>{ // funcao com
+    return this.http.get<MoviesResponse>(`${this.domain}/?apikey=${this.apiKey}&s=${search}`)
+
+  }
+   
+
+
+
+
+
+
